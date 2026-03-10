@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0))
+  .slice(0, 3);
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 4);
+
+const research = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 2);
+---
+
+<BaseLayout title="Nivedita Pandey">
+  <div class="home">
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">
+        Building bridges between digital innovation, market scale, and cross-border ecosystems
+      </h1>
+      <p class="hero-text">
+        My career follows an M-shaped trajectory across three domains: digital innovation in public infrastructure, 
+        go-to-market execution at scale, and cross-border ecosystem development. The connector across them is 
+        public–private partnerships and the institutional design that enables technology adoption.
+      </p>
+      <p class="hero-text">
+        I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with 
+        particular focus on AI governance, digital public infrastructure, and strategic partnerships across Asia.
+      </p>
+    </section>
+    
+    <!-- Selected Projects -->
+    {projects.length > 0 && (
+      <section class="section">
+        <div class="section-header">
+          <h2>Selected Projects</h2>
+          <a href="/projects" class="section-link">View all →</a>
+        </div>
+        
+        <div class="project-grid">
+          {projects.map((project) => (
+            <a href={`/projects/${project.slug}`} class="project-card">
+              <div class="project-meta">
+                <span class="project-industry">{project.data.industry}</span>
+                <span class="project-year">{project.data.year}</span>
+              </div>
+              <h3 class="project-title">{project.data.title}</h3>
+              <p class="project-problem">{project.data.problem}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+    
+    <!-- Latest Writing -->
+    {articles.length > 0 && (
+      <section class="section">
+        <div class="section-header">
+          <h2>Latest Writing</h2>
+          <a href="/articles" class="section-link">View all →</a>
+        </div>
+        
+        <div class="article-list">
+          {articles.map((article) => (
+            <a href={`/articles/${article.slug}`} class="article-item">
+              <div class="article-meta">
+                <time datetime={article.data.publishDate.toISOString()}>
+                  {article.data.publishDate.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </time>
+              </div>
+              <h3 class="article-title">{article.data.title}</h3>
+              <p class="article-description">{article.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+    
+    <!-- Notes -->
+    {notes.length > 0 && (
+      <section class="section">
+        <div class="section-header">
+          <h2>Notes</h2>
+          <a href="/notes" class="section-link">View all →</a>
+        </div>
+        
+        <div class="notes-grid">
+          {notes.map((note) => (
+            <a href={`/notes/${note.slug}`} class="note-card">
+              <h4 class="note-title">{note.data.title}</h4>
+              <time class="note-date" datetime={note.data.publishDate.toISOString()}>
+                {note.data.publishDate.toLocaleDateString('en-US', { 
+                  month: 'short', 
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </time>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+    
+    <!-- Research -->
+    {research.length > 0 && (
+      <section class="section">
+        <div class="section-header">
+          <h2>Research</h2>
+          <a href="/research" class="section-link">View all →</a>
+        </div>
+        
+        <div class="research-list">
+          {research.map((paper) => (
+            <div class="research-item">
+              <div class="research-meta">
+                <span class="research-type">{paper.data.type}</span>
+                <span class="research-year">{paper.data.year}</span>
+              </div>
+              <h3 class="research-title">{paper.data.title}</h3>
+              <p class="research-org">Prepared for {paper.data.preparedFor}</p>
+              <p class="research-summary">{paper.data.summary}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+    
+    <!-- Newsletter CTA -->
+    <section class="section newsletter-cta">
+      <h2>Newsletter</h2>
+      <p class="newsletter-description">
+        Insights on AI governance, digital infrastructure, and the intersection of technology and institutions.
+      </p>
+      <a href="/newsletter" class="cta-button">Subscribe</a>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .home {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 2rem 0 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 750px;
+  }
+  
+  /* Sections */
+  .section {
+    border-top: 1px solid var(--border);
+    padding-top: 3rem;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .section-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  
+  .section-link:hover {
+    color: var(--accent);
+  }
+  
+  /* Projects */
+  .project-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+  
+  .project-card {
+    display: block;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+  }
+  
+  .project-card:last-child {
+    border-bottom: none;
+  }
+  
+  .project-card:hover {
+    border-color: var(--accent);
+  }
+  
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .project-industry {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .project-year {
+    color: var(--text-muted);
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+  
+  .project-problem {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  
+  /* Articles */
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .article-item {
+    display: block;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .article-item:last-child {
+    border-bottom: none;
+  }
+  
+  .article-meta {
+    margin-bottom: 0.75rem;
+  }
+  
+  .article-meta time {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  .article-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+  
+  .article-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  
+  /* Notes */
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .note-card {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+  }
+  
+  .note-card:hover {
+    border-color: var(--accent);
+  }
+  
+  .note-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+  
+  .note-date {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  /* Research */
+  .research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .research-item {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .research-item:last-child {
+    border-bottom: none;
+  }
+  
+  .research-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .research-type {
+    color: var(--accent);
+  }
+  
+  .research-year {
+    color: var(--text-muted);
+  }
+  
+  .research-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .research-org {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .research-summary {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  
+  /* Newsletter CTA */
+  .newsletter-cta {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
+  .newsletter-cta h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    font-family: var(--font-heading);
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .cta-button:hover {
+    opacity: 0.9;
+    color: var(--bg);
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 1.75rem;
+    }
+    
+    .notes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

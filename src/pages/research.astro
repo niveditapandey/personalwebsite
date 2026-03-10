@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const research = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<BaseLayout title="Research — Nivedita Pandey">
+  <div class="research-page">
+    <header class="page-header">
+      <h1>Research</h1>
+      <p class="page-description">
+        Analytical work produced during professional engagements with institutions, governments, and multilateral organizations.
+      </p>
+      <p class="disclaimer">
+        These are public versions of research produced during professional engagements and do not represent 
+        official publications of the institutions mentioned.
+      </p>
+    </header>
+    
+    <div class="research-list">
+      {research.map((paper) => (
+        <article class="research-item">
+          <div class="research-meta">
+            <span class="research-type">{paper.data.type}</span>
+            <span class="research-year">{paper.data.year}</span>
+          </div>
+          <h2>{paper.data.title}</h2>
+          <p class="research-org">Prepared for {paper.data.preparedFor}</p>
+          <p class="research-summary">{paper.data.summary}</p>
+          {paper.data.pdfUrl && (
+            <a href={paper.data.pdfUrl} class="pdf-link" target="_blank" rel="noopener noreferrer">
+              Download PDF →
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .research-page {
+    max-width: 850px;
+  }
+  
+  .page-header {
+    margin-bottom: 4rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .disclaimer {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--border);
+    background: rgba(127, 141, 166, 0.05);
+  }
+  
+  .research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .research-item {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .research-item:last-child {
+    border-bottom: none;
+  }
+  
+  .research-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .research-type {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .research-year {
+    color: var(--text-muted);
+  }
+  
+  .research-item h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .research-org {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  
+  .research-summary {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pdf-link {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+  
+  .pdf-link:hover {
+    color: var(--text-primary);
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

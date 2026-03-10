@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0));
+---
+
+<BaseLayout title="Projects — Nivedita Pandey">
+  <div class="projects-page">
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p class="page-description">
+        Selected work across digital innovation, institutional partnerships, and ecosystem building.
+      </p>
+    </header>
+    
+    <div class="projects-list">
+      {projects.map((project) => (
+        <a href={`/projects/${project.slug}`} class="project-card">
+          <div class="project-meta">
+            <span class="project-industry">{project.data.industry}</span>
+            <span class="project-year">{project.data.year}</span>
+          </div>
+          <h2 class="project-title">{project.data.title}</h2>
+          <p class="project-problem">{project.data.problem}</p>
+          <span class="project-link">View project →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-page {
+    max-width: 900px;
+  }
+  
+  .page-header {
+    margin-bottom: 4rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .project-card {
+    display: block;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+  }
+  
+  .project-card:hover {
+    border-color: var(--accent);
+  }
+  
+  .project-card:hover .project-link {
+    color: var(--accent);
+  }
+  
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .project-industry {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .project-year {
+    color: var(--text-muted);
+  }
+  
+  .project-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  .project-problem {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  .project-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

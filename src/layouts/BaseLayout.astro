@@ -1,0 +1,291 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Nivedita Pandey — Digital innovation, go-to-market, and cross-border ecosystems" } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <a href="/" class="logo">
+            <h1>Nivedita Pandey</h1>
+          </a>
+          
+          <nav class="nav">
+            <div class="nav-section">
+              <span class="nav-label">About</span>
+              <a href="/about" class:list={['nav-link', { active: currentPath === '/about' }]}>Bio</a>
+              <a href="/about#problems" class="nav-link">Problems I'm Working On</a>
+              <a href="/about#beyond" class="nav-link">Beyond Work</a>
+            </div>
+            
+            <div class="nav-section">
+              <span class="nav-label">Work</span>
+              <a href="/projects" class:list={['nav-link', { active: currentPath.startsWith('/projects') }]}>Projects</a>
+            </div>
+            
+            <div class="nav-section">
+              <span class="nav-label">Thinking</span>
+              <a href="/articles" class:list={['nav-link', { active: currentPath.startsWith('/articles') }]}>Articles</a>
+              <a href="/notes" class:list={['nav-link', { active: currentPath.startsWith('/notes') }]}>Notes</a>
+            </div>
+            
+            <div class="nav-section">
+              <span class="nav-label">Research</span>
+              <a href="/research" class:list={['nav-link', { active: currentPath.startsWith('/research') }]}>Papers</a>
+            </div>
+            
+            <div class="nav-section">
+              <a href="/newsletter" class:list={['nav-link single', { active: currentPath === '/newsletter' }]}>Newsletter</a>
+            </div>
+            
+            <div class="nav-section">
+              <span class="nav-label">Media</span>
+              <a href="/media/videos" class:list={['nav-link', { active: currentPath === '/media/videos' }]}>Videos</a>
+              <a href="/media/images" class:list={['nav-link', { active: currentPath === '/media/images' }]}>Images</a>
+            </div>
+            
+            <div class="nav-section">
+              <a href="/contact" class:list={['nav-link single', { active: currentPath === '/contact' }]}>Contact</a>
+            </div>
+          </nav>
+        </div>
+      </aside>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Main Content -->
+      <main class="main-content">
+        <slot />
+      </main>
+    </div>
+    
+    <style is:global>
+      :root {
+        --bg: #0F1C2E;
+        --sidebar-bg: #081628;
+        --text-primary: #E6EAF2;
+        --text-secondary: #AAB3C5;
+        --text-muted: #7F8DA6;
+        --accent: #7DA6FF;
+        --border: rgba(170, 179, 197, 0.15);
+        
+        --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Source Serif 4', Georgia, serif;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        font-family: var(--font-body);
+        background: var(--bg);
+        color: var(--text-primary);
+      }
+      
+      body {
+        line-height: 1.7;
+        font-size: 18px;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 500;
+        line-height: 1.3;
+      }
+      
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      a:hover {
+        color: var(--text-primary);
+      }
+      
+      .layout {
+        display: flex;
+        min-height: 100vh;
+      }
+      
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background: var(--sidebar-bg);
+        border-right: 1px solid var(--border);
+        overflow-y: auto;
+        z-index: 100;
+      }
+      
+      .sidebar-content {
+        padding: 3rem 2rem;
+      }
+      
+      .logo h1 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 3rem;
+        letter-spacing: -0.02em;
+      }
+      
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .nav-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .nav-label {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+      }
+      
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        padding: 0.4rem 0;
+        transition: color 0.2s ease;
+      }
+      
+      .nav-link:hover {
+        color: var(--accent);
+      }
+      
+      .nav-link.active {
+        color: var(--text-primary);
+      }
+      
+      .nav-link.single {
+        margin-top: -1.5rem;
+      }
+      
+      /* Mobile Menu Toggle */
+      .mobile-menu-toggle {
+        display: none;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 200;
+        background: var(--sidebar-bg);
+        border: 1px solid var(--border);
+        padding: 0.75rem;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      
+      .mobile-menu-toggle span {
+        display: block;
+        width: 1.5rem;
+        height: 2px;
+        background: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+      
+      /* Main Content */
+      .main-content {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+        padding: 4rem;
+        max-width: 900px;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        
+        .sidebar.mobile-open {
+          transform: translateX(0);
+        }
+        
+        .mobile-menu-toggle {
+          display: flex;
+        }
+        
+        .main-content {
+          margin-left: 0;
+          width: 100%;
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+    
+    <script>
+      const toggle = document.getElementById('mobileMenuToggle');
+      const sidebar = document.querySelector('.sidebar');
+      
+      toggle?.addEventListener('click', () => {
+        sidebar?.classList.toggle('mobile-open');
+      });
+      
+      // Close menu on navigation
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          sidebar?.classList.remove('mobile-open');
+        });
+      });
+    </script>
+  </body>
+</html>

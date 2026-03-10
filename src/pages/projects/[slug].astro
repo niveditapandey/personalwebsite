@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout title={`${project.data.title} — Nivedita Pandey`}>
+  <article class="project">
+    <header class="project-header">
+      <div class="project-meta">
+        <span class="project-industry">{project.data.industry}</span>
+        <span class="project-year">{project.data.year}</span>
+      </div>
+      <h1>{project.data.title}</h1>
+    </header>
+    
+    <div class="project-details">
+      <div class="detail-section">
+        <h3>Problem</h3>
+        <p>{project.data.problem}</p>
+      </div>
+      
+      <div class="detail-section">
+        <h3>Approach</h3>
+        <p>{project.data.approach}</p>
+      </div>
+      
+      <div class="detail-section">
+        <h3>Impact</h3>
+        <p>{project.data.impact}</p>
+      </div>
+    </div>
+    
+    {project.body && (
+      <div class="project-content">
+        <Content />
+      </div>
+    )}
+    
+    <footer class="project-footer">
+      <a href="/projects" class="back-link">← Back to projects</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .project {
+    max-width: 750px;
+  }
+  
+  .project-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .project-industry {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .project-year {
+    color: var(--text-muted);
+  }
+  
+  .project-header h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .detail-section h3 {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  
+  .detail-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.125rem;
+  }
+  
+  .project-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  
+  .project-content :global(h2) {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--text-primary);
+  }
+  
+  .project-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .back-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  
+  .back-link:hover {
+    color: var(--accent);
+  }
+  
+  @media (max-width: 768px) {
+    .project-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

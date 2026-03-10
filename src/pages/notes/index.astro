@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout title="Notes — Nivedita Pandey">
+  <div class="notes-page">
+    <header class="page-header">
+      <h1>Notes</h1>
+      <p class="page-description">
+        Brief thoughts and observations — typically 100–400 words.
+      </p>
+    </header>
+    
+    <div class="notes-grid">
+      {notes.map((note) => (
+        <a href={`/notes/${note.slug}`} class="note-card">
+          <h3>{note.data.title}</h3>
+          <time datetime={note.data.publishDate.toISOString()}>
+            {note.data.publishDate.toLocaleDateString('en-US', { 
+              month: 'short', 
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </time>
+          {note.data.tags.length > 0 && (
+            <div class="note-tags">
+              {note.data.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .notes-page {
+    max-width: 1100px;
+  }
+  
+  .page-header {
+    margin-bottom: 3rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+  }
+  
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .note-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+    min-height: 160px;
+  }
+  
+  .note-card:hover {
+    border-color: var(--accent);
+  }
+  
+  .note-card h3 {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: auto;
+    font-weight: 500;
+  }
+  
+  .note-card time {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+  }
+  
+  .note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  
+  .tag {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(125, 166, 255, 0.1);
+    color: var(--accent);
+    border-radius: 3px;
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+    
+    .notes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Nivedita Pandey">
+  <div class="contact-page">
+    <header class="page-header">
+      <h1>Contact</h1>
+      <p class="page-description">
+        I'm interested in conversations about AI governance, digital public infrastructure, 
+        institutional partnerships, and cross-border ecosystem development.
+      </p>
+    </header>
+    
+    <div class="contact-content">
+      <section class="contact-section">
+        <h2>Professional Inquiries</h2>
+        <p>
+          For advisory engagements, speaking opportunities, or partnership discussions:
+        </p>
+        <a href="mailto:nivedita@dendrons.ai" class="contact-link">nivedita@dendrons.ai</a>
+      </section>
+      
+      <section class="contact-section">
+        <h2>Training & Workshops</h2>
+        <p>
+          For AI governance training, institutional capacity building, or workshop facilitation:
+        </p>
+        <a href="mailto:contact@skillai.academy" class="contact-link">contact@skillai.academy</a>
+      </section>
+      
+      <section class="contact-section">
+        <h2>Connect</h2>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer" class="social-link">
+            LinkedIn
+          </a>
+          <a href="https://twitter.com/niveditapandey" target="_blank" rel="noopener noreferrer" class="social-link">
+            Twitter
+          </a>
+        </div>
+      </section>
+      
+      <section class="contact-section">
+        <h2>Response Time</h2>
+        <p class="note">
+          I aim to respond to professional inquiries within 3-5 business days. 
+          If your matter is time-sensitive, please indicate this in your subject line.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-page {
+    max-width: 700px;
+  }
+  
+  .page-header {
+    margin-bottom: 4rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .contact-section {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .contact-section:last-child {
+    border-bottom: none;
+  }
+  
+  .contact-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .contact-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-link {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+  
+  .contact-link:hover {
+    color: var(--text-primary);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .social-link {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  
+  .note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

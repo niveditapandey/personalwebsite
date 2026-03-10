@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+---
+
+<BaseLayout 
+  title={`${article.data.title} — Nivedita Pandey`}
+  description={article.data.description}
+>
+  <article class="article">
+    <header class="article-header">
+      <time datetime={article.data.publishDate.toISOString()}>
+        {article.data.publishDate.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })}
+      </time>
+      <h1>{article.data.title}</h1>
+      <p class="article-description">{article.data.description}</p>
+      <div class="article-tags">
+        {article.data.tags.map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    </header>
+    
+    <div class="article-content">
+      <Content />
+    </div>
+    
+    <footer class="article-footer">
+      <a href="/articles" class="back-link">← Back to articles</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    max-width: 680px;
+  }
+  
+  .article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .article-header time {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .article-header h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(125, 166, 255, 0.1);
+    color: var(--accent);
+    border-radius: 3px;
+  }
+  
+  .article-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.125rem;
+  }
+  
+  .article-content :global(h2) {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  .article-content :global(h3) {
+    font-size: 1.375rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  .article-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .article-content :global(li) {
+    margin-bottom: 0.75rem;
+  }
+  
+  .article-content :global(blockquote) {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent);
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  
+  .article-content :global(code) {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    background: rgba(125, 166, 255, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
+  
+  .article-content :global(pre) {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    border-radius: 4px;
+  }
+  
+  .article-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+  
+  .article-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .back-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  
+  .back-link:hover {
+    color: var(--accent);
+  }
+  
+  @media (max-width: 768px) {
+    .article-header h1 {
+      font-size: 2rem;
+    }
+    
+    .article-content {
+      font-size: 1rem;
+    }
+  }
+</style>
