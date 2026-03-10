@@ -101,11 +101,11 @@ const currentPath = Astro.url.pathname;
     
     <style is:global>
       :root {
-        --bg: #0F1C2E;
-        --sidebar-bg: #081628;
-        --text-primary: #E6EAF2;
-        --text-secondary: #AAB3C5;
-        --text-muted: #7F8DA6;
+        --bg: #1C3D5E;
+        --sidebar-bg: #15314D;
+        --text-primary: #FFFFFF;
+        --text-secondary: #D4DBE8;
+        --text-muted: #9BA8BC;
         --accent: #7DA6FF;
         --border: rgba(170, 179, 197, 0.15);
         
@@ -128,6 +128,8 @@ const currentPath = Astro.url.pathname;
       body {
         line-height: 1.7;
         font-size: 18px;
+        background: #1C3D5E;
+        min-height: 100vh;
       }
       
       h1, h2, h3, h4, h5, h6 {
@@ -158,7 +160,7 @@ const currentPath = Astro.url.pathname;
         top: 0;
         width: 280px;
         height: 100vh;
-        background: var(--sidebar-bg);
+        background: #15314D;
         border-right: 1px solid var(--border);
         overflow-y: auto;
         z-index: 100;
