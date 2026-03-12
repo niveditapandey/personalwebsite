@@ -101,13 +101,14 @@ const currentPath = Astro.url.pathname;
     
     <style is:global>
       :root {
-        --bg: #1C3D5E;
-        --sidebar-bg: #15314D;
+        /* Elephants Dance Brand Colors - Solid Version */
+        --bg: #1e3c72;
+        --sidebar-bg: #152d56;
         --text-primary: #FFFFFF;
         --text-secondary: #D4DBE8;
         --text-muted: #9BA8BC;
-        --accent: #7DA6FF;
-        --border: rgba(170, 179, 197, 0.15);
+        --accent: #60a5fa;
+        --border: rgba(212, 219, 232, 0.15);
         
         --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         --font-body: 'Source Serif 4', Georgia, serif;
@@ -128,8 +129,6 @@ const currentPath = Astro.url.pathname;
       body {
         line-height: 1.7;
         font-size: 18px;
-        background: #1C3D5E;
-        min-height: 100vh;
       }
       
       h1, h2, h3, h4, h5, h6 {
@@ -160,7 +159,7 @@ const currentPath = Astro.url.pathname;
         top: 0;
         width: 280px;
         height: 100vh;
-        background: #15314D;
+        background: var(--sidebar-bg);
         border-right: 1px solid var(--border);
         overflow-y: auto;
         z-index: 100;
