@@ -26,16 +26,16 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
       <div class="hero-inner">
         <div class="hero-text-block">
           <h1 class="hero-title">
-            Digital innovation and go-to-market execution, connected by cross-border ecosystem building
+            Strategist, builder, and ecosystem connector
           </h1>
           <p class="hero-text">
-            My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
-            The connector across them is a cross-border ecosystem development approach that accelerates value creation.
+            16 years at the intersection of AI, capital, and institutions — across the US, UK, Singapore, and India.
           </p>
-          <p class="hero-text">
-            I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
-            particular focus on Applied AI, Private Capital, and Public Sector Transformation.
-          </p>
+          <div class="hero-links">
+            <a href="/about" class="hero-link">Bio →</a>
+            <a href="/projects" class="hero-link">Selected Work →</a>
+            <a href="/problems" class="hero-link">Problems I'm Working On →</a>
+          </div>
         </div>
         <div class="hero-photo-block">
           <img
@@ -192,9 +192,27 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
   .hero-title {
     font-size: 2.25rem;
     line-height: 1.25;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     font-weight: 500;
     letter-spacing: -0.02em;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .hero-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+
+  .hero-link:hover {
+    color: var(--text-primary);
   }
   
   .hero-text {

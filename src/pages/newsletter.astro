@@ -13,17 +13,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </header>
 
     <section class="subscribe-section">
-      <h2>Subscribe</h2>
-      <p>
-        To receive new issues, send an email expressing your interest and I'll add you to the list.
-        No forms, no automation — just a direct line.
-      </p>
-      <a
-        href="mailto:np@niveditapandey.com?subject=Newsletter%20subscription"
-        class="subscribe-cta"
-      >
-        np@niveditapandey.com →
-      </a>
+      <div class="subscribe-inner">
+        <div class="subscribe-text">
+          <h2>Subscribe</h2>
+          <p>
+            To receive new issues, send an email expressing your interest and I'll add you to the list.
+            No forms, no automation — just a direct line.
+          </p>
+          <a
+            href="mailto:np@niveditapandey.com?subject=Newsletter%20subscription"
+            class="subscribe-cta"
+          >
+            np@niveditapandey.com →
+          </a>
+        </div>
+        <div class="subscribe-photo-block">
+          <img
+            src="/images/about-bio.png"
+            alt="Nivedita Pandey"
+            class="subscribe-photo"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="about-section">
@@ -60,6 +71,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 1.125rem;
     color: var(--text-secondary);
     line-height: 1.8;
+  }
+
+  .subscribe-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .subscribe-photo-block {
+    flex-shrink: 0;
+  }
+
+  .subscribe-photo {
+    width: 200px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   }
 
   .subscribe-section,
@@ -107,6 +137,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   @media (max-width: 768px) {
     .page-header h1 {
       font-size: 2rem;
+    }
+
+    .subscribe-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .subscribe-photo-block {
+      order: -1;
+    }
+
+    .subscribe-photo {
+      width: 140px;
+      margin: 0 auto;
     }
   }
 </style>
