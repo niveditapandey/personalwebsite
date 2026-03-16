@@ -40,6 +40,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </li>
           </ul>
 
+          <p class="bio-values">
+            I try to bring curiosity, compassion, courage, and creativity to everything I do — in work and beyond.
+          </p>
+
           <p class="bio-contact">
             <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
           </p>
@@ -117,8 +121,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 500;
   }
 
+  .bio-values {
+    margin-top: 1.5rem;
+    color: var(--text-primary) !important;
+    font-style: italic;
+  }
+
   .bio-contact {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     font-family: var(--font-heading);
     font-size: 1rem;
   }
