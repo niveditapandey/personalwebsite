@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <div class="nav-section">
-              <a href="/projects" class:list={['nav-top-link', { active: currentPath.startsWith('/projects') }]}>Selected Work</a>
+              <a href="/projects" class:list={['nav-top-link', { active: currentPath.startsWith('/projects') }]}>Past Work</a>
             </div>
 
             <div class="nav-section">
@@ -62,7 +62,6 @@ const currentPath = Astro.url.pathname;
             <div class="nav-section">
               <span class="nav-label">Thinking & Writing</span>
               <a href="/articles" class:list={['nav-link', { active: currentPath.startsWith('/articles') }]}>Articles</a>
-              <a href="/notes" class:list={['nav-link', { active: currentPath.startsWith('/notes') }]}>Notes</a>
               <a href="/newsletter" class:list={['nav-link', { active: currentPath === '/newsletter' }]}>Newsletter</a>
               <a href="https://elephantsdance.com" target="_blank" rel="noopener noreferrer" class="nav-link">Elephants Dance ↗</a>
               <a href="/research" class:list={['nav-link', { active: currentPath.startsWith('/research') }]}>Papers</a>
@@ -73,9 +72,7 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <div class="nav-section">
-              <span class="nav-label">Media</span>
-              <a href="/media/videos" class:list={['nav-link', { active: currentPath === '/media/videos' }]}>Videos</a>
-              <a href="/media/images" class:list={['nav-link', { active: currentPath === '/media/images' }]}>Images</a>
+              <a href="/media" class:list={['nav-top-link', { active: currentPath.startsWith('/media') }]}>Media</a>
             </div>
 
             <div class="nav-section">
