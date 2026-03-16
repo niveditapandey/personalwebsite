@@ -23,17 +23,28 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
   <div class="home">
     <!-- Hero -->
     <section class="hero">
-      <h1 class="hero-title">
-        Digital innovation and go-to-market execution, connected by cross-border ecosystem building
-      </h1>
-      <p class="hero-text">
-        My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
-        The connector across them is a cross-border ecosystem development approach that accelerates value creation.
-      </p>
-      <p class="hero-text">
-        I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
-        particular focus on Applied AI, Private Capital, and Public Sector Transformation.
-      </p>
+      <div class="hero-inner">
+        <div class="hero-text-block">
+          <h1 class="hero-title">
+            Digital innovation and go-to-market execution, connected by cross-border ecosystem building
+          </h1>
+          <p class="hero-text">
+            My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
+            The connector across them is a cross-border ecosystem development approach that accelerates value creation.
+          </p>
+          <p class="hero-text">
+            I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
+            particular focus on Applied AI, Private Capital, and Public Sector Transformation.
+          </p>
+        </div>
+        <div class="hero-photo-block">
+          <img
+            src="/images/hero-professional.png"
+            alt="Nivedita Pandey"
+            class="hero-photo"
+          />
+        </div>
+      </div>
     </section>
     
     <!-- Selected Projects -->
@@ -158,7 +169,26 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
   .hero {
     padding: 2rem 0 3rem;
   }
-  
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-photo-block {
+    flex-shrink: 0;
+  }
+
+  .hero-photo {
+    width: 280px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  }
+
   .hero-title {
     font-size: 2.25rem;
     line-height: 1.25;
@@ -408,10 +438,24 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
   }
   
   @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-photo-block {
+      order: -1;
+    }
+
+    .hero-photo {
+      width: 160px;
+      margin: 0 auto;
+    }
+
     .hero-title {
       font-size: 1.75rem;
     }
-    
+
     .notes-grid {
       grid-template-columns: 1fr;
     }

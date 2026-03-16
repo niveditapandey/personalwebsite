@@ -5,11 +5,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Contact — Nivedita Pandey">
   <div class="contact-page">
     <header class="page-header">
-      <h1>Contact</h1>
-      <p class="page-description">
-        I'm interested in conversations about AI governance, digital public infrastructure, 
-        institutional partnerships, and cross-border ecosystem development.
-      </p>
+      <div class="header-inner">
+        <div class="header-text">
+          <h1>Contact</h1>
+          <p class="page-description">
+            I'm interested in conversations about AI governance, digital public infrastructure,
+            institutional partnerships, and cross-border ecosystem development.
+          </p>
+        </div>
+        <div class="header-photo-block">
+          <img
+            src="/images/contact-fintech.png"
+            alt="Nivedita Pandey at Singapore Fintech Festival"
+            class="contact-photo"
+          />
+          <p class="photo-caption">Singapore Fintech Festival, 2024</p>
+        </div>
+      </div>
     </header>
     
     <div class="contact-content">
@@ -68,17 +80,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .page-header {
     margin-bottom: 4rem;
   }
-  
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
   .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
   }
-  
+
   .page-description {
     font-size: 1.125rem;
     color: var(--text-secondary);
     line-height: 1.8;
+  }
+
+  .header-photo-block {
+    flex-shrink: 0;
+  }
+
+  .contact-photo {
+    width: 200px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .photo-caption {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: center;
   }
   
   .contact-content {
@@ -146,6 +185,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   @media (max-width: 768px) {
+    .header-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .header-photo-block {
+      order: -1;
+    }
+
+    .contact-photo {
+      width: 140px;
+      margin: 0 auto;
+    }
+
     .page-header h1 {
       font-size: 2rem;
     }
