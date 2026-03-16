@@ -12,8 +12,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="bio-text">
           <p>
             I am a strategist and operator with 16+ years of international experience across the US, UK, Singapore, and India.
-            My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
-            The connector across them is a cross-border ecosystem development approach that accelerates value creation.
             I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
             particular focus on Applied AI, Private Capital, and Public Sector Transformation.
           </p>
@@ -24,30 +22,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
           <p>
             I currently run Dendrons.ai, an Applied AI Innovation Studio selected for Antler Singapore and Google Cloud for Startups.
-            I also serve as Managing Director - Asia for Wharton Alumni Angels and lead SkillAI.academy, a training brand focused on
-            AI governance and applied AI for institutions.
           </p>
-          <p class="bio-contact">
-            <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
-          </p>
-        </div>
-        <div class="bio-photo-block">
-          <img
-            src="/images/about-bio.png"
-            alt="Nivedita Pandey"
-            class="bio-photo"
-          />
-        </div>
-      </div>
-    </section>
 
-    <section class="work-on" id="work">
-      <h2>What I Work On</h2>
-      <div class="work-inner">
-        <div class="work-text">
-          <p>
-            My work sits at the intersection of three domains:
-          </p>
+          <p class="domains-intro">My work sits at the intersection of three domains:</p>
           <ul class="work-list">
             <li>
               <strong>Digital Innovation:</strong> Product strategy for emerging technologies, with recent focus on AI governance,
@@ -62,65 +39,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               connecting innovation ecosystems between India, Singapore, and global markets.
             </li>
           </ul>
+
+          <p class="bio-contact">
+            <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
+          </p>
         </div>
-        <div class="work-photo-block">
+        <div class="bio-photo-block">
           <img
-            src="/images/about-ai.png"
-            alt="At a technology conference"
-            class="work-photo"
+            src="/images/about-bio.png"
+            alt="Nivedita Pandey"
+            class="bio-photo"
           />
-        </div>
-      </div>
-    </section>
-
-    <section class="beyond" id="beyond">
-      <h2>Beyond Work</h2>
-      <p>
-        Outside of professional work, I have several deep interests that shape how I think and live.
-      </p>
-
-      <div class="beyond-grid">
-        <div class="beyond-item">
-          <h3>Spirituality</h3>
-          <p>
-            I maintain a serious engagement with Vedic astrology, the Ramcharitmanas, and meditation practices. These aren't
-            casual interests—they're frameworks I use to understand purpose, time, and uncertainty.
-          </p>
-        </div>
-
-        <div class="beyond-item">
-          <h3>Animals & Rescue</h3>
-          <p>
-            I have a profound connection with animals, particularly cats. I support animal rescue work and believe in the
-            responsibility we have toward creatures who cannot advocate for themselves.
-          </p>
-        </div>
-
-        <div class="beyond-item">
-          <h3>Adventure Sports</h3>
-          <img
-            src="/images/beyond-adventure.png"
-            alt="Rappelling"
-            class="beyond-photo"
-          />
-          <p>
-            To be added.
-          </p>
-        </div>
-
-        <div class="beyond-item">
-          <h3>Travel & Curiosity</h3>
-          <p>
-            I've lived and worked across multiple continents, and I'm endlessly curious about how systems, cultures, and
-            institutions work differently across contexts. Travel is less about tourism and more about pattern recognition.
-          </p>
-        </div>
-
-        <div class="beyond-item">
-          <h3>Performing Arts</h3>
-          <p>
-            To be added.
-          </p>
         </div>
       </div>
     </section>
@@ -154,12 +83,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 500;
   }
 
-  .about h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-  }
-
   .about p {
     color: var(--text-secondary);
     line-height: 1.8;
@@ -170,22 +93,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 0;
   }
 
-  .bio-contact {
-    margin-top: 1.5rem;
-    font-family: var(--font-heading);
-    font-size: 1rem;
-  }
-
-  .bio-contact a {
-    color: var(--accent);
+  .domains-intro {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem !important;
   }
 
   .work-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
   }
 
   .work-list li {
@@ -197,6 +115,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-primary);
     font-family: var(--font-heading);
     font-weight: 500;
+  }
+
+  .bio-contact {
+    margin-top: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+  }
+
+  .bio-contact a {
+    color: var(--accent);
   }
 
   /* Bio layout */
@@ -219,68 +147,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   }
 
-  /* Work on layout */
-  .work-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .work-photo-block {
-    flex-shrink: 0;
-  }
-
-  .work-photo {
-    width: 220px;
-    height: auto;
-    display: block;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Beyond Work */
-  .beyond-grid {
-    display: grid;
-    gap: 2rem;
-    margin-top: 1.5rem;
-  }
-
-  .beyond-item h3 {
-    color: var(--text-primary);
-  }
-
-  .beyond-item p {
-    margin-bottom: 0;
-  }
-
-  .beyond-photo {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    display: block;
-    margin: 0.75rem 0 1rem;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  }
-
   @media (max-width: 768px) {
     .about h1 {
       font-size: 2rem;
     }
 
-    .bio-inner,
-    .work-inner {
+    .bio-inner {
       grid-template-columns: 1fr;
     }
 
-    .bio-photo-block,
-    .work-photo-block {
+    .bio-photo-block {
       order: -1;
     }
 
-    .bio-photo,
-    .work-photo {
+    .bio-photo {
       width: 160px;
       margin: 0 auto;
     }

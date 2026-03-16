@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Beyond Work — Nivedita Pandey">
+  <div class="beyond-page">
+    <header class="page-header">
+      <h1>Beyond Work</h1>
+      <p class="page-description">
+        Outside of professional work, I have several deep interests that shape how I think and live.
+      </p>
+    </header>
+
+    <div class="beyond-grid">
+
+      <div class="beyond-item">
+        <h2>Spirituality</h2>
+        <p>
+          I maintain a serious engagement with Vedic astrology, the Ramcharitmanas, and meditation practices. These aren't
+          casual interests—they're frameworks I use to understand purpose, time, and uncertainty.
+        </p>
+      </div>
+
+      <div class="beyond-item">
+        <h2>Animals & Rescue</h2>
+        <p>
+          I have a profound connection with animals, particularly cats. I support animal rescue work and believe in the
+          responsibility we have toward creatures who cannot advocate for themselves.
+        </p>
+      </div>
+
+      <div class="beyond-item">
+        <h2>Adventure Sports</h2>
+        <img
+          src="/images/beyond-adventure.png"
+          alt="Rappelling"
+          class="beyond-photo"
+        />
+        <p>
+          To be added.
+        </p>
+      </div>
+
+      <div class="beyond-item">
+        <h2>Travel & Curiosity</h2>
+        <p>
+          I've lived and worked across multiple continents, and I'm endlessly curious about how systems, cultures, and
+          institutions work differently across contexts. Travel is less about tourism and more about pattern recognition.
+        </p>
+      </div>
+
+      <div class="beyond-item">
+        <h2>Performing Arts</h2>
+        <p>
+          To be added.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .beyond-page {
+    max-width: 750px;
+  }
+
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .beyond-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .beyond-item {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .beyond-item:last-child {
+    border-bottom: none;
+  }
+
+  .beyond-item h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+  }
+
+  .beyond-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  .beyond-photo {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+    margin: 0.75rem 0 1.25rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

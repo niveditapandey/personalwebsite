@@ -12,11 +12,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </header>
 
     <section class="problem-domain">
-      <h2 class="domain-title">Applied AI</h2>
-      <p class="domain-intro">
-        How do emerging AI capabilities translate into real-world impact — in healthcare, governance, and everyday commerce?
-        These are not just technical problems. They require institutional design, trust-building, and context-specific deployment.
-      </p>
+      <div class="domain-header">
+        <div class="domain-header-text">
+          <h2 class="domain-title">Applied AI</h2>
+          <p class="domain-intro">
+            How do emerging AI capabilities translate into real-world impact — in healthcare, governance, and everyday commerce?
+            These are not just technical problems. They require institutional design, trust-building, and context-specific deployment.
+          </p>
+        </div>
+        <div class="domain-photo-block">
+          <img
+            src="/images/about-ai.png"
+            alt="At a technology conference"
+            class="domain-photo"
+          />
+        </div>
+      </div>
 
       <div class="subdomains">
 
@@ -93,8 +104,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="problem-domain coming-soon">
       <h2 class="domain-title">More Coming Soon</h2>
       <p class="domain-intro">
-        Other problem areas I'm actively thinking through — on digital public infrastructure, cross-border ecosystems,
-        and institutional change — will be added here.
+        Other problem areas I'm actively thinking through — on Human-Computer Interaction, Mental Health &amp; Neuroscience,
+        and Institutional Change — will be added here.
       </p>
     </section>
 
@@ -136,6 +147,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-bottom: none;
   }
 
+  .domain-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+
   .domain-title {
     font-size: 1.5rem;
     font-weight: 500;
@@ -146,7 +165,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .domain-intro {
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+  }
+
+  .domain-photo-block {
+    flex-shrink: 0;
+  }
+
+  .domain-photo {
+    width: 200px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   }
 
   .subdomains {
@@ -245,6 +276,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   @media (max-width: 768px) {
     .page-header h1 {
       font-size: 2rem;
+    }
+
+    .domain-header {
+      grid-template-columns: 1fr;
+    }
+
+    .domain-photo-block {
+      order: -1;
+    }
+
+    .domain-photo {
+      width: 140px;
     }
   }
 </style>
