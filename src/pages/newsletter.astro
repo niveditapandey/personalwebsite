@@ -1,8 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-
-const newsletters = await getCollection('newsletters');
 ---
 
 <BaseLayout title="Newsletter — Nivedita Pandey">
@@ -10,149 +7,106 @@ const newsletters = await getCollection('newsletters');
     <header class="page-header">
       <h1>Newsletter</h1>
       <p class="page-description">
-        Subscribe to receive insights on technology, institutions, and the systems that shape our world.
+        Irregular dispatches on applied AI, digital public infrastructure, institutional change,
+        and the systems that shape how we work and live.
       </p>
     </header>
-    
-    <div class="newsletters-list">
-      {newsletters.map((newsletter) => (
-        <article class="newsletter-item">
-          <h2>{newsletter.data.title}</h2>
-          <p class="newsletter-description">{newsletter.data.description}</p>
-          <div class="newsletter-meta">
-            <span class="frequency">{newsletter.data.frequency}</span>
-            {newsletter.data.active && <span class="status">Active</span>}
-          </div>
-          <div class="subscribe-form">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              class="email-input"
-              aria-label="Email address"
-            />
-            <button class="subscribe-button">Subscribe</button>
-          </div>
-        </article>
-      ))}
-    </div>
+
+    <section class="subscribe-section">
+      <h2>Subscribe</h2>
+      <p>
+        To receive new issues, send an email expressing your interest and I'll add you to the list.
+        No forms, no automation — just a direct line.
+      </p>
+      <a
+        href="mailto:np@niveditapandey.com?subject=Newsletter%20subscription"
+        class="subscribe-cta"
+      >
+        np@niveditapandey.com →
+      </a>
+    </section>
+
+    <section class="about-section">
+      <h2>What to expect</h2>
+      <p>
+        The newsletter is a space for thinking out loud — on problems I'm working through,
+        patterns I'm noticing, and ideas that don't fit neatly into an article.
+        Topics include applied AI, go-to-market strategy, digital public infrastructure,
+        and cross-border ecosystem building.
+      </p>
+      <p>
+        Sent when there's something worth saying. Not on a fixed schedule.
+      </p>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
   .newsletter-page {
-    max-width: 700px;
+    max-width: 650px;
   }
-  
+
   .page-header {
     margin-bottom: 4rem;
-    text-align: center;
   }
-  
+
   .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
   }
-  
+
   .page-description {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.8;
   }
-  
-  .newsletters-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+
+  .subscribe-section,
+  .about-section {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
   }
-  
-  .newsletter-item {
-    padding: 2.5rem;
-    border: 1px solid var(--border);
+
+  .about-section {
+    border-bottom: none;
   }
-  
-  .newsletter-item h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+
+  .subscribe-section h2,
+  .about-section h2 {
+    font-size: 1.5rem;
     font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
   }
-  
-  .newsletter-description {
+
+  .subscribe-section p,
+  .about-section p {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
-  
-  .newsletter-meta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+
+  .about-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .subscribe-cta {
+    display: inline-block;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-  }
-  
-  .frequency {
-    color: var(--text-muted);
-  }
-  
-  .status {
+    font-size: 1.125rem;
     color: var(--accent);
+    transition: color 0.2s ease;
   }
-  
-  .subscribe-form {
-    display: flex;
-    gap: 0.75rem;
-  }
-  
-  .email-input {
-    flex: 1;
-    padding: 0.875rem 1.25rem;
-    background: var(--sidebar-bg);
-    border: 1px solid var(--border);
+
+  .subscribe-cta:hover {
     color: var(--text-primary);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: border-color 0.2s ease;
   }
-  
-  .email-input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-  
-  .email-input::placeholder {
-    color: var(--text-muted);
-  }
-  
-  .subscribe-button {
-    padding: 0.875rem 2rem;
-    background: var(--accent);
-    color: var(--bg);
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-  }
-  
-  .subscribe-button:hover {
-    opacity: 0.9;
-  }
-  
+
   @media (max-width: 768px) {
     .page-header h1 {
       font-size: 2rem;
-    }
-    
-    .newsletter-item {
-      padding: 1.5rem;
-    }
-    
-    .subscribe-form {
-      flex-direction: column;
     }
   }
 </style>
