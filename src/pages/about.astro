@@ -8,47 +8,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="bio">
       <h2>Bio</h2>
-      <p>
-        I am a strategist and operator with 16+ years of international experience across the US, UK, Singapore, and India.
-        My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
-        The connector across them is a cross-border ecosystem development approach that accelerates value creation.
-        I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
-        particular focus on Applied AI, Private Capital, and Public Sector Transformation.
-      </p>
-      <p>
-        I hold an MBA from Wharton and degrees in computer science and social impact. My career includes scaling Microsoft's
-        PE/VC partnerships vertical across APAC to $130M, serving as a Prime Minister's Fellow on Digital Payments and Digital
-        Public Infrastructure, and advising the Reserve Bank Innovation Hub on AI governance and DPI strategy.
-      </p>
-      <p>
-        I currently run Dendrons.ai, an Applied AI Innovation Studio selected for Antler Singapore and Google Cloud for Startups.
-        I also serve as Managing Director - Asia for Wharton Alumni Angels and lead SkillAI.academy, a training brand focused on
-        AI governance and applied AI for institutions.
-      </p>
-      <p class="bio-contact">
-        <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
-      </p>
+      <div class="bio-inner">
+        <div class="bio-text">
+          <p>
+            I am a strategist and operator with 16+ years of international experience across the US, UK, Singapore, and India.
+            My career follows an H-shaped trajectory across two pillars: digital innovation and go-to-market execution at scale.
+            The connector across them is a cross-border ecosystem development approach that accelerates value creation.
+            I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
+            particular focus on Applied AI, Private Capital, and Public Sector Transformation.
+          </p>
+          <p>
+            I hold an MBA from Wharton and degrees in computer science and social impact. My career includes scaling Microsoft's
+            PE/VC partnerships vertical across APAC to $130M, serving as a Prime Minister's Fellow on Digital Payments and Digital
+            Public Infrastructure, and advising the Reserve Bank Innovation Hub on AI governance and DPI strategy.
+          </p>
+          <p>
+            I currently run Dendrons.ai, an Applied AI Innovation Studio selected for Antler Singapore and Google Cloud for Startups.
+            I also serve as Managing Director - Asia for Wharton Alumni Angels and lead SkillAI.academy, a training brand focused on
+            AI governance and applied AI for institutions.
+          </p>
+          <p class="bio-contact">
+            <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
+          </p>
+        </div>
+        <div class="bio-photo-block">
+          <img
+            src="/images/about-bio.png"
+            alt="Nivedita Pandey"
+            class="bio-photo"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="work-on" id="work">
       <h2>What I Work On</h2>
-      <p>
-        My work sits at the intersection of three domains:
-      </p>
-      <ul class="work-list">
-        <li>
-          <strong>Digital Innovation:</strong> Product strategy for emerging technologies, with recent focus on AI governance,
-          digital public infrastructure, and healthcare coordination platforms.
-        </li>
-        <li>
-          <strong>Go-to-Market & Scale:</strong> Growth strategies, partnership development, and institutional sales—particularly
-          in technology adoption by governments, financial institutions, and enterprise.
-        </li>
-        <li>
-          <strong>Cross-Border Ecosystems:</strong> Building partnerships and market entry strategies across Asia-Pacific,
-          connecting innovation ecosystems between India, Singapore, and global markets.
-        </li>
-      </ul>
+      <div class="work-inner">
+        <div class="work-text">
+          <p>
+            My work sits at the intersection of three domains:
+          </p>
+          <ul class="work-list">
+            <li>
+              <strong>Digital Innovation:</strong> Product strategy for emerging technologies, with recent focus on AI governance,
+              digital public infrastructure, and healthcare coordination platforms.
+            </li>
+            <li>
+              <strong>Go-to-Market & Scale:</strong> Growth strategies, partnership development, and institutional sales—particularly
+              in technology adoption by governments, financial institutions, and enterprise.
+            </li>
+            <li>
+              <strong>Cross-Border Ecosystems:</strong> Building partnerships and market entry strategies across Asia-Pacific,
+              connecting innovation ecosystems between India, Singapore, and global markets.
+            </li>
+          </ul>
+        </div>
+        <div class="work-photo-block">
+          <img
+            src="/images/about-ai.png"
+            alt="At a technology conference"
+            class="work-photo"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="beyond" id="beyond">
@@ -76,6 +98,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <div class="beyond-item">
           <h3>Adventure Sports</h3>
+          <img
+            src="/images/beyond-adventure.png"
+            alt="Rappelling"
+            class="beyond-photo"
+          />
           <p>
             To be added.
           </p>
@@ -172,6 +199,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 500;
   }
 
+  /* Bio layout */
+  .bio-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .bio-photo-block {
+    flex-shrink: 0;
+  }
+
+  .bio-photo {
+    width: 220px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Work on layout */
+  .work-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .work-photo-block {
+    flex-shrink: 0;
+  }
+
+  .work-photo {
+    width: 220px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Beyond Work */
   .beyond-grid {
     display: grid;
     gap: 2rem;
@@ -186,9 +254,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 0;
   }
 
+  .beyond-photo {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    margin: 0.75rem 0 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
   @media (max-width: 768px) {
     .about h1 {
       font-size: 2rem;
+    }
+
+    .bio-inner,
+    .work-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .bio-photo-block,
+    .work-photo-block {
+      order: -1;
+    }
+
+    .bio-photo,
+    .work-photo {
+      width: 160px;
+      margin: 0 auto;
     }
   }
 </style>
