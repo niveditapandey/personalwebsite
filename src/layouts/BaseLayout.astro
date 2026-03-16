@@ -73,7 +73,7 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <div class="nav-section">
-              <a href="/about#beyond" class:list={['nav-link single', { active: false }]}>Beyond Work</a>
+              <a href="/beyond" class:list={['nav-link single', { active: currentPath === '/beyond' }]}>Beyond Work</a>
             </div>
 
             <div class="nav-section">
