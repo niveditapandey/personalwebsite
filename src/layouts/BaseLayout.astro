@@ -52,28 +52,24 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <div class="nav-section">
-              <a href="/projects" class:list={['nav-link single', { active: currentPath.startsWith('/projects') }]}>Selected Work</a>
+              <a href="/projects" class:list={['nav-top-link', { active: currentPath.startsWith('/projects') }]}>Selected Work</a>
             </div>
 
             <div class="nav-section">
-              <a href="/problems" class:list={['nav-link single', { active: currentPath === '/problems' }]}>Problems I'm Working On</a>
+              <a href="/problems" class:list={['nav-top-link', { active: currentPath === '/problems' }]}>Problems I'm Working On</a>
             </div>
 
             <div class="nav-section">
-              <span class="nav-label">Thinking</span>
+              <span class="nav-label">Thinking & Writing</span>
               <a href="/articles" class:list={['nav-link', { active: currentPath.startsWith('/articles') }]}>Articles</a>
               <a href="/notes" class:list={['nav-link', { active: currentPath.startsWith('/notes') }]}>Notes</a>
               <a href="/newsletter" class:list={['nav-link', { active: currentPath === '/newsletter' }]}>Newsletter</a>
               <a href="https://elephantsdance.com" target="_blank" rel="noopener noreferrer" class="nav-link">Elephants Dance ↗</a>
-            </div>
-
-            <div class="nav-section">
-              <span class="nav-label">Research</span>
               <a href="/research" class:list={['nav-link', { active: currentPath.startsWith('/research') }]}>Papers</a>
             </div>
 
             <div class="nav-section">
-              <a href="/beyond" class:list={['nav-link single', { active: currentPath === '/beyond' }]}>Beyond Work</a>
+              <a href="/beyond" class:list={['nav-top-link', { active: currentPath === '/beyond' }]}>Beyond Work</a>
             </div>
 
             <div class="nav-section">
@@ -83,7 +79,7 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <div class="nav-section">
-              <a href="/contact" class:list={['nav-link single', { active: currentPath === '/contact' }]}>Contact</a>
+              <a href="/contact" class:list={['nav-top-link', { active: currentPath === '/contact' }]}>Contact</a>
             </div>
           </nav>
         </div>
@@ -217,8 +213,23 @@ const currentPath = Astro.url.pathname;
         color: var(--text-primary);
       }
       
-      .nav-link.single {
-        margin-top: -1.5rem;
+      .nav-top-link {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        padding: 0.15rem 0;
+        transition: color 0.2s ease;
+        display: block;
+      }
+
+      .nav-top-link:hover {
+        color: var(--accent);
+      }
+
+      .nav-top-link.active {
+        color: var(--text-primary);
       }
       
       /* Mobile Menu Toggle */
@@ -284,7 +295,7 @@ const currentPath = Astro.url.pathname;
       });
       
       // Close menu on navigation
-      const navLinks = document.querySelectorAll('.nav-link');
+      const navLinks = document.querySelectorAll('.nav-link, .nav-top-link');
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           sidebar?.classList.remove('mobile-open');
