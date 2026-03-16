@@ -49,36 +49,39 @@ const currentPath = Astro.url.pathname;
             <div class="nav-section">
               <span class="nav-label">About</span>
               <a href="/about" class:list={['nav-link', { active: currentPath === '/about' }]}>Bio</a>
-              <a href="/about#problems" class="nav-link">Problems I'm Working On</a>
-              <a href="/about#beyond" class="nav-link">Beyond Work</a>
             </div>
-            
+
             <div class="nav-section">
-              <span class="nav-label">Work</span>
-              <a href="/projects" class:list={['nav-link', { active: currentPath.startsWith('/projects') }]}>Projects</a>
+              <a href="/projects" class:list={['nav-link single', { active: currentPath.startsWith('/projects') }]}>Selected Work</a>
             </div>
-            
+
+            <div class="nav-section">
+              <a href="/problems" class:list={['nav-link single', { active: currentPath === '/problems' }]}>Problems I'm Working On</a>
+            </div>
+
             <div class="nav-section">
               <span class="nav-label">Thinking</span>
               <a href="/articles" class:list={['nav-link', { active: currentPath.startsWith('/articles') }]}>Articles</a>
               <a href="/notes" class:list={['nav-link', { active: currentPath.startsWith('/notes') }]}>Notes</a>
+              <a href="/newsletter" class:list={['nav-link', { active: currentPath === '/newsletter' }]}>Newsletter</a>
+              <a href="https://elephantsdance.com" target="_blank" rel="noopener noreferrer" class="nav-link">Elephants Dance ↗</a>
             </div>
-            
+
             <div class="nav-section">
               <span class="nav-label">Research</span>
               <a href="/research" class:list={['nav-link', { active: currentPath.startsWith('/research') }]}>Papers</a>
             </div>
-            
+
             <div class="nav-section">
-              <a href="/newsletter" class:list={['nav-link single', { active: currentPath === '/newsletter' }]}>Newsletter</a>
+              <a href="/about#beyond" class:list={['nav-link single', { active: false }]}>Beyond Work</a>
             </div>
-            
+
             <div class="nav-section">
               <span class="nav-label">Media</span>
               <a href="/media/videos" class:list={['nav-link', { active: currentPath === '/media/videos' }]}>Videos</a>
               <a href="/media/images" class:list={['nav-link', { active: currentPath === '/media/images' }]}>Images</a>
             </div>
-            
+
             <div class="nav-section">
               <a href="/contact" class:list={['nav-link single', { active: currentPath === '/contact' }]}>Contact</a>
             </div>

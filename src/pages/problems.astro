@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Problems I'm Working On — Nivedita Pandey">
+  <div class="problems-page">
+    <header class="page-header">
+      <h1>Problems I'm Working On</h1>
+      <p class="page-description">
+        The questions I keep returning to — across applied AI, institutions, and the infrastructure that shapes how people live.
+      </p>
+    </header>
+
+    <section class="problem-domain">
+      <h2 class="domain-title">Applied AI</h2>
+      <p class="domain-intro">
+        How do emerging AI capabilities translate into real-world impact — in healthcare, governance, and everyday commerce?
+        These are not just technical problems. They require institutional design, trust-building, and context-specific deployment.
+      </p>
+
+      <div class="subdomains">
+
+        <details class="subdomain">
+          <summary>
+            <span class="subdomain-title">Healthcare</span>
+          </summary>
+          <div class="subdomain-content">
+            <p>
+              How can voice-based and conversational AI improve healthcare access in low-literacy populations?
+              What does responsible deployment look like when patient data meets AI interfaces?
+              How do you build AI tools that work within the constraints of India's fragmented healthcare system?
+            </p>
+            <p class="placeholder-note">More detail coming soon. <a href="/contact">Get in touch</a> if you're working on this.</p>
+          </div>
+        </details>
+
+        <details class="subdomain">
+          <summary>
+            <span class="subdomain-title">Governance</span>
+          </summary>
+          <div class="subdomain-content">
+            <p>
+              How do governments and regulated institutions build genuine capacity for AI adoption — not just technical training,
+              but organizational readiness, governance frameworks, and change management at scale?
+              What does responsible AI adoption look like in public institutions with legacy infrastructure and accountability constraints?
+            </p>
+            <p class="placeholder-note">More detail coming soon. <a href="/contact">Get in touch</a> if you're working on this.</p>
+          </div>
+        </details>
+
+        <details class="subdomain">
+          <summary>
+            <span class="subdomain-title">Retail & Consumer Goods</span>
+          </summary>
+          <div class="subdomain-content">
+            <p>
+              How do consumer brands use AI to build deeper market understanding and accelerate go-to-market decisions —
+              especially in complex, multi-market contexts?
+            </p>
+            <p class="placeholder-note">More detail coming soon. <a href="/contact">Get in touch</a> if you're working on this.</p>
+          </div>
+        </details>
+
+        <details class="subdomain">
+          <summary>
+            <span class="subdomain-title">Finance</span>
+          </summary>
+          <div class="subdomain-content">
+            <p>
+              To be added.
+            </p>
+            <p class="placeholder-note">More detail coming soon. <a href="/contact">Get in touch</a> if you're working on this.</p>
+          </div>
+        </details>
+
+        <details class="subdomain">
+          <summary>
+            <span class="subdomain-title">Elder Care</span>
+          </summary>
+          <div class="subdomain-content">
+            <p>
+              How can AI tools improve coordination and quality of care for elderly populations — particularly in the context
+              of NRI families managing parents' healthcare across distance and fragmented providers?
+              What's the right balance between technology and human care?
+            </p>
+            <p class="placeholder-note">More detail coming soon. <a href="/contact">Get in touch</a> if you're working on this.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="problem-domain coming-soon">
+      <h2 class="domain-title">More Coming Soon</h2>
+      <p class="domain-intro">
+        Other problem areas I'm actively thinking through — on digital public infrastructure, cross-border ecosystems,
+        and institutional change — will be added here.
+      </p>
+    </section>
+
+    <p class="page-footer">
+      If you're working on any of these problems, I'd like to hear from you.
+      <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .problems-page {
+    max-width: 750px;
+  }
+
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .problem-domain {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .problem-domain:last-of-type {
+    border-bottom: none;
+  }
+
+  .domain-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+
+  .domain-intro {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .subdomains {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .subdomain {
+    border-top: 1px solid var(--border);
+  }
+
+  .subdomain:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .subdomain summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .subdomain summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .subdomain summary::after {
+    content: '+';
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .subdomain[open] summary::after {
+    content: '−';
+  }
+
+  .subdomain-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .subdomain summary:hover .subdomain-title {
+    color: var(--accent);
+  }
+
+  .subdomain-content {
+    padding: 0 0 1.5rem 0;
+  }
+
+  .subdomain-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .subdomain-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .placeholder-note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .placeholder-note a {
+    color: var(--accent);
+  }
+
+  .coming-soon .domain-intro {
+    margin-bottom: 0;
+  }
+
+  .page-footer {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .page-footer a {
+    color: var(--accent);
+    font-family: var(--font-heading);
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

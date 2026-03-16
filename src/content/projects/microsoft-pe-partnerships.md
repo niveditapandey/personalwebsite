@@ -1,6 +1,6 @@
 ---
-title: "APAC PE/VC Partnerships Vertical at Microsoft"
-industry: "Enterprise Technology"
+title: "Building Microsoft's Private Capital Partnerships Vertical Across Asia-Pacific"
+industry: "Private Sector"
 problem: "How do you build a $130M business selling cloud infrastructure to private equity and venture capital firms across 15 Asia-Pacific markets with no precedent or playbook?"
 approach: "Built partnerships vertical from zero by identifying PE/VC portfolio companies as high-velocity cloud adopters, then scaling across geographies with localized GTM and institutional relationship management."
 impact: "Scaled vertical to $130M across APAC. Created partnership templates now used across Microsoft's global PE/VC program."
