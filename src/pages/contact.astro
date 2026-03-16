@@ -4,71 +4,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Contact — Nivedita Pandey">
   <div class="contact-page">
-    <header class="page-header">
-      <div class="header-inner">
-        <div class="header-text">
-          <h1>Contact</h1>
-          <p class="page-description">
-            I'm interested in conversations about AI governance, digital public infrastructure,
-            institutional partnerships, and cross-border ecosystem development.
-          </p>
+
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h1>Contact</h1>
+
+        <div class="contact-rows">
+          <div class="contact-row">
+            <span class="contact-label">General</span>
+            <a href="mailto:np@niveditapandey.com" class="contact-link">np@niveditapandey.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Work & Advisory</span>
+            <a href="mailto:nivedita@dendrons.ai" class="contact-link">nivedita@dendrons.ai</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Training</span>
+            <a href="mailto:contact@skillai.academy" class="contact-link">contact@skillai.academy</a>
+          </div>
         </div>
-        <div class="header-photo-block">
-          <img
-            src="/images/contact-fintech.png"
-            alt="Nivedita Pandey at Singapore Fintech Festival"
-            class="contact-photo"
-          />
-          <p class="photo-caption">Singapore Fintech Festival, 2024</p>
+
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
+          <span class="divider">·</span>
+          <a href="https://twitter.com/niveditapandey" target="_blank" rel="noopener noreferrer" class="social-link">Twitter ↗</a>
         </div>
       </div>
-    </header>
-    
-    <div class="contact-content">
-      <section class="contact-section">
-        <h2>Get in Touch</h2>
-        <p>
-          For general inquiries, collaborations, or to connect directly:
-        </p>
-        <a href="mailto:np@niveditapandey.com" class="contact-link">np@niveditapandey.com</a>
-      </section>
 
-      <section class="contact-section">
-        <h2>Professional Inquiries</h2>
-        <p>
-          For advisory engagements, speaking invites, or partnership discussions:
-        </p>
-        <a href="mailto:nivedita@dendrons.ai" class="contact-link">nivedita@dendrons.ai</a>
-      </section>
-      
-      <section class="contact-section">
-        <h2>Training & Workshops</h2>
-        <p>
-          For AI governance training, institutional capacity building, or workshop facilitation:
-        </p>
-        <a href="mailto:contact@skillai.academy" class="contact-link">contact@skillai.academy</a>
-      </section>
-      
-      <section class="contact-section">
-        <h2>Connect</h2>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer" class="social-link">
-            LinkedIn
-          </a>
-          <a href="https://twitter.com/niveditapandey" target="_blank" rel="noopener noreferrer" class="social-link">
-            Twitter
-          </a>
-        </div>
-      </section>
-      
-      <section class="contact-section">
-        <h2>Response Time</h2>
-        <p class="note">
-          I aim to respond to professional inquiries within 3-5 business days. 
-          If your matter is time-sensitive, please indicate this in your subject line.
-        </p>
-      </section>
+      <div class="contact-photo-block">
+        <img
+          src="/images/contact-fintech.png"
+          alt="Nivedita Pandey at Singapore Fintech Festival"
+          class="contact-photo"
+        />
+        <p class="photo-caption">Singapore Fintech Festival, 2024</p>
+      </div>
     </div>
+
   </div>
 </BaseLayout>
 
@@ -76,31 +48,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .contact-page {
     max-width: 700px;
   }
-  
-  .page-header {
-    margin-bottom: 4rem;
-  }
 
-  .header-inner {
+  .contact-inner {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 3rem;
+    gap: 4rem;
     align-items: start;
   }
 
-  .page-header h1 {
+  .contact-left h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
     font-weight: 500;
+    margin-bottom: 3rem;
   }
 
-  .page-description {
-    font-size: 1.125rem;
+  .contact-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .contact-link {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--text-primary);
+  }
+
+  .social-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    transition: color 0.2s ease;
   }
 
-  .header-photo-block {
+  .social-link:hover {
+    color: var(--accent);
+  }
+
+  .divider {
+    color: var(--text-muted);
+  }
+
+  .contact-photo-block {
     flex-shrink: 0;
   }
 
@@ -119,77 +134,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 0.5rem;
     text-align: center;
   }
-  
-  .contact-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  
-  .contact-section {
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .contact-section:last-child {
-    border-bottom: none;
-  }
-  
-  .contact-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-  
-  .contact-section p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-link {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
-    color: var(--accent);
-    transition: color 0.2s ease;
-  }
-  
-  .contact-link:hover {
-    color: var(--text-primary);
-  }
-  
-  .social-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .social-link {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    transition: all 0.2s ease;
-  }
-  
-  .social-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-  
-  .note {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-  
+
   @media (max-width: 768px) {
-    .header-inner {
+    .contact-inner {
       grid-template-columns: 1fr;
     }
 
-    .header-photo-block {
+    .contact-photo-block {
       order: -1;
     }
 
@@ -198,7 +149,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       margin: 0 auto;
     }
 
-    .page-header h1 {
+    .contact-left h1 {
       font-size: 2rem;
     }
   }
