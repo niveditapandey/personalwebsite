@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// object-position for the adventure photo banner — adjust if crop is off
-const adventureCrop = "center";
 ---
 
 <BaseLayout title="Beyond Work — Nivedita Pandey">
@@ -39,8 +37,7 @@ const adventureCrop = "center";
             src="/images/beyond-adventure.png"
             alt="Rappelling"
             class="section-banner-img"
-            style={`object-position: ${adventureCrop}`}
-          />
+            />
         </div>
         <p>
           Skydiving, PADI-certified diving, ziplining, rappelling, and more. There's something about putting yourself
@@ -128,15 +125,14 @@ const adventureCrop = "center";
 
   .section-banner {
     width: 100%;
-    height: 280px;
+    max-height: 420px;
     overflow: hidden;
     margin-bottom: 1.25rem;
   }
 
   .section-banner-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
 

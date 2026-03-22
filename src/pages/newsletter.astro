@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// object-position for the newsletter photo banner — adjust if crop is off
-const photoCrop = "center";
 ---
 
 <BaseLayout title="Newsletter — Nivedita Pandey">
@@ -20,7 +18,6 @@ const photoCrop = "center";
         src="/images/about-bio.png"
         alt="Nivedita Pandey"
         class="page-banner-img"
-        style={`object-position: ${photoCrop}`}
       />
     </div>
 
@@ -76,15 +73,14 @@ const photoCrop = "center";
 
   .page-banner {
     width: 100%;
-    height: 300px;
+    max-height: 420px;
     overflow: hidden;
     margin-bottom: 3rem;
   }
 
   .page-banner-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
 
