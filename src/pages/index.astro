@@ -1,31 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// object-position for the hero photo banner — adjust if crop is off
+const photoCrop = "top center";
 ---
 
 <BaseLayout title="Nivedita Pandey">
   <div class="home">
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-text-block">
-          <h1 class="hero-title">
-            Applied AI, Digital Innovation, and Strategic Growth Leader
-          </h1>
-          <p class="hero-text">
-            16 years at the intersection of AI, capital, and institutions — across the US, UK, Singapore, and India.
-          </p>
-          <div class="hero-links">
-            <a href="/about" class="hero-link">Bio →</a>
-            <a href="/projects" class="hero-link">Past Work →</a>
-            <a href="/problems" class="hero-link">Problems I'm Working On →</a>
-          </div>
-        </div>
-        <div class="hero-photo-block">
-          <img
-            src="/images/hero-professional.png"
-            alt="Nivedita Pandey"
-            class="hero-photo"
-          />
-        </div>
+      <div class="hero-banner">
+        <img
+          src="/images/hero-professional.png"
+          alt="Nivedita Pandey"
+          class="hero-banner-img"
+          style={`object-position: ${photoCrop}`}
+        />
+      </div>
+      <h1 class="hero-title">
+        Applied AI, Digital Innovation, and Strategic Growth Leader
+      </h1>
+      <p class="hero-text">
+        16 years at the intersection of AI, capital, and institutions — across the US, UK, Singapore, and India.
+      </p>
+      <div class="hero-links">
+        <a href="/about" class="hero-link">Bio →</a>
+        <a href="/projects" class="hero-link">Past Work →</a>
+        <a href="/problems" class="hero-link">Problems I'm Working On →</a>
       </div>
     </section>
   </div>
@@ -38,26 +38,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .hero {
-    padding: 2rem 0 3rem;
+    padding-bottom: 3rem;
   }
 
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: center;
+  .hero-banner {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
   }
 
-  .hero-photo-block {
-    flex-shrink: 0;
-  }
-
-  .hero-photo {
-    width: 280px;
-    height: auto;
+  .hero-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   }
 
   .hero-title {
@@ -66,6 +61,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 1.25rem;
     font-weight: 500;
     letter-spacing: -0.02em;
+    max-width: 700px;
   }
 
   .hero-text {
@@ -73,7 +69,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1.8;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    max-width: 750px;
+    max-width: 650px;
   }
 
   .hero-links {
@@ -95,18 +91,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 768px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .hero-photo-block {
-      order: -1;
-    }
-
-    .hero-photo {
-      width: 160px;
-      margin: 0 auto;
+    .hero-banner {
+      height: 220px;
     }
 
     .hero-title {

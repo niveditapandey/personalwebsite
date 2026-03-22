@@ -1,61 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// object-position for the bio photo banner — adjust if crop is off
+const photoCrop = "top center";
 ---
 
 <BaseLayout title="About — Nivedita Pandey">
   <article class="about">
-    <h1>About</h1>
+    <h1>Bio</h1>
+
+    <div class="bio-banner">
+      <img
+        src="/images/hero-professional.png"
+        alt="Nivedita Pandey"
+        class="bio-banner-img"
+        style={`object-position: ${photoCrop}`}
+      />
+    </div>
 
     <section class="bio">
-      <h2>Bio</h2>
-      <div class="bio-inner">
-        <div class="bio-text">
-          <p>
-            I am a strategist and operator with 16+ years of international experience across the US, UK, Singapore, and India.
-            I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
-            particular focus on Applied AI, Private Capital, and Public Sector Transformation.
-          </p>
-          <p>
-            I hold an MBA from Wharton and degrees in computer science and social impact. My career includes scaling Microsoft's
-            PE/VC partnerships vertical across APAC to $130M, serving as a Prime Minister's Fellow on Digital Payments and Digital
-            Public Infrastructure, and advising the Reserve Bank Innovation Hub on AI governance and DPI strategy.
-          </p>
-          <p>
-            I currently run Dendrons.ai, an Applied AI Innovation Studio selected for Antler Singapore and Google Cloud for Startups.
-          </p>
+      <p>
+        I am a strategist and operator with 16+ years of international experience across the US, UK, Singapore, and India.
+        I work at the intersection of emerging technologies, institutional adoption, and ecosystem building—with
+        particular focus on Applied AI, Private Capital, and Public Sector Transformation.
+      </p>
+      <p>
+        I hold an MBA from Wharton and degrees in computer science and social impact. My career includes scaling Microsoft's
+        PE/VC partnerships vertical across APAC to $130M, serving as a Prime Minister's Fellow on Digital Payments and Digital
+        Public Infrastructure, and advising the Reserve Bank Innovation Hub on AI governance and DPI strategy.
+      </p>
+      <p>
+        I currently run Dendrons.ai, an Applied AI Innovation Studio selected for Antler Singapore and Google Cloud for Startups.
+      </p>
 
-          <p class="domains-intro">My work sits at the intersection of three domains:</p>
-          <ul class="work-list">
-            <li>
-              <strong>Digital Innovation:</strong> Product strategy for emerging technologies, with recent focus on AI governance,
-              digital public infrastructure, and healthcare coordination platforms.
-            </li>
-            <li>
-              <strong>Go-to-Market & Scale:</strong> Growth strategies, partnership development, and institutional sales—particularly
-              in technology adoption by governments, financial institutions, and enterprise.
-            </li>
-            <li>
-              <strong>Cross-Border Ecosystems:</strong> Building partnerships and market entry strategies across Asia-Pacific,
-              connecting innovation ecosystems between India, Singapore, and global markets.
-            </li>
-          </ul>
+      <p class="domains-intro">My work sits at the intersection of three domains:</p>
+      <ul class="work-list">
+        <li>
+          <strong>Digital Innovation:</strong> Product strategy for emerging technologies, with recent focus on AI governance,
+          digital public infrastructure, and healthcare coordination platforms.
+        </li>
+        <li>
+          <strong>Go-to-Market & Scale:</strong> Growth strategies, partnership development, and institutional sales—particularly
+          in technology adoption by governments, financial institutions, and enterprise.
+        </li>
+        <li>
+          <strong>Cross-Border Ecosystems:</strong> Building partnerships and market entry strategies across Asia-Pacific,
+          connecting innovation ecosystems between India, Singapore, and global markets.
+        </li>
+      </ul>
 
-          <p class="bio-values">
-            I try to bring curiosity, compassion, courage, and creativity to everything I do — in work and beyond.
-          </p>
+      <p class="bio-values">
+        I try to bring curiosity, compassion, courage, and creativity to everything I do — in work and beyond.
+      </p>
 
-          <p class="bio-contact">
-            <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
-          </p>
-        </div>
-        <div class="bio-photo-block">
-          <img
-            src="/images/hero-professional.png"
-            alt="Nivedita Pandey"
-            class="bio-photo"
-          />
-        </div>
-      </div>
+      <p class="bio-contact">
+        <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
+      </p>
     </section>
   </article>
 </BaseLayout>
@@ -67,33 +67,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .about h1 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-weight: 500;
   }
 
-  .about section {
-    margin-bottom: 4rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--border);
+  .bio-banner {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
   }
 
-  .about section:last-child {
-    border-bottom: none;
+  .bio-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  .about h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-  }
-
-  .about p {
+  .bio p {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
 
-  .about p:last-child {
+  .bio p:last-child {
     margin-bottom: 0;
   }
 
@@ -137,42 +135,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--accent);
   }
 
-  /* Bio layout */
-  .bio-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .bio-photo-block {
-    flex-shrink: 0;
-  }
-
-  .bio-photo {
-    width: 220px;
-    height: auto;
-    display: block;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-  }
-
   @media (max-width: 768px) {
     .about h1 {
       font-size: 2rem;
     }
 
-    .bio-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .bio-photo-block {
-      order: -1;
-    }
-
-    .bio-photo {
-      width: 160px;
-      margin: 0 auto;
+    .bio-banner {
+      height: 220px;
     }
   }
 </style>

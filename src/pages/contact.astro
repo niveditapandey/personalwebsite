@@ -1,42 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// object-position for the contact photo banner — adjust if crop is off
+const photoCrop = "center";
 ---
 
 <BaseLayout title="Contact — Nivedita Pandey">
   <div class="contact-page">
+    <h1>Contact</h1>
 
-    <div class="contact-inner">
-      <div class="contact-left">
-        <h1>Contact</h1>
+    <div class="page-banner">
+      <img
+        src="/images/contact-fintech.png"
+        alt="Nivedita Pandey at Singapore Fintech Festival"
+        class="page-banner-img"
+        style={`object-position: ${photoCrop}`}
+      />
+      <p class="photo-caption">Singapore Fintech Festival, 2024</p>
+    </div>
 
-        <div class="contact-rows">
-          <div class="contact-row">
-            <span class="contact-label">General</span>
-            <a href="mailto:np@niveditapandey.com" class="contact-link">np@niveditapandey.com</a>
-          </div>
-          <div class="contact-row">
-            <span class="contact-label">Professional Engagements & Speaking</span>
-            <a href="mailto:np@dendrons.ai" class="contact-link">np@dendrons.ai</a>
-          </div>
-        </div>
-
-        <div class="social-row">
-          <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
-          <span class="divider">·</span>
-          <a href="https://twitter.com/niveditapandey" target="_blank" rel="noopener noreferrer" class="social-link">Twitter ↗</a>
-        </div>
+    <div class="contact-rows">
+      <div class="contact-row">
+        <span class="contact-label">General</span>
+        <a href="mailto:np@niveditapandey.com" class="contact-link">np@niveditapandey.com</a>
       </div>
-
-      <div class="contact-photo-block">
-        <img
-          src="/images/contact-fintech.png"
-          alt="Nivedita Pandey at Singapore Fintech Festival"
-          class="contact-photo"
-        />
-        <p class="photo-caption">Singapore Fintech Festival, 2024</p>
+      <div class="contact-row">
+        <span class="contact-label">Professional Engagements & Speaking</span>
+        <a href="mailto:nivedita@dendrons.ai" class="contact-link">nivedita@dendrons.ai</a>
       </div>
     </div>
 
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
+      <span class="divider">·</span>
+      <a href="https://twitter.com/niveditapandey" target="_blank" rel="noopener noreferrer" class="social-link">Twitter ↗</a>
+    </div>
   </div>
 </BaseLayout>
 
@@ -45,16 +43,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     max-width: 700px;
   }
 
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .contact-left h1 {
+  .contact-page h1 {
     font-size: 2.5rem;
     font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .page-banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .page-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-caption {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
     margin-bottom: 3rem;
   }
 
@@ -111,42 +125,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-muted);
   }
 
-  .contact-photo-block {
-    flex-shrink: 0;
-  }
-
-  .contact-photo {
-    width: 200px;
-    height: auto;
-    display: block;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  .photo-caption {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-
   @media (max-width: 768px) {
-    .contact-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-photo-block {
-      order: -1;
-    }
-
-    .contact-photo {
-      width: 140px;
-      margin: 0 auto;
-    }
-
-    .contact-left h1 {
+    .contact-page h1 {
       font-size: 2rem;
+    }
+
+    .page-banner {
+      height: 220px;
     }
   }
 </style>

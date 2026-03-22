@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// object-position for the newsletter photo banner — adjust if crop is off
+const photoCrop = "center";
 ---
 
 <BaseLayout title="Newsletter — Nivedita Pandey">
@@ -12,29 +15,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </header>
 
+    <div class="page-banner">
+      <img
+        src="/images/about-bio.png"
+        alt="Nivedita Pandey"
+        class="page-banner-img"
+        style={`object-position: ${photoCrop}`}
+      />
+    </div>
+
     <section class="subscribe-section">
-      <div class="subscribe-inner">
-        <div class="subscribe-text">
-          <h2>Subscribe</h2>
-          <p>
-            To receive new issues, send an email expressing your interest and I'll add you to the list.
-            No forms, no automation — just a direct line.
-          </p>
-          <a
-            href="mailto:np@niveditapandey.com?subject=Newsletter%20subscription"
-            class="subscribe-cta"
-          >
-            np@niveditapandey.com →
-          </a>
-        </div>
-        <div class="subscribe-photo-block">
-          <img
-            src="/images/about-bio.png"
-            alt="Nivedita Pandey"
-            class="subscribe-photo"
-          />
-        </div>
-      </div>
+      <h2>Subscribe</h2>
+      <p>
+        To receive new issues, send an email expressing your interest and I'll add you to the list.
+        No forms, no automation — just a direct line.
+      </p>
+      <a
+        href="mailto:np@niveditapandey.com?subject=Newsletter%20subscription"
+        class="subscribe-cta"
+      >
+        np@niveditapandey.com →
+      </a>
     </section>
 
     <section class="about-section">
@@ -54,11 +55,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .newsletter-page {
-    max-width: 650px;
+    max-width: 700px;
   }
 
   .page-header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .page-header h1 {
@@ -73,23 +74,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1.8;
   }
 
-  .subscribe-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
+  .page-banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 3rem;
   }
 
-  .subscribe-photo-block {
-    flex-shrink: 0;
-  }
-
-  .subscribe-photo {
-    width: 200px;
-    height: auto;
+  .page-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   }
 
   .subscribe-section,
@@ -139,17 +135,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       font-size: 2rem;
     }
 
-    .subscribe-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .subscribe-photo-block {
-      order: -1;
-    }
-
-    .subscribe-photo {
-      width: 140px;
-      margin: 0 auto;
+    .page-banner {
+      height: 220px;
     }
   }
 </style>
