@@ -5,8 +5,9 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     industry: z.string(),
+    context: z.string().optional(),
     problem: z.string(),
-    approach: z.string(),
+    approach: z.string().optional(),
     impact: z.string(),
     year: z.number(),
     order: z.number().optional(),

@@ -1,6 +1,7 @@
 ---
 title: "AI Governance Framework for Financial Infrastructure"
 industry: "Public Sector"
+context: "Central bank innovation hubs and regulated financial institutions were under growing pressure to adopt AI responsibly — but lacked practical governance frameworks that could operate within regulatory constraints without stifling innovation."
 problem: "How do financial regulators build institutional capacity for responsible AI adoption without stifling innovation?"
 approach: "Developed a risk-based governance framework combining technical standards, organizational readiness assessments, and ecosystem coordination mechanisms."
 impact: "Framework informed policy development at central bank innovation hub and provided reference architecture for regulated financial institutions."

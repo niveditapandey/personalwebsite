@@ -1,6 +1,7 @@
 ---
 title: "Healthcare Coordination Platform for NRI Families"
 industry: "Startup"
+context: "Millions of NRI families manage elderly parents' healthcare across India's fragmented providers — multiple specialists, labs, and pharmacies operating in silos, with no shared records, no coordination layer, and timezone-separated caregivers."
 problem: "NRI families managing elderly parents' healthcare across fragmented providers in India face coordination failures, duplicated tests, and medication errors."
 approach: "Designed a coordination layer built on India's Ayushman Bharat Digital Mission infrastructure, focusing on longitudinal health records and caregiver visibility."
 impact: "Platform architecture validated with 40+ NRI families. In development as Dendrons.ai flagship product."
