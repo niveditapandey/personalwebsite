@@ -125,14 +125,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .section-banner {
     width: 100%;
-    max-height: 420px;
+    height: 380px;
     overflow: hidden;
     margin-bottom: 1.25rem;
   }
 
   .section-banner-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
     display: block;
   }
 
