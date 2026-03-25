@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const sections = [
+type Photo = { src: string; caption: string; position?: string; tall?: boolean; contain?: boolean };
+type Section = { title: string; photos: Photo[] };
+
+const sections: Section[] = [
   {
     title: "IIM - Startup Conclave",
     photos: [
