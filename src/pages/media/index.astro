@@ -16,11 +16,11 @@ const sections = [
       { src: "/media/SKIPA-Lecture_AIGovernance-Jharkhand_Mar17.jpeg", caption: "AI Governance, Jharkhand, January 2026" },
       { src: "/media/SKIPA-Lecture_FistRaised_Feb26.jpg", caption: "AI lecture, February 2026" },
       { src: "/media/SKIPA-Lecture_AlgorithmicBias_Feb24.jpg", caption: "Algorithmic Bias, February 2026" },
-      { src: "/media/SKIPA-Lecture_AIToolsInAction_Feb27.jpg", caption: "AI Tools in Action, February 2026", position: "top" },
+      { src: "/media/SKIPA-Lecture_AIToolsInAction_Feb27.jpg", caption: "AI Tools in Action, February 2026", position: "left center", tall: true },
       { src: "/media/SKIPA-Lecture_GenAI-Slide_Feb27.jpg", caption: "GenAI lecture, February 2026" },
       { src: "/media/SKIPA-Lecture_AudienceView_Mar05.jpg", caption: "AI in War (1)" },
-      { src: "/media/SKIPA-Lecture_HandRaised_Mar05.jpg", caption: "AI in War (2)" },
-      { src: "/media/SKIPA-Lecture_PolicyToPrototype_Mar07.jpeg", caption: "Policy to Prototype, March 2026", position: "top" },
+      { src: "/media/SKIPA-Lecture_HandRaised_Mar05.jpg", caption: "AI in War (2)", position: "left center", tall: true },
+      { src: "/media/SKIPA-Lecture_PolicyToPrototype_Mar07.jpeg", caption: "Policy to Prototype, March 2026", position: "left top", tall: true },
       { src: "/media/SKIPA-Lecture_QRCode_Mar07.jpeg", caption: "Closing class of AI course" },
     ]
   },
@@ -50,8 +50,8 @@ const sections = [
         <h2 class="section-title">{section.title}</h2>
         <div class="photo-grid">
           {section.photos.map((p) => (
-            <figure class="photo-item">
-              <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: center ${p.position}` : undefined} />
+            <figure class={`photo-item${p.tall ? ' photo-item--tall' : ''}`}>
+              <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
               <figcaption>{p.caption}</figcaption>
             </figure>
           ))}
@@ -118,6 +118,10 @@ const sections = [
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
+  }
+
+  .photo-item--tall img {
+    aspect-ratio: 2 / 3;
   }
 
   .photo-item:hover img {
