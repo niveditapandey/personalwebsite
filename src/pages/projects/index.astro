@@ -47,6 +47,12 @@ const sectorColors: Record<string, string> = {
                     <span class="row-label">Challenge</span>
                     <span class="row-value">{project.data.problem}</span>
                   </div>
+                  {project.data.approach && (
+                    <div class="card-row">
+                      <span class="row-label">Approach</span>
+                      <span class="row-value">{project.data.approach}</span>
+                    </div>
+                  )}
                   <div class="card-row">
                     <span class="row-label">Outcome</span>
                     <span class="row-value row-value--impact">{project.data.impact}</span>

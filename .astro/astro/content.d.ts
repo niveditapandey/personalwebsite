@@ -206,23 +206,72 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "projects": {
-"ai-governance-financial.md": {
-	id: "ai-governance-financial.md";
-  slug: "ai-governance-financial";
+"estee-lauder-asia-ecommerce.md": {
+	id: "estee-lauder-asia-ecommerce.md";
+  slug: "estee-lauder-asia-ecommerce";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
-"healthcare-coordination.md": {
-	id: "healthcare-coordination.md";
-  slug: "healthcare-coordination";
+"estee-lauder-male-grooming.md": {
+	id: "estee-lauder-male-grooming.md";
+  slug: "estee-lauder-male-grooming";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
-"microsoft-pe-partnerships.md": {
-	id: "microsoft-pe-partnerships.md";
-  slug: "microsoft-pe-partnerships";
+"incopro-enterprise-conversion.md": {
+	id: "incopro-enterprise-conversion.md";
+  slug: "incopro-enterprise-conversion";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"mmtc-digital-gold.md": {
+	id: "mmtc-digital-gold.md";
+  slug: "mmtc-digital-gold";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"private-capital-asia.md": {
+	id: "private-capital-asia.md";
+  slug: "private-capital-asia";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"rbih-ai-dpi-scaling.md": {
+	id: "rbih-ai-dpi-scaling.md";
+  slug: "rbih-ai-dpi-scaling";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"shareit-social-commerce.md": {
+	id: "shareit-social-commerce.md";
+  slug: "shareit-social-commerce";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"skipa-ai-capacity-building.md": {
+	id: "skipa-ai-capacity-building.md";
+  slug: "skipa-ai-capacity-building";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"taghive-edtech-expansion.md": {
+	id: "taghive-edtech-expansion.md";
+  slug: "taghive-edtech-expansion";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"worldbank-dpi-frameworks.md": {
+	id: "worldbank-dpi-frameworks.md";
+  slug: "worldbank-dpi-frameworks";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
