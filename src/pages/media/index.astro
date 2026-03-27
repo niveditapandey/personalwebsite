@@ -51,13 +51,16 @@ const sections: Section[] = [
     {sections.map((section) => (
       <section class="media-section">
         <h2 class="section-title">{section.title}</h2>
-        <div class="photo-grid">
-          {section.photos.map((p) => (
-            <figure class={`photo-item${p.tall ? ' photo-item--tall' : ''}${p.contain ? ' photo-item--contain' : ''}`}>
-              <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
-              <figcaption>{p.caption}</figcaption>
-            </figure>
-          ))}
+        <div class="ribbon-wrapper">
+          <div class="ribbon-track">
+            {/* Render photos twice for seamless loop */}
+            {[...section.photos, ...section.photos].map((p, i) => (
+              <figure class={`photo-item${p.contain ? ' photo-item--contain' : ''}`}>
+                <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
+                <figcaption>{p.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
     ))}
@@ -66,10 +69,11 @@ const sections: Section[] = [
 
 <style>
   .media-page {
-    max-width: 1000px;
+    max-width: 100%;
   }
 
   .page-header {
+    max-width: 1000px;
     margin-bottom: 4rem;
   }
 
@@ -86,8 +90,8 @@ const sections: Section[] = [
   }
 
   .media-section {
-    margin-bottom: 5rem;
-    padding-bottom: 5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
     border-bottom: 1px solid var(--border);
   }
 
@@ -96,6 +100,7 @@ const sections: Section[] = [
   }
 
   .section-title {
+    max-width: 1000px;
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 1.75rem;
@@ -104,31 +109,47 @@ const sections: Section[] = [
     letter-spacing: 0.02em;
   }
 
-  .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  /* Ribbon */
+  .ribbon-wrapper {
+    overflow: hidden;
+    /* Fade edges */
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+
+  .ribbon-track {
+    display: flex;
     gap: 1rem;
+    width: max-content;
+    animation: ribbon-scroll 30s linear infinite;
+  }
+
+  .ribbon-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ribbon-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   .photo-item {
+    flex: 0 0 auto;
+    width: 280px;
     margin: 0;
-    overflow: hidden;
   }
 
   .photo-item img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 210px;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
   }
 
-  .photo-item--tall img {
-    aspect-ratio: 2 / 3;
-  }
-
   .photo-item--contain img {
     object-fit: contain;
+    background: rgba(255,255,255,0.04);
   }
 
   .photo-item:hover img {
@@ -148,15 +169,16 @@ const sections: Section[] = [
       font-size: 2rem;
     }
 
-    .photo-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
+    .photo-item {
+      width: 220px;
     }
-  }
 
-  @media (max-width: 480px) {
-    .photo-grid {
-      grid-template-columns: 1fr;
+    .photo-item img {
+      height: 165px;
+    }
+
+    .ribbon-track {
+      animation-duration: 20s;
     }
   }
 </style>
