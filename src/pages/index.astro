@@ -24,6 +24,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="/projects" class="hero-link">Past Work →</a>
         <a href="/problems" class="hero-link">Problems I'm Working On →</a>
       </div>
+      <div class="stat-bar">
+        <div class="stat"><span class="stat-number">$130M+</span><span class="stat-label">B2B revenue built from zero</span></div>
+        <div class="stat"><span class="stat-number">$124M</span><span class="stat-label">B2C GMV</span></div>
+        <div class="stat"><span class="stat-number">10M+</span><span class="stat-label">Customers acquired</span></div>
+        <div class="stat"><span class="stat-number">15+</span><span class="stat-label">Multi-million dollar deals</span></div>
+        <div class="stat"><span class="stat-number">268%</span><span class="stat-label">YoY portfolio revenue growth</span></div>
+        <div class="stat"><span class="stat-number">50%+</span><span class="stat-label">Deal conversion lift</span></div>
+        <div class="stat"><span class="stat-number">210</span><span class="stat-label">Civil servants trained on AI</span></div>
+        <div class="stat"><span class="stat-number">42</span><span class="stat-label">AI prototypes with government</span></div>
+      </div>
     </section>
   </div>
 </BaseLayout>
@@ -86,6 +96,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .hero-link:hover {
     color: var(--text-primary);
+  }
+
+  .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-number { font-size: 1.4rem; font-weight: 600; }
+  .stat-label { font-size: 0.75rem; opacity: 0.7; line-height: 1.4; }
+  @media (max-width: 600px) {
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {

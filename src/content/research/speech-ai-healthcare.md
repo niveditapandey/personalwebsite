@@ -1,8 +1,7 @@
 ---
-title: "Speech AI for Healthcare Access in Low-Literacy Populations"
+title: "Credit DPI for Global Growth: A Strategy Framework for Emerging Markets"
 year: 2024
 type: "Working Paper"
 preparedFor: "Reserve Bank Innovation Hub"
-summary: "Analysis of deployment considerations for voice-based AI in healthcare settings serving low-literacy populations. Examines technical architecture, privacy-preserving design, consent mechanisms, and institutional readiness requirements for responsible deployment."
-pdfUrl: ""
+summary: "Strategy framework for the international expansion of India's Digital Public Infrastructure for credit — covering the Unified Lending Interface (ULI), cross-border adoption pathways for financial institutions in Africa and Southeast Asia, partnership structures with multilaterals and foreign governments, and governance considerations for credit DPI deployment in markets with varying regulatory maturity."
 ---
