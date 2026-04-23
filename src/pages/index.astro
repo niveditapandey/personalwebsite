@@ -19,20 +19,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="hero-text">
         16 years at the intersection of AI, capital, and institutions — across the US, UK, Singapore, and India.
       </p>
-      <div class="hero-links">
-        <a href="/about" class="hero-link">Bio →</a>
-        <a href="/projects" class="hero-link">Past Work →</a>
-        <a href="/problems" class="hero-link">Problems I'm Working On →</a>
-      </div>
       <div class="stat-bar">
         <div class="stat"><span class="stat-number">$130M+</span><span class="stat-label">B2B revenue built from zero</span></div>
         <div class="stat"><span class="stat-number">268%</span><span class="stat-label">YoY portfolio revenue growth</span></div>
         <div class="stat"><span class="stat-number">$124M</span><span class="stat-label">B2C GMV</span></div>
         <div class="stat"><span class="stat-number">210</span><span class="stat-label">Civil servants trained on AI</span></div>
+        <div class="stat"><span class="stat-number">5 markets</span><span class="stat-label">3 continents</span></div>
         <div class="stat"><span class="stat-number">15+</span><span class="stat-label">Multi-million dollar deals</span></div>
         <div class="stat"><span class="stat-number">50%+</span><span class="stat-label">Deal conversion lift</span></div>
         <div class="stat"><span class="stat-number">10M+</span><span class="stat-label">Customers acquired</span></div>
         <div class="stat"><span class="stat-number">42</span><span class="stat-label">AI prototypes with government</span></div>
+        <div class="stat"><span class="stat-number">16+ years</span><span class="stat-label">Work-ex, 2 masters</span></div>
+      </div>
+      <div class="hero-links">
+        <a href="/about" class="hero-link">Bio →</a>
+        <a href="/projects" class="hero-link">Past Work →</a>
+        <a href="/problems" class="hero-link">Problems I'm Working On →</a>
       </div>
     </section>
   </div>
@@ -100,7 +102,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .stat-bar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     margin: 2rem 0;
     padding: 1.5rem 0;
