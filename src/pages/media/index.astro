@@ -2,20 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 type Photo = { src: string; caption: string; position?: string; tall?: boolean; contain?: boolean };
-type Section = { title: string; photos: Photo[] };
+type SubSection = { label: string; photos: Photo[] };
 
-const sections: Section[] = [
+const skipaSections: SubSection[] = [
   {
-    title: "IIM - Startup Conclave",
-    photos: [
-      { src: "/media/IIM_PanelDiscussion.JPG", caption: "Panel discussion 1" },
-      { src: "/media/IIM_StartupConclave-Speaking.JPG", caption: "Panel discussion 2" },
-      { src: "/media/IIM_StartupConclave-PanelDiscussion.jpeg", caption: "MSME-Startup Collaboration" },
-      { src: "/media/IIM_AwardPlaque.JPG", caption: "Felicitated as judge & guest speaker" },
-    ]
-  },
-  {
-    title: "SKIPA - Guest Lectures on AI for New Civil Servants",
+    label: "Applied AI and Digital Innovation in Governance",
     photos: [
       { src: "/media/SKIPA-Lecture_AIGovernance-Jharkhand_Mar17.jpeg", caption: "AI Governance, Jan 2026" },
       { src: "/media/SKIPA-Lecture_GenAI-Slide_Feb27.jpg", caption: "GenAI lecture, Feb 2026" },
@@ -28,7 +19,7 @@ const sections: Section[] = [
     ]
   },
   {
-    title: "SKIPA - Valedictory Ceremony",
+    label: "Valedictory Ceremony",
     photos: [
       { src: "/media/SKIPA-Convocation_LampLighting.JPG", caption: "Lamp lighting" },
       { src: "/media/SKIPA-Convocation_PlantGift.JPG", caption: "Felicitation" },
@@ -44,13 +35,15 @@ const sections: Section[] = [
     <header class="page-header">
       <h1>Media</h1>
       <p class="page-description">
-        Guest lectures, panels, and events.
+        Interviews, webinars, panels, and public appearances.
       </p>
     </header>
 
-    <section class="media-section video-section">
-      <h2 class="section-title">Speaking Appearances</h2>
+    <!-- TV & Video -->
+    <section class="media-section">
+      <h2 class="section-title">TV &amp; Video</h2>
       <div class="video-grid">
+
         <div class="video-item">
           <div class="video-embed">
             <iframe
@@ -64,29 +57,95 @@ const sections: Section[] = [
           </div>
           <div class="video-meta">
             <p class="video-title">AI Readiness: Why 75% of AI Projects Fail and How to Get It Right</p>
-            <p class="video-host">Squirro · Webinar · 2024</p>
-            <p class="video-description">A 1-hour session on AI adoption failure modes, organisational readiness, and what separates AI initiatives that succeed from those that stall — drawing on experience across government, financial services, and enterprise.</p>
+            <p class="video-host">Squirro · Webinar · Feb 2025</p>
+            <p class="video-outlet-desc">Swiss enterprise GenAI platform specialising in knowledge intelligence and insight engines</p>
+            <p class="video-description">On AI adoption failure modes, organisational readiness, and what separates AI initiatives that succeed from those that stall - drawing on experience across government, financial services, and enterprise.</p>
           </div>
         </div>
+
+        <div class="video-item video-item--placeholder">
+          <div class="video-embed video-embed--placeholder">
+            <span class="placeholder-label">Link coming soon</span>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">AI and Its Impact on Us: How We Live, Work, and Prepare</p>
+            <p class="video-host">Doordarshan · Interview · Apr 2026</p>
+            <p class="video-description">A conversation on how AI will change the way we live and work - and what it will take for policymakers and the state to be ready for it.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    {sections.map((section) => (
-      <section class="media-section">
-        <h2 class="section-title">{section.title}</h2>
+    <!-- Radio & Audio -->
+    <section class="media-section">
+      <h2 class="section-title">Radio &amp; Audio</h2>
+      <div class="video-grid">
+
+        <div class="video-item video-item--placeholder">
+          <div class="video-embed video-embed--placeholder">
+            <span class="placeholder-label">Link coming soon</span>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">AI and Its Impact on Us</p>
+            <p class="video-host">Radio 92.4 FM · Interview · Apr 2026</p>
+            <p class="video-description">A wide-ranging conversation covering AI's practical applications, personal reflections on a career at the intersection of technology and institutions, and what the AI moment means for ordinary people.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Events & Talks -->
+    <section class="media-section">
+      <h2 class="section-title">Events &amp; Talks</h2>
+
+      <div class="event-block">
+        <div class="event-header">
+          <span class="event-name">IIM Ranchi - Startup Conclave</span>
+          <span class="event-meta">Feb 2026 · Invited as distinguished guest · Panelist and Judge</span>
+        </div>
         <div class="ribbon-wrapper">
           <div class="ribbon-track">
-            {/* Render photos twice for seamless loop */}
-            {[...section.photos, ...section.photos].map((p, i) => (
-              <figure class={`photo-item${p.contain ? ' photo-item--contain' : ''}`}>
-                <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
+            {[...Array(2)].flatMap(() => [
+              { src: "/media/IIM_PanelDiscussion.JPG", caption: "Panel discussion 1" },
+              { src: "/media/IIM_StartupConclave-Speaking.JPG", caption: "Panel discussion 2" },
+              { src: "/media/IIM_StartupConclave-PanelDiscussion.jpeg", caption: "MSME-Startup Collaboration" },
+              { src: "/media/IIM_AwardPlaque.JPG", caption: "Felicitated as judge & guest speaker" },
+            ]).map((p) => (
+              <figure class="photo-item">
+                <img src={p.src} alt={p.caption} loading="lazy" />
                 <figcaption>{p.caption}</figcaption>
               </figure>
             ))}
           </div>
         </div>
-      </section>
-    ))}
+      </div>
+
+      <div class="event-block">
+        <div class="event-header">
+          <span class="event-name">SKIPA</span>
+          <span class="event-meta">Jan-Mar 2026</span>
+        </div>
+        {skipaSections.map((sub) => (
+          <div class="event-subsection">
+            <p class="subsection-label">{sub.label}</p>
+            <div class="ribbon-wrapper">
+              <div class="ribbon-track">
+                {[...sub.photos, ...sub.photos].map((p) => (
+                  <figure class={`photo-item${p.contain ? ' photo-item--contain' : ''}`}>
+                    <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
+                    <figcaption>{p.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </section>
+
   </div>
 </BaseLayout>
 
@@ -132,11 +191,11 @@ const sections: Section[] = [
     letter-spacing: 0.02em;
   }
 
-  /* Video section */
+  /* Video / Audio cards */
   .video-grid {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
     max-width: 760px;
   }
 
@@ -160,6 +219,20 @@ const sections: Section[] = [
     height: 100%;
   }
 
+  .video-embed--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(255,255,255,0.15);
+  }
+
+  .placeholder-label {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
   .video-title {
     font-size: 1rem;
     font-weight: 500;
@@ -176,6 +249,14 @@ const sections: Section[] = [
     margin: 0;
   }
 
+  .video-outlet-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+  }
+
   .video-description {
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -183,10 +264,56 @@ const sections: Section[] = [
     margin: 0;
   }
 
+  /* Events & Talks */
+  .event-block {
+    margin-bottom: 3rem;
+  }
+
+  .event-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .event-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .event-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .event-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+
+  .event-subsection {
+    margin-bottom: 2rem;
+  }
+
+  .event-subsection:last-child {
+    margin-bottom: 0;
+  }
+
+  .subsection-label {
+    font-size: 0.8rem;
+    font-family: var(--font-heading);
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
   /* Ribbon */
   .ribbon-wrapper {
     overflow: hidden;
-    /* Fade edges */
     mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
