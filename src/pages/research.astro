@@ -34,6 +34,11 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
               Download PDF →
             </a>
           )}
+          {paper.data.requestEmail && (
+            <a href={`mailto:${paper.data.requestEmail}`} class="pdf-link">
+              Mail me for a copy of this working paper →
+            </a>
+          )}
         </article>
       ))}
     </div>

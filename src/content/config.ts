@@ -44,6 +44,7 @@ const research = defineCollection({
     preparedFor: z.string(),
     summary: z.string(),
     pdfUrl: z.string().optional(),
+    requestEmail: z.string().optional(),
     draft: z.boolean().optional(),
   }),
 });

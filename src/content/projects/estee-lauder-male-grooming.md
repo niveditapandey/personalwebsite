@@ -5,6 +5,6 @@ context: "A New York-based beauty behemoth wanted to diversify revenue streams a
 problem: "How do you build a credible market entry strategy for a new, untried consumer segment across fundamentally different geographies, each with distinct beauty norms, retail infrastructure, and consumer behaviour?"
 approach: "Conducted detailed primary and secondary research and Voice of Customer studies. Piloted new product (Solid Water Essence), established new pricing framework, launched new lifestyle concept pop-up (Grooming Station in London), and established new channel partnerships in the USA and internationally to target this new consumer segment."
 impact: "Launched new skincare product line and decreased concept-to-production time by 25%. New partnerships strategy adopted and executed across target markets with 2% revenue uplift worth $230M."
-year: 2015
+year: 2016
 order: 1
 ---
