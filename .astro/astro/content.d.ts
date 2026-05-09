@@ -285,6 +285,27 @@ declare module 'astro:content' {
   collection: "research";
   data: InferEntrySchema<"research">
 } & { render(): Render[".md"] };
+"credit-dpi-unbanked.md": {
+	id: "credit-dpi-unbanked.md";
+  slug: "credit-dpi-unbanked";
+  body: string;
+  collection: "research";
+  data: InferEntrySchema<"research">
+} & { render(): Render[".md"] };
+"lpg-subsidy-india.md": {
+	id: "lpg-subsidy-india.md";
+  slug: "lpg-subsidy-india";
+  body: string;
+  collection: "research";
+  data: InferEntrySchema<"research">
+} & { render(): Render[".md"] };
+"solar-ppp-odisha.md": {
+	id: "solar-ppp-odisha.md";
+  slug: "solar-ppp-odisha";
+  body: string;
+  collection: "research";
+  data: InferEntrySchema<"research">
+} & { render(): Render[".md"] };
 "speech-ai-healthcare.md": {
 	id: "speech-ai-healthcare.md";
   slug: "speech-ai-healthcare";

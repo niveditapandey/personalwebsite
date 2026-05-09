@@ -7,7 +7,7 @@ tags: ["AI", "healthcare", "governance"]
 
 There's a seductive narrative around speech AI: that voice interfaces will finally make technology accessible to populations that written interfaces exclude. In India, where functional literacy rates lag official statistics and digital literacy is even lower, this promise feels particularly urgent.
 
-But the reality of deploying speech AI in healthcare—the domain where I've spent the last year working—reveals a more complex picture.
+But the reality of deploying speech AI in healthcare-the domain where I've spent the last year working-reveals a more complex picture.
 
 ## The Access Promise
 
@@ -24,7 +24,7 @@ This isn't hypothetical. We've seen successful deployments in limited contexts.
 
 But moving from prototype to production deployment surfaces challenges that pure technologists often underestimate:
 
-**Consent in low-literacy contexts.** How do you obtain meaningful informed consent for data usage when the person doesn't read consent forms? Voice-based consent sounds like a solution until you consider that comprehension—not just communication—is the barrier.
+**Consent in low-literacy contexts.** How do you obtain meaningful informed consent for data usage when the person doesn't read consent forms? Voice-based consent sounds like a solution until you consider that comprehension-not just communication-is the barrier.
 
 **The accuracy-coverage tradeoff.** Speech recognition trained on urban, educated speakers performs poorly on rural dialects. But gathering representative training data from target populations raises ethical questions about data extraction from vulnerable groups.
 
@@ -38,7 +38,7 @@ Effective deployment requires:
 
 1. **Community-embedded implementation.** Not technology pushed from outside, but built with local healthcare workers who understand actual workflows.
 
-2. **Privacy-preserving architectures.** In contexts where patients don't understand data usage, the default should be data minimization—not consent forms.
+2. **Privacy-preserving architectures.** In contexts where patients don't understand data usage, the default should be data minimization-not consent forms.
 
 3. **Institutional capacity building.** Before deploying AI, ensure institutions can manage the organizational change it requires.
 

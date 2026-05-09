@@ -14,7 +14,7 @@ const { note } = Astro.props;
 const { Content } = await note.render();
 ---
 
-<BaseLayout title={`${note.data.title} — Nivedita Pandey`}>
+<BaseLayout title={`${note.data.title} - Nivedita Pandey`}>
   <article class="note">
     <header class="note-header">
       <time datetime={note.data.publishDate.toISOString()}>

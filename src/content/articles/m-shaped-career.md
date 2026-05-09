@@ -1,6 +1,6 @@
 ---
 title: "The M-Shaped Career"
-description: "Why career trajectories that cross domains—rather than climbing a single ladder—may be better suited to how technology and institutions actually evolve."
+description: "Why career trajectories that cross domains-rather than climbing a single ladder-may be better suited to how technology and institutions actually evolve."
 publishDate: 2024-09-22
 tags: ["career", "strategy"]
 ---
@@ -27,11 +27,11 @@ The connector across all three: public-private partnerships and the institutiona
 
 **Institutions evolve slowly; technology evolves fast.** The gap between them is where the interesting work happens. People who understand both technology and institutional constraints can build bridges. But you can't build bridges from just one side.
 
-**Strategic optionality.** An M-shaped career creates multiple points of re-entry. When one domain faces headwinds, you can pivot to another. This isn't lack of focus—it's recognition that markets, technologies, and institutional priorities shift faster than we can plan for.
+**Strategic optionality.** An M-shaped career creates multiple points of re-entry. When one domain faces headwinds, you can pivot to another. This isn't lack of focus-it's recognition that markets, technologies, and institutional priorities shift faster than we can plan for.
 
 ## The Tradeoff
 
-The cost: you'll never be the world's leading expert in any single domain. That's fine. The value isn't in depth—it's in the ability to translate across contexts, spot patterns that domain specialists miss, and operate effectively in ambiguous spaces where no one has a playbook.
+The cost: you'll never be the world's leading expert in any single domain. That's fine. The value isn't in depth-it's in the ability to translate across contexts, spot patterns that domain specialists miss, and operate effectively in ambiguous spaces where no one has a playbook.
 
 ## Who This Works For
 

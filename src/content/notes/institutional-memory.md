@@ -4,7 +4,7 @@ publishDate: 2024-12-03
 tags: ["institutions", "knowledge"]
 ---
 
-Organizations with high turnover lose institutional memory faster than they realize. The knowledge doesn't disappear all at once—it degrades gradually as people leave and take context with them.
+Organizations with high turnover lose institutional memory faster than they realize. The knowledge doesn't disappear all at once-it degrades gradually as people leave and take context with them.
 
 What's lost isn't facts. Facts get documented. What's lost is judgment: why certain decisions were made, what tradeoffs were considered, which approaches failed and why.
 

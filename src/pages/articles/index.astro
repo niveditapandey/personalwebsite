@@ -9,7 +9,7 @@ const articles = (await getCollection('articles', ({ data }) => !data.draft))
 const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
 ---
 
-<BaseLayout title="Articles — Nivedita Pandey">
+<BaseLayout title="Articles - Nivedita Pandey">
   <div class="articles-page">
     <header class="page-header">
       <h1>Articles</h1>
