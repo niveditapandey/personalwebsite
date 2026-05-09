@@ -29,16 +29,10 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
           <h2>{paper.data.title}</h2>
           <p class="research-org">Prepared for {paper.data.preparedFor}</p>
           <p class="research-summary">{paper.data.summary}</p>
-          {paper.data.pdfUrl && (
-            <a href={paper.data.pdfUrl} class="pdf-link" target="_blank" rel="noopener noreferrer">
-              Download PDF →
-            </a>
+          {paper.data.note && (
+            <p class="research-note">{paper.data.note}</p>
           )}
-          {paper.data.requestEmail && (
-            <a href={`mailto:${paper.data.requestEmail}`} class="pdf-link">
-              Mail me for a copy of this working paper →
-            </a>
-          )}
+          <a href="/contact" class="pdf-link">Get in touch →</a>
         </article>
       ))}
     </div>
@@ -139,6 +133,14 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
   
   .pdf-link:hover {
     color: var(--text-primary);
+  }
+
+  .research-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
   }
   
   @media (max-width: 768px) {

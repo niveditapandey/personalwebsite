@@ -40,9 +40,10 @@ const research = defineCollection({
   schema: z.object({
     title: z.string(),
     year: z.number(),
-    type: z.enum(['Working Paper', 'Discussion Paper', 'Report']),
+    type: z.enum(['Working Paper', 'Discussion Paper', 'Report', 'Policy Paper']),
     preparedFor: z.string(),
     summary: z.string(),
+    note: z.string().optional(),
     pdfUrl: z.string().optional(),
     requestEmail: z.string().optional(),
     draft: z.boolean().optional(),
