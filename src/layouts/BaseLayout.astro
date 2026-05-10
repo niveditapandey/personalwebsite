@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Nivedita Pandey - Digital innovation, go-to-market, and cross-border ecosystems" } = Astro.props;
+const { title, description = "Applied AI and Digital Innovation leader. I help governments, enterprises, and institutions turn AI ambition into deployable products, governance frameworks, and measurable outcomes." } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -24,7 +24,8 @@ const currentPath = Astro.url.pathname;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, 'https://www.niveditapandey.com').toString()} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://www.niveditapandey.com').toString()} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

@@ -3,8 +3,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://personalwebsite-one-chi.vercel.app',
-  integrations: [mdx()],
+  site: 'https://www.niveditapandey.com',
+  integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
       theme: 'nord',
