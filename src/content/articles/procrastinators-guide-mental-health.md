@@ -1,7 +1,7 @@
 ---
 title: "The Procrastinator's Guide to Mental Health"
 description: "A practical framework for busy professionals who know mental health matters but haven't quite gotten around to doing something about it. Through PERMA."
-publishDate: 2021-05-31
+publishDate: 2022-05-31
 tags: ["mental health", "wellbeing", "productivity"]
 ---
 
