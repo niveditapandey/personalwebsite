@@ -179,11 +179,11 @@ const skipaSections: SubSection[] = [
           <span class="event-name">SKIPA</span>
           <span class="event-meta">Jan-Mar 2026</span>
         </div>
-        {skipaSections.map((sub) => (
+        {skipaSections.map((sub, i) => (
           <div class="event-subsection">
             <p class="subsection-label">{sub.label}</p>
             <div class="ribbon-wrapper">
-              <div class="ribbon-track">
+              <div class="ribbon-track" style={i === 0 ? "animation-duration: 60s" : undefined}>
                 {[...sub.photos, ...sub.photos].map((p) => (
                   <figure class={`photo-item${p.contain ? ' photo-item--contain' : ''}`}>
                     <img src={p.src} alt={p.caption} loading="lazy" style={p.position ? `object-position: ${p.position}` : undefined} />
@@ -481,13 +481,13 @@ const skipaSections: SubSection[] = [
 
   .photo-item {
     flex: 0 0 auto;
-    width: 280px;
+    width: 320px;
     margin: 0;
   }
 
   .photo-item img {
     width: 100%;
-    height: 210px;
+    height: 240px;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -516,11 +516,11 @@ const skipaSections: SubSection[] = [
     }
 
     .photo-item {
-      width: 220px;
+      width: 250px;
     }
 
     .photo-item img {
-      height: 165px;
+      height: 188px;
     }
 
     .ribbon-track {
