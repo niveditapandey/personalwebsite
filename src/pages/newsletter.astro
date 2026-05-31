@@ -1,50 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 ---
 
-<BaseLayout title="Newsletter - Nivedita Pandey">
+<BaseLayout title="Newsletters - Nivedita Pandey">
   <div class="newsletter-page">
     <header class="page-header">
-      <h1>Newsletter</h1>
+      <h1>Newsletters</h1>
       <p class="page-description">
-        Irregular dispatches on applied AI, digital public infrastructure, institutional change,
-        and the systems that shape how we work and live.
+        Three publications covering AI, governance, and society — each written for a different reader.
       </p>
     </header>
 
-    <div class="page-banner">
-      <img
-        src="/images/about-bio.png"
-        alt="Nivedita Pandey"
-        class="page-banner-img"
-      />
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-header">
+          <div>
+            <p class="pub-tag">AI · Policy · Institutions</p>
+            <h2 class="pub-name">AI &amp; Governance</h2>
+          </div>
+          <a class="pub-subscribe" href="https://niveditapandey.substack.com" target="_blank" rel="noopener">Subscribe →</a>
+        </div>
+        <p class="pub-description">
+          On institutional AI adoption, digital public infrastructure, and the gap between technical
+          possibility and policy reality. Written for practitioners — in government, multilaterals,
+          and enterprise — who are navigating AI implementation without a map.
+        </p>
+        <p class="pub-meta">Irregular · niveditapandey.substack.com</p>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-header">
+          <div>
+            <p class="pub-tag">AI · Asia · Ecosystem</p>
+            <h2 class="pub-name">Asia AI Foundry</h2>
+          </div>
+          <a class="pub-subscribe" href="https://asiaaifoundry.substack.com" target="_blank" rel="noopener">Subscribe →</a>
+        </div>
+        <p class="pub-description">
+          On AI adoption, investment, and ecosystem building across Asia — with a focus on how
+          different markets are approaching AI readiness, regulation, and deployment. For founders,
+          investors, and policymakers thinking about AI in the Asian context.
+        </p>
+        <p class="pub-meta">Irregular · asiaaifoundry.substack.com</p>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-header">
+          <div>
+            <p class="pub-tag">Society · Culture · Ideas</p>
+            <h2 class="pub-name">The Uncomfortable Enquiry</h2>
+          </div>
+          <a class="pub-subscribe" href="https://mindunruled.substack.com" target="_blank" rel="noopener">Subscribe →</a>
+        </div>
+        <p class="pub-description">
+          On society, culture, and the questions that make people uncomfortable — marriage, tradition,
+          identity, and the unspoken rules that govern how we live. A different register from the AI
+          work: more personal, more argumentative.
+        </p>
+        <p class="pub-meta">Irregular · mindunruled.substack.com</p>
+      </div>
+
     </div>
-
-    <section class="subscribe-section">
-      <h2>Subscribe</h2>
-      <iframe
-        src="https://niveditapandey.substack.com/embed"
-        width="100%"
-        height="150"
-        style="border:none; background: transparent;"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
-    </section>
-
-    <section class="about-section">
-      <h2>What to expect</h2>
-      <p>
-        The newsletter is a space for thinking out loud - on problems I'm working through,
-        patterns I'm noticing, and ideas that don't fit neatly into an article.
-        Topics include applied AI, go-to-market strategy, digital public infrastructure,
-        and cross-border ecosystem building.
-      </p>
-      <p>
-        Sent when there's something worth saying. Not on a fixed schedule.
-      </p>
-    </section>
   </div>
 </BaseLayout>
 
@@ -54,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .page-header {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
   }
 
   .page-header h1 {
@@ -69,61 +86,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1.8;
   }
 
-  .page-banner {
-    width: 100%;
-    height: 380px;
-    overflow: hidden;
-    margin-bottom: 3rem;
+  .pub-list {
+    display: flex;
+    flex-direction: column;
   }
 
-  .page-banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-  }
-
-  .subscribe-section,
-  .about-section {
-    margin-bottom: 4rem;
-    padding-bottom: 4rem;
+  .pub-item {
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
   }
 
-  .about-section {
+  .pub-item:last-child {
     border-bottom: none;
   }
 
-  .subscribe-section h2,
-  .about-section h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
+  .pub-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
   }
 
-  .subscribe-section p,
-  .about-section p {
+  .pub-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 0.35rem;
+  }
+
+  .pub-name {
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    margin: 0;
+  }
+
+  .pub-subscribe {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding-top: 0.2rem;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .pub-subscribe:hover {
+    opacity: 0.7;
+  }
+
+  .pub-description {
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin: 0;
   }
 
-  .about-section p:last-child {
-    margin-bottom: 0;
-  }
-
-  .subscribe-cta {
-    display: inline-block;
+  .pub-meta {
     font-family: var(--font-heading);
-    font-size: 1.125rem;
-    color: var(--accent);
-    transition: color 0.2s ease;
-  }
-
-  .subscribe-cta:hover {
-    color: var(--text-primary);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
@@ -131,8 +162,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       font-size: 2rem;
     }
 
-    .page-banner {
-      height: 220px;
+    .pub-header {
+      flex-direction: column;
+      gap: 0.75rem;
     }
   }
 </style>
