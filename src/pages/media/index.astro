@@ -129,7 +129,7 @@ const skipaSections: SubSection[] = [
           <div class="press-series-left">
             <span class="press-series-outlet">The Pioneer</span>
             <span class="press-series-divider">·</span>
-            <span class="press-series-name">AI 360</span>
+            <span class="press-series-name press-series-name--column">AI 360</span>
           </div>
           <span class="press-series-count">Column · Ongoing</span>
         </div>
@@ -419,6 +419,14 @@ const skipaSections: SubSection[] = [
     font-size: 0.9375rem;
     font-weight: 400;
     color: var(--text-muted);
+  }
+
+  .press-series-name--column {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .press-series-count {
