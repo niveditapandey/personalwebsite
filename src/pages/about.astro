@@ -25,9 +25,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>
         I hold an MBA from Wharton as a Joseph Wharton Fellow, a Computer Science degree with distinction where I ranked 1st in a class of 600, and a Masters from IRMA where I ranked 1st in the All-India entrance among tens of thousands of students.
       </p>
-      <p>
-        I currently run Dendrons.ai, an agentic AI company supported by Google Cloud for Startups and a member of the Anthropic Claude Partner Network.
-      </p>
+      <div class="dendrons-card">
+        <div class="dendrons-card-top">
+          <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer" class="dendrons-name">Dendrons.ai ↗</a>
+          <span class="dendrons-type">Agentic AI · Founder</span>
+        </div>
+        <div class="dendrons-card-badges">
+          <span class="dendrons-badge">Google Cloud for Startups</span>
+          <span class="dendrons-badge dendrons-badge--anthropic">Anthropic Claude Partner Network</span>
+        </div>
+      </div>
 
       <p class="bio-contact">
         <a href="mailto:NiveditaPandey@alumni.upenn.edu">NiveditaPandey@alumni.upenn.edu</a>
@@ -100,6 +107,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 1.5rem;
     color: var(--text-primary) !important;
     font-style: italic;
+  }
+
+  .dendrons-card {
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(96, 165, 250, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .dendrons-card-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dendrons-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .dendrons-name:hover {
+    color: var(--accent);
+  }
+
+  .dendrons-type {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .dendrons-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dendrons-badge {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text-muted);
+  }
+
+  .dendrons-badge--anthropic {
+    border-color: rgba(96, 165, 250, 0.4);
+    color: var(--accent);
   }
 
   .bio-contact {

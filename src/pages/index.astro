@@ -32,6 +32,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="stat"><span class="stat-number">49</span><span class="stat-label">AI prototypes with government</span></div>
         <div class="stat"><span class="stat-number">#1 in India</span><span class="stat-label">$58M G2C payments</span></div>
       </div>
+      <div class="dendrons-strip">
+        <span class="dendrons-founder">Founder, <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a></span>
+        <span class="dendrons-dot">·</span>
+        <span class="dendrons-badge">Google Cloud for Startups</span>
+        <span class="dendrons-dot">·</span>
+        <span class="dendrons-badge">Anthropic Claude Partner Network</span>
+      </div>
+
       <div class="hero-links">
         <a href="/about" class="hero-link">Bio →</a>
         <a href="/projects" class="hero-link">Past Work →</a>
@@ -99,6 +107,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .hero-link:hover {
     color: var(--text-primary);
+  }
+
+  .dendrons-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.75rem 0;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  .dendrons-founder {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .dendrons-founder a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s ease;
+  }
+
+  .dendrons-founder a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .dendrons-dot {
+    color: var(--text-muted);
+  }
+
+  .dendrons-badge {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
   }
 
   .stat-bar {
