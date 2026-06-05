@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Applied AI and Digital Innovation leader. I help governments, enterprises, and institutions turn AI ambition into deployable products, governance frameworks, and measurable outcomes." } = Astro.props;
+const { title, description = "Applied AI, Digital Innovation, and Strategic Growth Leader. 16 years across enterprise, fintech, and government in the US, UK, Singapore, and India." } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -26,12 +26,14 @@ const currentPath = Astro.url.pathname;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={new URL(Astro.url.pathname, 'https://www.niveditapandey.com').toString()} />
+    <meta property="og:image" content="https://www.niveditapandey.com/images/PolkaDress.JPG" />
     <link rel="canonical" href={new URL(Astro.url.pathname, 'https://www.niveditapandey.com').toString()} />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.niveditapandey.com/images/PolkaDress.JPG" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
