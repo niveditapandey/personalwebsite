@@ -39,9 +39,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="dendrons-dot">·</span>
         <span class="dendrons-badge">Anthropic Claude Partner Network</span>
       </div>
+    </section>
+
+    <section class="bio">
+      <p>
+        I build products, platforms, verticals, and strategic initiatives at the intersection of technology, business, and impact - and I've done it across the public and private sector, from fintech to central bank innovation, from luxury consumer goods to government AI.
+      </p>
+      <p>
+        I have founded Microsoft's PE/VC partnerships vertical across APAC and scaled it to $130M, built Asia's first digital gold fintech from zero to $124M GMV, served as a Prime Minister's Fellow on Digital Public Infrastructure where my implementation ranked #1 in India ahead of Delhi, and advised the Reserve Bank Innovation Hub on AI and global growth.
+      </p>
+      <p>
+        I hold an MBA from Wharton as a Joseph Wharton Fellow, a Computer Science degree with distinction where I ranked 1st in a class of 600, and a Masters from IRMA where I ranked 1st in the All-India entrance among tens of thousands of students.
+      </p>
+
+      <div class="dendrons-card">
+        <div class="dendrons-card-top">
+          <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer" class="dendrons-name">Dendrons.ai ↗</a>
+          <span class="dendrons-type">Agentic AI · Founder</span>
+        </div>
+        <div class="dendrons-card-badges">
+          <span class="dendrons-pill">Google Cloud for Startups</span>
+          <span class="dendrons-pill dendrons-pill--anthropic">Anthropic Claude Partner Network</span>
+        </div>
+      </div>
+
+      <p class="bio-contact">
+        <a href="mailto:NiveditaPandey@alumni.upenn.edu">NiveditaPandey@alumni.upenn.edu</a>
+      </p>
 
       <div class="hero-links">
-        <a href="/about" class="hero-link">Bio →</a>
         <a href="/projects" class="hero-link">Past Work →</a>
         <a href="/problems" class="hero-link">Problems I'm Working On →</a>
       </div>
@@ -53,10 +79,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .home {
     display: flex;
     flex-direction: column;
+    max-width: 750px;
   }
 
   .hero {
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
   }
 
   .hero-banner {
@@ -114,7 +141,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
-    margin: 0 0 1.75rem 0;
+    margin: 0 0 0 0;
     font-family: var(--font-heading);
     font-size: 0.8rem;
     letter-spacing: 0.03em;
@@ -159,6 +186,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .stat { display: flex; flex-direction: column; gap: 4px; }
   .stat-number { font-size: 1.4rem; font-weight: 600; }
   .stat-label { font-size: 0.75rem; opacity: 0.7; line-height: 1.4; }
+
+  /* Bio section */
+  .bio {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .bio p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .dendrons-card {
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(96, 165, 250, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .dendrons-card-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dendrons-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .dendrons-name:hover {
+    color: var(--accent);
+  }
+
+  .dendrons-type {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .dendrons-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dendrons-pill {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text-muted);
+  }
+
+  .dendrons-pill--anthropic {
+    border-color: rgba(96, 165, 250, 0.4);
+    color: var(--accent);
+  }
+
+  .bio-contact {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .bio-contact a {
+    color: var(--accent);
+  }
+
   @media (max-width: 600px) {
     .stat-bar { grid-template-columns: repeat(2, 1fr); }
   }

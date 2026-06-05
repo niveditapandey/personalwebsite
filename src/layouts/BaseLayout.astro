@@ -49,8 +49,7 @@ const currentPath = Astro.url.pathname;
           
           <nav class="nav">
             <div class="nav-section">
-              <span class="nav-label">About</span>
-              <a href="/about" class:list={['nav-link', { active: currentPath === '/about' }]}>Bio</a>
+              <a href="/" class:list={['nav-top-link', { active: currentPath === '/' }]}>About</a>
             </div>
 
             <div class="nav-section">
