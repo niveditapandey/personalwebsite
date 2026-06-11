@@ -100,6 +100,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="agent-item">
           <h3 class="agent-name">Arsène</h3>
           <p class="agent-description">Task management agent. I forward emails to it and it builds and maintains a Kanban board of what needs doing. Keeps incoming chaos organised without manual triage.</p>
+          <a class="agent-link" href="https://arsene.niveditapandey.com/about" target="_blank" rel="noopener">Know more →</a>
         </div>
 
         <div class="agent-item">
@@ -284,6 +285,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-secondary);
     line-height: 1.8;
     margin: 0;
+  }
+
+  .agent-link {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .agent-link:hover {
+    opacity: 0.7;
   }
 
   .section-footer {
