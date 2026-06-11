@@ -1,0 +1,330 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Currently Building - Nivedita Pandey">
+  <div class="building-page">
+    <header class="page-header">
+      <h1>Currently Building</h1>
+      <p class="page-description">
+        A live view of what's in progress - problems I'm pursuing, products in use, and agents I've built for my own work.
+      </p>
+    </header>
+
+    <!-- Problems -->
+    <section class="building-section">
+      <h2 class="section-heading">Problems</h2>
+      <p class="section-intro">The questions I keep returning to.</p>
+      <ul class="problem-list">
+        <li>How do organisations actually become AI-ready - not through training alone, but through systems, governance, and institutional capacity?</li>
+        <li>How do you extract meaningful signal from markets and media at scale, and make it actionable for people without research teams?</li>
+        <li>Can one person, properly tooled with AI agents, operate at the leverage of a small team?</li>
+        <li>What does it mean to build AI tools responsibly when you are both the designer and the first user?</li>
+      </ul>
+    </section>
+
+    <!-- Products -->
+    <section class="building-section">
+      <h2 class="section-heading">Products</h2>
+      <p class="section-intro">Tools built for others to use.</p>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">MirrorMirror.life</h3>
+            <span class="product-status">Live</span>
+          </div>
+          <p class="product-description">Personality assessment built on narrative psychology. Tells you something true about yourself that standard tests miss.</p>
+          <a class="product-link" href="https://mirrormirror.life" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">getHeard Voice</h3>
+            <span class="product-status">Live · via Dendrons.ai</span>
+          </div>
+          <p class="product-description">AI-powered market research. Structured qualitative insight at the speed and cost of a survey.</p>
+          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">getHeard Pulse</h3>
+            <span class="product-status">Live · via Dendrons.ai</span>
+          </div>
+          <p class="product-description">Media monitoring and signal extraction. Know what is being said, what it means, and what to do about it.</p>
+          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">getBookings</h3>
+            <span class="product-status">Live · via Dendrons.ai</span>
+          </div>
+          <p class="product-description">Revenue operations automation. Reduces the manual overhead between pipeline and closed revenue.</p>
+          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">AI Readiness Assessment</h3>
+            <span class="product-status">Live</span>
+          </div>
+          <p class="product-description">A structured diagnostic for organisations evaluating where they stand on AI adoption - across capability, governance, and culture.</p>
+          <a class="product-link" href="https://aiready.dendrons.ai" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">Governance Readiness Assessment</h3>
+            <span class="product-status">Live</span>
+          </div>
+          <p class="product-description">A focused diagnostic for institutions building AI governance capacity. Based on work with central bank innovation infrastructure and regulated environments.</p>
+          <a class="product-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener">Visit →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personal Agents -->
+    <section class="building-section building-section--last">
+      <h2 class="section-heading">Personal Agents</h2>
+      <p class="section-intro">Tools built for my own workflows. They work. I use them daily. Not yet productized - but that may change.</p>
+      <div class="agent-list">
+
+        <div class="agent-item">
+          <h3 class="agent-name">VERNE <span class="agent-sub">built on NanoClaw</span></h3>
+          <p class="agent-description">Personal AI assistant built on NanoClaw, an open-source framework I forked and extended. The customisation layer - memory management, WhatsApp and web interfaces, and my specific daily workflows - is what became VERNE.</p>
+        </div>
+
+        <div class="agent-item">
+          <h3 class="agent-name">Arsène</h3>
+          <p class="agent-description">Task management agent. I forward emails to it and it builds and maintains a Kanban board of what needs doing. Keeps incoming chaos organised without manual triage.</p>
+        </div>
+
+        <div class="agent-item">
+          <h3 class="agent-name">Thoth AI</h3>
+          <p class="agent-description">Form-filling agent, named after the Egyptian scribe-god. Handles repetitive documentation and application workflows.</p>
+        </div>
+
+      </div>
+      <p class="section-footer">
+        These tools are built for my own work. If you are interested in the code, the approach, or exploring a productized version - <a href="/contact">get in touch</a>.
+      </p>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .building-page {
+    max-width: 750px;
+  }
+
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .building-section {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .building-section--last {
+    border-bottom: none;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+  }
+
+  .section-intro {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  /* Problems */
+  .problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .problem-list li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .problem-list li:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .problem-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+  }
+
+  /* Products */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .product-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .product-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .product-status {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+
+  .product-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+  }
+
+  .product-link {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .product-link:hover {
+    opacity: 0.7;
+  }
+
+  /* Personal Agents */
+  .agent-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .agent-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .agent-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .agent-name {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .agent-sub {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  .agent-description {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .section-footer {
+    margin-top: 2rem;
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .section-footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .section-footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
