@@ -14,10 +14,37 @@ const { article } = Astro.props;
 const { Content } = await article.render();
 ---
 
-<BaseLayout 
+<BaseLayout
   title={`${article.data.title} - Nivedita Pandey`}
   description={article.data.description}
+  ogType="article"
 >
+  <Fragment slot="head">
+    <meta property="article:published_time" content={article.data.publishDate.toISOString()} />
+    <meta property="article:author" content="Nivedita Pandey" />
+    {article.data.tags.map((tag: string) => (
+      <meta property="article:tag" content={tag} />
+    ))}
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.data.title,
+      "description": article.data.description,
+      "datePublished": article.data.publishDate.toISOString(),
+      "author": {
+        "@type": "Person",
+        "name": "Nivedita Pandey",
+        "url": "https://www.niveditapandey.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Nivedita Pandey",
+        "url": "https://www.niveditapandey.com"
+      },
+      "image": "https://www.niveditapandey.com/images/PolkaDress.JPG",
+      "url": `https://www.niveditapandey.com/articles/${article.slug}`
+    })}</script>
+  </Fragment>
   <article class="article">
     <header class="article-header">
       <time datetime={article.data.publishDate.toISOString()}>

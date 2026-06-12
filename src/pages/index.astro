@@ -3,7 +3,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 ---
 
-<BaseLayout title="Nivedita Pandey">
+<BaseLayout title="Nivedita Pandey | Applied AI & Digital Innovation Leader" description="Applied AI, Digital Innovation, and Strategic Growth Leader. 16 years across enterprise, fintech, and government in the US, UK, Singapore, and India. Founder of Dendrons.ai.">
+  <Fragment slot="head">
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nivedita Pandey",
+      "url": "https://www.niveditapandey.com",
+      "image": "https://www.niveditapandey.com/images/PolkaDress.JPG",
+      "jobTitle": "Applied AI & Digital Innovation Leader",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dendrons.ai",
+        "url": "https://dendrons.ai"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Wharton School, University of Pennsylvania" },
+        { "@type": "CollegeOrUniversity", "name": "Institute of Rural Management Anand" }
+      ],
+      "sameAs": [
+        "https://x.com/curious_NP",
+        "https://github.com/niveditapandey",
+        "https://dendrons.ai"
+      ],
+      "description": "Applied AI, Digital Innovation, and Strategic Growth Leader. 16 years across enterprise, fintech, and government in the US, UK, Singapore, and India."
+    })}</script>
+  </Fragment>
   <div class="home">
     <section class="hero">
       <div class="hero-banner">
