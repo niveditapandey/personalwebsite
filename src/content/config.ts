@@ -11,6 +11,8 @@ const projects = defineCollection({
     impact: z.string(),
     year: z.number(),
     order: z.number().optional(),
+    link: z.string().optional(),
+    linkLabel: z.string().optional(),
   }),
 });
 

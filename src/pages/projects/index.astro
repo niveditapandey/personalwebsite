@@ -58,6 +58,11 @@ const sectorColors: Record<string, string> = {
                     <span class="row-value row-value--impact">{project.data.impact}</span>
                   </div>
                 </div>
+                {project.data.link && (
+                  <a class="card-link" href={project.data.link} target="_blank" rel="noopener" style={`color: ${color}`}>
+                    {project.data.linkLabel || 'Visit live'} &rarr;
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -203,6 +208,19 @@ const sectorColors: Record<string, string> = {
   .row-value--impact {
     color: var(--text-primary);
     font-weight: 500;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .card-link:hover {
+    text-decoration: underline;
   }
 
   .page-footer {
