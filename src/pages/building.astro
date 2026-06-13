@@ -83,6 +83,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a class="product-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
         </div>
 
+        <div class="product-card">
+          <div class="product-card-top">
+            <h3 class="product-name">Compass DataReady</h3>
+            <span class="product-status">Live</span>
+          </div>
+          <p class="product-description">CDO-grade data readiness across quality, infrastructure, governance, security, and AI/ML. 38 questions, 25 minutes - mapped to DAMA-DMBOK, NIST AI RMF, DPDP, and GDPR.</p>
+          <a class="product-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
+        </div>
+
+        <div class="product-card product-card--soon">
+          <div class="product-card-top">
+            <h3 class="product-name">Agentic Commerce Suite</h3>
+            <span class="product-status product-status--soon">Launching Soon</span>
+          </div>
+          <p class="product-description">AI search is rewriting who gets found. Three products - RankReady, TransactReady, TrustReady - for businesses that need to rank in AI search, transact with agentic buyers, and stay compliant.</p>
+          <span class="product-link product-link--muted">Waitlist open via Dendrons.ai</span>
+        </div>
+
       </div>
     </section>
 
@@ -243,6 +261,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .product-link:hover {
     opacity: 0.7;
+  }
+
+  .product-link--muted {
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .product-status--soon {
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  .product-card--soon {
+    border-style: dashed;
+    opacity: 0.85;
   }
 
   /* Personal Agents */
