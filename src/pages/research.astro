@@ -32,7 +32,7 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
           {paper.data.note && (
             <p class="research-note">{paper.data.note}</p>
           )}
-          <a href="/contact" class="pdf-link">Get in touch →</a>
+          <p class="pdf-link">Working paper · Available on request.</p>
         </article>
       ))}
     </div>
