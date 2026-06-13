@@ -24,6 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="contact-row">
         <span class="contact-label">Professional Engagements & Speaking</span>
         <a href="mailto:np@dendrons.ai" class="contact-link">np@dendrons.ai</a>
+        <p class="contact-note">I speak on AI adoption, digital public infrastructure, and institutional transformation — to government bodies, management institutions, and national media. Recent appearances include Doordarshan, Naxatra News, IIM Ranchi, and the Administrative Training Institute.</p>
       </div>
     </div>
 
@@ -99,6 +100,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .contact-link:hover {
     color: var(--text-primary);
+  }
+
+  .contact-note {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 0.5rem;
   }
 
   .social-row {
