@@ -111,20 +111,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="agent-list">
 
         <div class="agent-item">
-          <h3 class="agent-name">VERNE <span class="agent-sub">built on NanoClaw</span></h3>
-          <p class="agent-description">Personal AI assistant built on NanoClaw, an open-source framework I forked and extended. The customisation layer - memory management, WhatsApp and web interfaces, and my specific daily workflows - is what became VERNE.</p>
+          <h3 class="agent-name">Verne <span class="agent-sub">built on NanoClaw</span></h3>
+          <p class="agent-description">Personal AI assistant built on NanoClaw, an open-source framework I forked and extended. The customisation layer - memory management, WhatsApp and web interfaces, and my specific daily workflows - is what became Verne.</p>
+          <p class="agent-inspiration">Named for Jules Verne - who imagined worlds that didn't exist yet, and wrote them into being anyway. It felt like the right name for a personal AI built from scratch.</p>
           <a class="agent-link" href="/verne/">Know more →</a>
         </div>
 
         <div class="agent-item">
           <h3 class="agent-name">Arsène</h3>
           <p class="agent-description">Task management agent. I forward emails to it and it builds and maintains a Kanban board of what needs doing. Keeps incoming chaos organised without manual triage.</p>
+          <p class="agent-inspiration">Named for Arsène Lupin - the fictional gentleman who was always three steps ahead, never lost track of anything, and made it look effortless.</p>
           <a class="agent-link" href="https://arsene.niveditapandey.com/about" target="_blank" rel="noopener noreferrer">Know more →</a>
         </div>
 
         <div class="agent-item">
           <h3 class="agent-name">Thoth AI</h3>
-          <p class="agent-description">Form-filling agent, named after the Egyptian scribe-god. Handles repetitive documentation and application workflows.</p>
+          <p class="agent-description">Form-filling agent. Handles repetitive documentation and application workflows.</p>
+          <p class="agent-inspiration">Named for Thoth - the Egyptian god of writing, knowledge, and record-keeping. The divine scribe felt like the right name for an agent that exists to handle paperwork.</p>
           <a class="agent-link" href="https://thoth.dendrons.ai" target="_blank" rel="noopener noreferrer">Know more →</a>
         </div>
 
@@ -324,6 +327,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-secondary);
     line-height: 1.8;
     margin: 0;
+  }
+
+  .agent-inspiration {
+    font-size: 0.825rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
   }
 
   .agent-link {
