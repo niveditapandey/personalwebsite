@@ -26,82 +26,112 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Products -->
     <section class="building-section">
       <h2 class="section-heading">Products</h2>
-      <p class="section-intro">Tools built for others to use.</p>
-      <div class="product-grid">
+      <p class="section-intro">Five suites. One platform. Built at <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a>.</p>
 
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">MirrorMirror.life</h3>
-            <span class="product-status">Live</span>
+      <div class="suite-list">
+
+        <div class="suite-card">
+          <div class="suite-card-top">
+            <div>
+              <span class="suite-label">Intelligence Suite</span>
+              <h3 class="suite-name">getHeard</h3>
+            </div>
+            <span class="suite-status">Live</span>
           </div>
-          <p class="product-description">Personality assessment built on narrative psychology. Tells you something true about yourself that standard tests miss.</p>
-          <a class="product-link" href="https://mirrormirror.life" target="_blank" rel="noopener noreferrer">Visit →</a>
+          <p class="suite-tagline">Know what's being said. Know what people actually think.</p>
+          <p class="suite-description">Media intelligence and stakeholder research for government, public affairs, and research teams - from signal extraction to structured qualitative insight.</p>
+          <div class="suite-products">
+            <a href="https://getheardpulse.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">Pulse</a>
+            <a href="https://getheardvoice.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">Voice</a>
+          </div>
+          <a class="suite-link" href="https://intelligence.dendrons.ai" target="_blank" rel="noopener noreferrer">Explore suite →</a>
         </div>
 
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">getHeard Voice</h3>
-            <span class="product-status">Live · via Dendrons.ai</span>
+        <div class="suite-card">
+          <div class="suite-card-top">
+            <div>
+              <span class="suite-label">Conversion Suite</span>
+              <h3 class="suite-name">getBookings + Newton</h3>
+            </div>
+            <span class="suite-status">Live</span>
           </div>
-          <p class="product-description">AI-powered market research. Structured qualitative insight at the speed and cost of a survey.</p>
-          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
+          <p class="suite-tagline">Turn high-intent searches into confirmed visits.</p>
+          <p class="suite-description">Two AI agents that close the gap between online interest and in-person commitment. getBookings hunts for high-intent visitors; Newton converts them into booked appointments.</p>
+          <div class="suite-products">
+            <a href="https://getbookings.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">getBookings</a>
+            <a href="https://newton.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">Newton</a>
+          </div>
+          <a class="suite-link" href="https://conversion.dendrons.ai" target="_blank" rel="noopener noreferrer">Explore suite →</a>
         </div>
 
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">getHeard Pulse</h3>
-            <span class="product-status">Live · via Dendrons.ai</span>
+        <div class="suite-card">
+          <div class="suite-card-top">
+            <div>
+              <span class="suite-label">Governance Suite</span>
+              <h3 class="suite-name">Compass</h3>
+            </div>
+            <span class="suite-status">Live</span>
           </div>
-          <p class="product-description">Media monitoring and signal extraction. Know what is being said, what it means, and what to do about it.</p>
-          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
+          <p class="suite-tagline">AI ready. Data ready. Regulator ready.</p>
+          <p class="suite-description">Four assessments for the full governance arc - from AI readiness strategy to continuous compliance monitoring.</p>
+          <div class="suite-products">
+            <a href="https://aiready.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">AIReady</a>
+            <a href="https://dataready.dendrons.ai" target="_blank" rel="noopener noreferrer" class="suite-pill">DataReady</a>
+            <a href="https://compass.dendrons.ai/governready" target="_blank" rel="noopener noreferrer" class="suite-pill">GovernReady</a>
+            <a href="https://compass.dendrons.ai/stayready" target="_blank" rel="noopener noreferrer" class="suite-pill">StayReady</a>
+          </div>
+          <a class="suite-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener noreferrer">Explore suite →</a>
         </div>
 
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">getBookings</h3>
-            <span class="product-status">Live · via Dendrons.ai</span>
+        <div class="suite-card suite-card--soon">
+          <div class="suite-card-top">
+            <div>
+              <span class="suite-label">AI Operations</span>
+              <h3 class="suite-name">Steward</h3>
+            </div>
+            <span class="suite-status suite-status--soon">Coming soon</span>
           </div>
-          <p class="product-description">Revenue operations automation. Reduces the manual overhead between pipeline and closed revenue.</p>
-          <a class="product-link" href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
+          <p class="suite-tagline">Every token. Every dollar. Accounted for.</p>
+          <p class="suite-description">Know what your AI is spending. Control it before the bill does. Rein governs AI spend at the enterprise level; Pare right-sizes model usage without sacrificing output quality.</p>
+          <div class="suite-products">
+            <span class="suite-pill suite-pill--muted">Rein</span>
+            <span class="suite-pill suite-pill--muted">Pare</span>
+          </div>
+          <a class="suite-link" href="https://steward.dendrons.ai" target="_blank" rel="noopener noreferrer">Join waitlist →</a>
         </div>
 
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">Compass AIReady</h3>
-            <span class="product-status">Live</span>
+        <div class="suite-card suite-card--soon">
+          <div class="suite-card-top">
+            <div>
+              <span class="suite-label">Agentic Commerce</span>
+              <h3 class="suite-name">Commerce Suite</h3>
+            </div>
+            <span class="suite-status suite-status--soon">Coming soon</span>
           </div>
-          <p class="product-description">An AI implementation readiness assessment across five dimensions and a 90-day action plan - mapped to where most AI initiatives quietly stall.</p>
-          <a class="product-link" href="https://aiready.dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">Compass DataReady</h3>
-            <span class="product-status">Live</span>
+          <p class="suite-tagline">Rank higher. Transact smarter. Stay secure.</p>
+          <p class="suite-description">Be found in AI search, ready for agentic buyers, and trusted by regulators. Three products for businesses entering the agentic commerce era.</p>
+          <div class="suite-products">
+            <span class="suite-pill suite-pill--muted">RankReady</span>
+            <span class="suite-pill suite-pill--muted">TransactReady</span>
+            <span class="suite-pill suite-pill--muted">TrustReady</span>
           </div>
-          <p class="product-description">A CDO-grade data readiness assessment across five dimensions - mapped to DAMA-DMBOK, NIST AI RMF, DPDP, and GDPR.</p>
-          <a class="product-link" href="https://dataready.dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card-top">
-            <h3 class="product-name">Compass GovernReady</h3>
-            <span class="product-status">Live</span>
-          </div>
-          <p class="product-description">A board-ready AI governance gap analysis and 90-day remediation roadmap - mapped to your jurisdiction: RBI, DPDP, MAS FEAT, SR 11-7, FCA, and the EU AI Act.</p>
-          <a class="product-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener noreferrer">Visit →</a>
-        </div>
-
-        <div class="product-card product-card--soon">
-          <div class="product-card-top">
-            <h3 class="product-name">Agentic Commerce Suite</h3>
-            <span class="product-status product-status--soon">Launching Soon</span>
-          </div>
-          <p class="product-description">AI search is rewriting who gets found. Are you in the answer? RankReady - show up when AI recommends. TransactReady - let AI agents buy from you. TrustReady - IAM and compliance for AI agents.</p>
-          <span class="product-link product-link--muted">Waitlist open via Dendrons.ai</span>
+          <a class="suite-link" href="https://agenticcommerce.dendrons.ai" target="_blank" rel="noopener noreferrer">Learn more →</a>
         </div>
 
       </div>
+
+      <div class="standalone-card">
+        <div class="suite-card-top">
+          <div>
+            <span class="suite-label">Standalone</span>
+            <h3 class="suite-name">MirrorMirror.life</h3>
+          </div>
+          <span class="suite-status">Live</span>
+        </div>
+        <p class="suite-description">Personality assessment built on narrative psychology. Tells you something true about yourself that standard tests miss.</p>
+        <a class="suite-link" href="https://mirrormirror.life" target="_blank" rel="noopener noreferrer">Visit →</a>
+      </div>
+
     </section>
 
     <!-- Personal Agents -->
@@ -200,39 +230,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1.8;
   }
 
-  /* Products */
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  /* Products - Suite Cards */
+  .suite-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
   }
 
-  .product-card {
+  .suite-card {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    padding: 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .product-card-top {
+  .suite-card:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .suite-card--soon {
+    opacity: 0.8;
+  }
+
+  .standalone-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .suite-card-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
-  .product-name {
+  .suite-label {
+    display: block;
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .suite-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
-  .product-status {
+  .suite-status {
     font-family: var(--font-heading);
     font-size: 0.68rem;
     letter-spacing: 0.05em;
@@ -240,49 +298,71 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-muted);
     white-space: nowrap;
     flex-shrink: 0;
-    padding-top: 0.15rem;
+    padding-top: 0.35rem;
   }
 
-  .product-description {
+  .suite-status--soon {
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  .suite-tagline {
+    font-size: 0.925rem;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .suite-description {
     font-size: 0.875rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
     margin: 0;
-    flex: 1;
   }
 
-  .product-link {
+  .suite-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .suite-pill {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    color: var(--accent);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .suite-pill:hover {
+    background: rgba(96, 165, 250, 0.1);
+    color: var(--accent);
+  }
+
+  .suite-pill--muted {
+    border-color: var(--border);
+    color: var(--text-muted);
+  }
+
+  .suite-link {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
     color: var(--accent);
     text-decoration: none;
     letter-spacing: 0.02em;
     transition: opacity 0.2s ease;
     align-self: flex-start;
-    margin-top: auto;
+    margin-top: 0.25rem;
   }
 
-  .product-link:hover {
+  .suite-link:hover {
     opacity: 0.7;
-  }
-
-  .product-link--muted {
-    color: var(--text-muted);
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    letter-spacing: 0.02em;
-    align-self: flex-start;
-    margin-top: auto;
-  }
-
-  .product-status--soon {
-    color: var(--accent);
-    opacity: 0.7;
-  }
-
-  .product-card--soon {
-    border-style: dashed;
-    opacity: 0.85;
   }
 
   /* Personal Agents */
@@ -372,8 +452,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       font-size: 2rem;
     }
 
-    .product-grid {
-      grid-template-columns: 1fr;
+    .suite-name {
+      font-size: 1rem;
     }
   }
 </style>
