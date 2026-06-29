@@ -22,18 +22,31 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
       </p>
     </header>
 
-    <!-- NitiScope project card -->
-    <div class="project-section">
-      <span class="project-section-label">Projects</span>
-      <div class="project-card">
-        <div class="project-card-top">
-          <span class="project-tag">Procurement intelligence</span>
-          <span class="project-status">Live</span>
+    <!-- NitiScope findings card -->
+    <div class="nitiscope-card">
+      <div class="nitiscope-header">
+        <div>
+          <span class="nitiscope-tag">Procurement intelligence</span>
+          <h2 class="nitiscope-title">NitiScope</h2>
+          <p class="nitiscope-sub">What does India's public-procurement record actually reveal?</p>
         </div>
-        <h2 class="project-name">NitiScope</h2>
-        <p class="project-body">Across 4.9 million government awards, 1 in 8 drew only a single bidder, and central procurement is three times less competitive than the states. NitiScope (by Dendrons.ai) makes patterns like these queryable across India's entire public-procurement record.</p>
-        <a href="https://nitiscope.com" target="_blank" rel="noopener" class="project-cta">Explore NitiScope →</a>
+        <span class="nitiscope-by">by Dendrons.ai</span>
       </div>
+      <div class="nitiscope-findings">
+        <div class="finding">
+          <span class="finding-stat">1 in 8</span>
+          <span class="finding-label">government awards drew only a single bidder</span>
+        </div>
+        <div class="finding">
+          <span class="finding-stat">3x</span>
+          <span class="finding-label">less competitive - central procurement vs. states</span>
+        </div>
+        <div class="finding">
+          <span class="finding-stat">4.9M</span>
+          <span class="finding-label">awards across India's entire procurement record, queryable</span>
+        </div>
+      </div>
+      <a href="https://nitiscope.com" target="_blank" rel="noopener" class="nitiscope-cta">Explore more at nitiscope.com →</a>
     </div>
 
     {allTags.length > 0 && (
@@ -89,71 +102,96 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     color: var(--text-secondary);
   }
 
-  /* NitiScope project section */
-  .project-section {
+  /* NitiScope findings card */
+  .nitiscope-card {
     margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .project-section-label {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-  }
-
-  .project-card {
+    padding: 1.75rem;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 6px;
+    background: rgba(96, 165, 250, 0.04);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.5rem;
   }
 
-  .project-card-top {
+  .nitiscope-header {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
-  .project-tag {
+  .nitiscope-tag {
+    display: inline-block;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 0.2rem 0.65rem;
     border-radius: 20px;
     border: 1px solid rgba(96, 165, 250, 0.35);
     color: var(--accent);
+    margin-bottom: 0.6rem;
   }
 
-  .project-status {
-    font-family: var(--font-heading);
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .project-name {
-    font-size: 1.75rem;
-    font-weight: 500;
+  .nitiscope-title {
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--text-primary);
-    margin: 0;
-    line-height: 1.3;
+    margin: 0 0 0.3rem;
+    font-family: var(--font-heading);
+    line-height: 1.2;
   }
 
-  .project-body {
+  .nitiscope-sub {
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    line-height: 1.75;
     margin: 0;
-    max-width: 680px;
+    font-style: italic;
+    line-height: 1.5;
   }
 
-  .project-cta {
-    display: inline-block;
+  .nitiscope-by {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+  }
+
+  .nitiscope-findings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  }
+
+  .finding {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .finding-stat {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .finding-label {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  .nitiscope-cta {
     font-family: var(--font-heading);
     font-size: 0.875rem;
     font-weight: 500;
@@ -163,8 +201,15 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     align-self: flex-start;
   }
 
-  .project-cta:hover {
+  .nitiscope-cta:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 600px) {
+    .nitiscope-findings {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 
   /* Tags filter */
