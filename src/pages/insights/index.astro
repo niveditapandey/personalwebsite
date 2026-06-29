@@ -5,11 +5,15 @@ import { getCollection } from 'astro:content';
 const articles = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-// Get all unique tags
 const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
 ---
 
-<BaseLayout title="Insights - Nivedita Pandey" description="Long-form writing by Nivedita Pandey on technology, institutions, society, and the intersection of AI with the real world.">
+<BaseLayout
+  title="Insights - Nivedita Pandey"
+  description="NitiScope decodes India's public-procurement record - 4.9M government awards - to reveal where spending faces no real competition and who actually wins. By Dendrons.ai."
+  ogTitle="NitiScope - India's Public Procurement, Decoded"
+  ogImage="https://nitiscope.com/og.png"
+>
   <div class="articles-page">
     <header class="page-header">
       <h1>Insights</h1>
@@ -17,7 +21,21 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
         Long-form writing on technology, institutions, and society.
       </p>
     </header>
-    
+
+    <!-- NitiScope project card -->
+    <div class="project-section">
+      <span class="project-section-label">Projects</span>
+      <div class="project-card">
+        <div class="project-card-top">
+          <span class="project-tag">Procurement intelligence</span>
+          <span class="project-status">Live</span>
+        </div>
+        <h2 class="project-name">NitiScope</h2>
+        <p class="project-body">Across 4.9 million government awards, 1 in 8 drew only a single bidder, and central procurement is three times less competitive than the states. NitiScope (by Dendrons.ai) makes patterns like these queryable across India's entire public-procurement record.</p>
+        <a href="https://nitiscope.com" target="_blank" rel="noopener" class="project-cta">Explore NitiScope →</a>
+      </div>
+    </div>
+
     {allTags.length > 0 && (
       <div class="tags-filter">
         {allTags.map(tag => (
@@ -25,16 +43,16 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
         ))}
       </div>
     )}
-    
+
     <div class="articles-list">
       {articles.map((article) => (
         <article class="article-card">
           <a href={`/insights/${article.slug}`}>
             <time datetime={article.data.publishDate.toISOString()}>
-              {article.data.publishDate.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+              {article.data.publishDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
               })}
             </time>
             <h2>{article.data.title}</h2>
@@ -55,22 +73,101 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
   .articles-page {
     max-width: 900px;
   }
-  
+
   .page-header {
     margin-bottom: 3rem;
   }
-  
+
   .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
   }
-  
+
   .page-description {
     font-size: 1.125rem;
     color: var(--text-secondary);
   }
-  
+
+  /* NitiScope project section */
+  .project-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-section-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .project-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    color: var(--accent);
+  }
+
+  .project-status {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .project-name {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .project-body {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .project-cta {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .project-cta:hover {
+    opacity: 0.7;
+  }
+
+  /* Tags filter */
   .tags-filter {
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +176,7 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--border);
   }
-  
+
   .tag {
     font-family: var(--font-heading);
     font-size: 0.85rem;
@@ -89,32 +186,33 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  
+
   .tag:hover {
     border-color: var(--accent);
     color: var(--accent);
   }
-  
+
+  /* Articles list */
   .articles-list {
     display: flex;
     flex-direction: column;
     gap: 3rem;
   }
-  
+
   .article-card {
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--border);
   }
-  
+
   .article-card:last-child {
     border-bottom: none;
   }
-  
+
   .article-card a {
     display: block;
     color: inherit;
   }
-  
+
   .article-card time {
     display: block;
     font-family: var(--font-heading);
@@ -122,7 +220,7 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     color: var(--text-muted);
     margin-bottom: 0.75rem;
   }
-  
+
   .article-card h2 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -130,23 +228,23 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     font-weight: 500;
     transition: color 0.2s ease;
   }
-  
+
   .article-card:hover h2 {
     color: var(--accent);
   }
-  
+
   .article-description {
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 1rem;
   }
-  
+
   .article-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .tag-small {
     font-family: var(--font-heading);
     font-size: 0.75rem;
@@ -155,10 +253,14 @@ const allTags = [...new Set(articles.flatMap(article => article.data.tags))];
     color: var(--accent);
     border-radius: 3px;
   }
-  
+
   @media (max-width: 768px) {
     .page-header h1 {
       font-size: 2rem;
+    }
+
+    .project-name {
+      font-size: 1.5rem;
     }
   }
 </style>
