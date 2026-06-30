@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verne - A Personal AI Agent for Extraordinary Voyages</title>
-<meta name="description" content="Verne is a self-hosted personal AI agent inspired by Jules Verne - built on NanoClaw, the Claude Agent SDK, and a persistent knowledge graph. By Nivedita Pande / Dendrons.ai">
+<meta name="description" content="Verne is a self-hosted personal AI agent inspired by Jules Verne - built on NanoClaw, Gemini 3.5 Flash via Vertex AI, and a persistent knowledge graph. By Nivedita Pandey / Dendrons.ai">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -355,7 +355,7 @@
         <strong>strategic peer</strong> - not a chatbot.
       </p>
       <div class="badge-row">
-        <span class="badge">Claude Agent SDK</span>
+        <span class="badge">Gemini 3.5 Flash</span>
         <span class="badge">NanoClaw v2</span>
         <span class="badge">Knowledge Graph Memory</span>
         <span class="badge">Telegram-Native</span>
@@ -448,7 +448,7 @@
         <h3>Memory That Compounds</h3>
         <p>A semantic knowledge graph stores facts, decisions, contacts,
         and timelines after every conversation - and recalls them before each reply.
-        Embeddings run locally via Ollama. Nothing leaves the machine.</p>
+        Recall is automatic - before each response, relevant memories are fetched and injected into context. Storage is evaluated after every exchange. Semantic embedding search via local Ollama: to be built.</p>
       </div>
       <div class="card">
         <span class="num">VOYAGE 03</span>
@@ -499,7 +499,7 @@
       <div class="arch-item">
         <h3>Host and Container Split</h3>
         <p>A Node host routes platform messages; each agent session gets an isolated
-        Bun-runtime Docker container running the <code>Claude Agent SDK</code>.
+        Bun-runtime Docker container running <code>Gemini 3.5 Flash via Vertex AI</code>.
         Containers are ephemeral - killed and respawned freely.</p>
       </div>
       <div class="arch-item">
@@ -513,7 +513,7 @@
         <h3>Semantic Memory Layer</h3>
         <p><code>mnemon</code> - a Go-based SQLite knowledge graph -
         hooks into the agent's turn lifecycle: recall before responding, store after.
-        Embeddings via <code>nomic-embed-text</code> on local Ollama.</p>
+        Local semantic search via Ollama: to be built.</p>
       </div>
       <div class="arch-item">
         <h3>Zero-Credential Containers</h3>
@@ -548,7 +548,7 @@
          |                               v
          |                 +---------------------------+
          |                 |   Agent Container (Bun)   |
-         |                 |  <span class="hl">Claude Agent SDK</span>         |
+         |                 |  <span class="hl">Gemini 3.5 Flash via Vertex AI</span>         |
          |                 |  mnemon memory hooks      |
          |                 |  MCP tools (Docs, ...)    |
          |                 +------------+--------------+
@@ -584,8 +584,8 @@
       </div>
       <div class="crew-card">
         <span class="role">Personal - Logistics - Daily Rhythm</span>
-        <h3>Lumiere</h3>
-        <p class="named">after the Lumiere brothers - who lit up everyday life</p>
+        <h3>Lumière</h3>
+        <p class="named">after the Lumière brothers - who lit up everyday life</p>
         <p>The trusted EA. Morning briefings at 7:30 sharp, travel logistics,
         to-do tracking, quick capture to notes. Warm but precise - built to be
         steady when the day isn't.</p>
@@ -596,7 +596,7 @@
       Both agents run as separate NanoClaw agent groups - separate containers, separate
       personas, separate channel wirings - but query the <code>same mnemon
       knowledge graph</code>. What Verne learns about shifting priorities surfaces for
-      Lumiere's planning, and vice versa. Separation of concerns; unity of context.
+      Lumière's planning, and vice versa. Separation of concerns; unity of context.
     </p>
   </div>
 </section>
@@ -620,7 +620,7 @@
         </tr>
         <tr>
           <td>Reasoning</td>
-          <td><code>Claude Agent SDK</code> (Anthropic)</td>
+          <td><code>Gemini 3.5 Flash via Vertex AI</code> (Anthropic)</td>
           <td>Full agentic loop - tools, file workspace, scheduled tasks - inside the container.</td>
         </tr>
         <tr>
@@ -640,8 +640,8 @@
         </tr>
         <tr>
           <td>Memory</td>
-          <td><code>mnemon + Ollama (nomic-embed-text)</code></td>
-          <td>Local semantic knowledge graph. Recall-before, store-after, on every turn.</td>
+          <td><code>mnemon - SQLite knowledge graph</code></td>
+          <td>Automatic recall-before, store-after on every turn. Local Ollama embeddings: to be built.</td>
         </tr>
         <tr>
           <td>Credentials</td>
@@ -661,7 +661,7 @@
         <tr>
           <td>Hardware</td>
           <td><code>MacBook (Apple Silicon)</code></td>
-          <td>Self-hosted. The agent, its memory, and its data never leave my machine.</td>
+          <td>Self-hosted on Apple Silicon. Routing, memory, and session state never leave the machine. Inference via Vertex AI (Google Cloud).</td>
         </tr>
       </tbody>
     </table>
@@ -674,11 +674,11 @@
     <div>
       <p class="sig">"The sea is everything." - Captain Nemo</p>
       <p class="fine" style="margin-top:14px;">
-        Built by Nivedita Pande · <a href="https://dendrons.ai" rel="noopener">Dendrons.ai</a>
+        Built by Nivedita Pandey · <a href="https://dendrons.ai" rel="noopener">Dendrons.ai</a>
       </p>
     </div>
     <p class="fine">
-      VERNE · personal agent project · NanoClaw / Claude Agent SDK / mnemon<br>
+      VERNE · personal agent project · NanoClaw / Gemini 3.5 Flash via Vertex AI / mnemon<br>
       A demonstration of self-hosted agentic AI - part of the Dendrons.ai portfolio.
     </p>
   </div>
