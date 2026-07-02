@@ -135,6 +135,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a class="suite-link" href="https://mirrormirror.life" target="_blank" rel="noopener noreferrer">Visit →</a>
       </div>
 
+      <!-- NitiScope findings card -->
+      <div class="nitiscope-card">
+        <div class="nitiscope-header">
+          <div>
+            <span class="nitiscope-tag">Procurement intelligence</span>
+            <h2 class="nitiscope-title">NitiScope</h2>
+            <p class="nitiscope-sub">What does India's public-procurement record actually reveal?</p>
+          </div>
+          <span class="nitiscope-by">by Dendrons.ai</span>
+        </div>
+        <div class="nitiscope-findings">
+          <div class="finding">
+            <span class="finding-stat">1 in 8</span>
+            <span class="finding-label">government awards drew only a single bidder</span>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">3x</span>
+            <span class="finding-label">less competitive - central procurement vs. states</span>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">4.9M</span>
+            <span class="finding-label">awards across India's entire procurement record, queryable</span>
+          </div>
+        </div>
+        <a href="https://nitiscope.com" target="_blank" rel="noopener" class="nitiscope-cta">Explore more at nitiscope.com →</a>
+      </div>
+
     </section>
 
     <!-- Personal Agents -->
@@ -366,6 +393,116 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .suite-link:hover {
     opacity: 0.7;
+  }
+
+  /* NitiScope findings card */
+  .nitiscope-card {
+    margin-top: 2rem;
+    padding: 1.75rem;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 6px;
+    background: rgba(96, 165, 250, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nitiscope-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nitiscope-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .nitiscope-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.3rem;
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  .nitiscope-sub {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .nitiscope-by {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+  }
+
+  .nitiscope-findings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  }
+
+  .finding {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .finding-stat {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .finding-label {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  .nitiscope-cta {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .nitiscope-cta:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 600px) {
+    .nitiscope-findings {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 
   /* Personal Agents */
