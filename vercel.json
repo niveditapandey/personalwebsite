@@ -5,6 +5,12 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "verne.niveditapandey.com" }],
+      "destination": "https://niveditapandey.com/verne",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "verne.niveditapandey.com" }],
       "destination": "https://niveditapandey.com/verne",
