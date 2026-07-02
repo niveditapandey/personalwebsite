@@ -3,11 +3,12 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "astro",
-  "rewrites": [
+  "redirects": [
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "verne.niveditapandey.com" }],
-      "destination": "/verne/:path*"
+      "destination": "https://niveditapandey.com/verne",
+      "permanent": false
     }
   ]
 }
