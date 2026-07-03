@@ -1,0 +1,372 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Speaking - Nivedita Pandey" description="Invite Nivedita Pandey to speak on AI readiness, AI governance, and agentic AI. National TV, international webinars, and 500 civil servants and PSU executives trained, rated 4.81/5.">
+  <div class="speaking-page">
+    <header class="page-header">
+      <h1>Speaking</h1>
+      <p class="page-description">
+        Keynotes, panels, lectures, and media appearances on applied AI, governance, and digital transformation - delivered in English and Hindi, across borders and formats.
+      </p>
+    </header>
+
+    <!-- Proof bar -->
+    <div class="proof-bar">
+      <div class="proof"><span class="proof-number">4.81/5</span><span class="proof-label">Average workshop rating</span></div>
+      <div class="proof"><span class="proof-number">~500</span><span class="proof-label">Civil servants &amp; PSU executives trained</span></div>
+      <div class="proof"><span class="proof-number">TV · Web · Stage</span><span class="proof-label">National broadcast to international webinars</span></div>
+    </div>
+
+    <!-- Featured talk -->
+    <section class="speaking-section">
+      <h2 class="section-title">Featured Talk</h2>
+      <div class="featured-video">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/Kw0LkPl5Dco"
+            title="AI Readiness: Why 75% of AI Projects Fail and How to Get It Right"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="featured-meta">
+          <p class="featured-title">AI Readiness: Why 75% of AI Projects Fail and How to Get It Right</p>
+          <p class="featured-host">Squirro (Switzerland) · Webinar · Feb 2025</p>
+          <p class="featured-description">On AI adoption failure modes, organisational readiness, and what separates AI initiatives that succeed from those that stall - drawing on experience across government, financial services, and enterprise.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics -->
+    <section class="speaking-section">
+      <h2 class="section-title">Topics I Speak On</h2>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h3 class="topic-name">AI Readiness &amp; Adoption</h3>
+          <p class="topic-desc">Why most AI initiatives stall, and the organisational systems, governance, and capability that separate pilots from production.</p>
+        </div>
+        <div class="topic-card">
+          <h3 class="topic-name">AI Governance &amp; Regulation</h3>
+          <p class="topic-desc">Building AI responsibly in regulated environments - drawing on central bank innovation work and governance frameworks across jurisdictions.</p>
+        </div>
+        <div class="topic-card">
+          <h3 class="topic-name">AI for Government &amp; Public Institutions</h3>
+          <p class="topic-desc">Capacity building for civil servants, Digital Public Infrastructure, and taking AI from policy intent to working prototypes.</p>
+        </div>
+        <div class="topic-card">
+          <h3 class="topic-name">Agentic AI &amp; the Future of Work</h3>
+          <p class="topic-desc">What AI agents change for individuals, businesses, and society - and what one person, properly tooled, can now build alone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past stages -->
+    <section class="speaking-section">
+      <h2 class="section-title">Past Stages</h2>
+      <div class="stage-list">
+        <div class="stage-item">
+          <div class="stage-left">
+            <span class="stage-name">Squirro</span>
+            <span class="stage-detail">International webinar with the Swiss enterprise GenAI platform - AI readiness for the enterprise</span>
+          </div>
+          <span class="stage-meta">Webinar · Feb 2025</span>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left">
+            <span class="stage-name">Doordarshan</span>
+            <span class="stage-detail">India's national broadcaster - AI and its impact on how we live, work, and prepare</span>
+          </div>
+          <span class="stage-meta">TV Interview · Apr 2026</span>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left">
+            <span class="stage-name">Naxatra News</span>
+            <span class="stage-detail">Two-part television conversation on AI's impact on individuals, institutions, and society</span>
+          </div>
+          <span class="stage-meta">TV Interview · May 2026</span>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left">
+            <span class="stage-name">IIM Ranchi - Startup Conclave</span>
+            <span class="stage-detail">Invited as distinguished guest - panelist and judge on MSME-startup collaboration</span>
+          </div>
+          <span class="stage-meta">Panel · Feb 2026</span>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left">
+            <span class="stage-name">Government Administrative Training Institute (SKIPA)</span>
+            <span class="stage-detail">Designed and delivered a state's first Applied AI Innovation Lab - lecture series for administrative service officers, rated 4.81/5</span>
+          </div>
+          <span class="stage-meta">Lecture Series · 2026</span>
+        </div>
+      </div>
+      <p class="stage-more"><a href="/media/">See all media appearances →</a></p>
+    </section>
+
+    <!-- CTA -->
+    <section class="speaking-cta">
+      <h2 class="cta-heading">Invite me to speak</h2>
+      <p class="cta-text">
+        Available for keynotes, panels, workshops, and media - in person or remote, internationally. Tell me about your event, audience, and dates.
+      </p>
+      <a class="cta-button" href="mailto:np@dendrons.ai?subject=Speaking%20invitation">Get in touch →</a>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .speaking-page {
+    max-width: 750px;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  /* Proof bar */
+  .proof-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3.5rem;
+  }
+
+  .proof {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .proof-number {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+  }
+
+  .proof-label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+
+  /* Sections */
+  .speaking-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  /* Featured video */
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: var(--sidebar-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .featured-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.3rem;
+  }
+
+  .featured-host {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin: 0 0 0.6rem;
+  }
+
+  .featured-description {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Topics */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .topic-card {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .topic-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .topic-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Stages */
+  .stage-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stage-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stage-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .stage-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .stage-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .stage-detail {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .stage-meta {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+  }
+
+  .stage-more {
+    margin-top: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+  }
+
+  /* CTA */
+  .speaking-cta {
+    padding: 2rem;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 8px;
+    background: rgba(96, 165, 250, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cta-heading {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .cta-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .cta-button {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity 0.2s ease;
+  }
+
+  .cta-button:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .proof-bar {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .topic-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stage-item {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
