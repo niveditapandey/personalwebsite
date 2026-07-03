@@ -22,6 +22,7 @@ const jsonLd = JSON.stringify({
     "https://github.com/niveditapandey",
     "https://dendrons.ai"
   ],
+  "knowsLanguage": ["English", "Hindi", "Sanskrit", "French"],
   "description": "Applied AI, Digital Innovation, and Strategic Growth Leader. 16 years across enterprise, fintech, and government in the US, UK, Singapore, and India."
 });
 ---
@@ -78,6 +79,9 @@ const jsonLd = JSON.stringify({
       </p>
       <p>
         I hold an MBA from The Wharton School as a Joseph Wharton Fellow (merit-based fellowship), and a Computer Science Engineering degree with distinction where I ranked 1st in a class of 600 (placed on the Dean's List across the entire University).
+      </p>
+      <p class="bio-languages">
+        Languages: English, Hindi, Sanskrit, French (beginner)
       </p>
 
       <div class="dendrons-card">
@@ -294,6 +298,13 @@ const jsonLd = JSON.stringify({
   .dendrons-pill--anthropic {
     border-color: color-mix(in srgb, var(--accent) 40%, transparent);
     color: var(--accent);
+  }
+
+  .bio-languages {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
   }
 
   .bio-contact {
