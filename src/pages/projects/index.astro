@@ -70,10 +70,12 @@ const sectorColors: Record<string, string> = {
       );
     })}
 
-    <p class="page-footer">
-      Interested in working together? Reach me via <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a> or at
-      <a href="mailto:np@dendrons.ai">np@dendrons.ai</a>
-    </p>
+    <div class="playbook-cta">
+      <p class="playbook-cta-text">
+        None of these came with a playbook - every case started with a blank page. But in solving each first-time challenge, I wrote one. If you're staring at a similar zero-to-one-to-scale problem, the fastest route to the playbook is a conversation.
+      </p>
+      <a class="playbook-cta-button" href="mailto:np@dendrons.ai?subject=Zero-to-one%20conversation">Get in touch →</a>
+    </div>
   </div>
 </BaseLayout>
 
@@ -223,18 +225,37 @@ const sectorColors: Record<string, string> = {
     text-decoration: underline;
   }
 
-  .page-footer {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-top: 1rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border);
+  .playbook-cta {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 8px;
+    background: rgba(96, 165, 250, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .page-footer a {
-    color: var(--accent);
+  .playbook-cta-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .playbook-cta-button {
     font-family: var(--font-heading);
-    margin-left: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity 0.2s ease;
+  }
+
+  .playbook-cta-button:hover {
+    opacity: 0.7;
   }
 
   @media (max-width: 768px) {
