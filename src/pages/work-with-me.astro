@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Work With Me - Nivedita Pandey" description="Work with Nivedita Pandey - startup and SME advisory, AI and innovation advisory for institutions, fractional leadership, AI capacity building, speaking, and Dendrons.ai products.">
+  <div class="wwm-page">
+    <header class="page-header">
+      <h1>Work With Me</h1>
+      <p class="page-description">
+        Everything on this site - the zero-to-one builds, the playbooks, the training - is available in six ways.
+      </p>
+    </header>
+
+    <div class="model-grid">
+
+      <div class="model-card">
+        <span class="model-number">01</span>
+        <h2 class="model-name">Startup &amp; SME Advisory + Board Roles</h2>
+        <p class="model-for">For founders and owner-led businesses.</p>
+        <p class="model-desc">For startups: zero to one, GTM, and new market entry across Asia, the US, and Europe. For SMEs: AI-led transformation, from first use case to running capability. Available for advisory and board positions.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="model-number">02</span>
+        <h2 class="model-name">AI &amp; Innovation Advisory for Institutions</h2>
+        <p class="model-for">For governments, multilaterals, and regulated financial institutions.</p>
+        <p class="model-desc">The RBIH and World Bank playbook: from AI use-case selection and innovation strategy to governance and cross-border DPI partnerships.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="model-number">03</span>
+        <h2 class="model-name">Fractional AI &amp; Growth Leadership</h2>
+        <p class="model-for">For organisations that need the function built before they can justify the full-time executive.</p>
+        <p class="model-desc">First-hire operator experience: new verticals, new markets, new products - from blank page to a running team.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="model-number">04</span>
+        <h2 class="model-name">AI Capacity Building &amp; Training</h2>
+        <p class="model-for">For governments, PSUs, and enterprises that want their people able to evaluate, pilot, and deploy AI.</p>
+        <p class="model-desc">~500 civil servants and PSU executives trained, rated 4.81/5. Delivered via <a href="https://skillai.academy" target="_blank" rel="noopener noreferrer">SkillAI Academy</a> or as custom programs.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="model-number">05</span>
+        <h2 class="model-name">Speaking &amp; Media</h2>
+        <p class="model-for">For conferences, broadcasters, and institutions.</p>
+        <p class="model-desc">Keynotes, panels, workshops, and interviews - from national TV to international webinars. Topics, past stages, and a featured talk on the <a href="/speaking/">Speaking page</a>.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="model-number">06</span>
+        <h2 class="model-name">Product Partnerships via Dendrons.ai</h2>
+        <p class="model-for">For organisations whose problem is already solved by a product.</p>
+        <p class="model-desc">getHeard, Compass, getBookings, NITI Scope, and the wider <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a> suite - the productised route to the same playbooks.</p>
+      </div>
+
+    </div>
+
+    <div class="wwm-cta">
+      <p class="wwm-availability">Based in Singapore. Working internationally - remote or on site - across US, European, and Asian time zones.</p>
+      <p class="wwm-cta-text">Tell me what you're trying to build.</p>
+      <a class="wwm-cta-button" href="mailto:np@dendrons.ai?subject=Working%20together">np@dendrons.ai →</a>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .wwm-page {
+    max-width: 750px;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .model-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .model-number {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  .model-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .model-for {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .model-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .model-desc a {
+    color: var(--accent);
+  }
+
+  .wwm-cta {
+    padding: 2rem;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 8px;
+    background: rgba(96, 165, 250, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .wwm-availability {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .wwm-cta-text {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .wwm-cta-button {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity 0.2s ease;
+  }
+
+  .wwm-cta-button:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .model-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
