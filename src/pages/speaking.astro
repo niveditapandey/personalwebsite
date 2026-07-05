@@ -136,7 +136,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .page-header h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.6rem, 4.5vw, 3.4rem); letter-spacing: -0.03em; line-height: 1.1;
     margin-bottom: 1rem;
     font-weight: 500;
   }
@@ -195,7 +195,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     width: 100%;
     padding-bottom: 56.25%;
     background: var(--sidebar-bg);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
     margin-bottom: 1rem;
   }
@@ -241,7 +241,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .topic-card {
     padding: 1.25rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

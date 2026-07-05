@@ -288,7 +288,12 @@ const resolvedOgTitle = ogTitle || title;
         margin-left: 280px;
         width: calc(100% - 280px);
         padding: 4rem;
-        max-width: 900px;
+      }
+
+      /* Centre each page's content column in the space beside the sidebar */
+      .main-content > * {
+        margin-left: auto;
+        margin-right: auto;
       }
       
       /* Responsive */
