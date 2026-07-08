@@ -241,6 +241,29 @@ const skipaSections: SubSection[] = [
 
       <div class="event-block">
         <div class="event-header">
+          <span class="event-name">CMPDIL — Applied AI in Mining</span>
+          <span class="event-meta">Jul 2026 · Central Mine Planning &amp; Design Institute Limited · A Coal India Subsidiary &amp; Mini Ratna (Category 1) PSU · Ranchi</span>
+        </div>
+        <div class="ribbon-wrapper">
+          <div class="ribbon-track">
+            {[...Array(2)].flatMap(() => [
+              { src: "/media/CMPDIL-Workshop-ClassroomWide.jpeg", caption: "Applied AI in Mining — full room" },
+              { src: "/media/CMPDIL-Workshop-Presenting1.jpeg", caption: "Live session — AI use cases in mining" },
+              { src: "/media/CMPDIL-Workshop-GroupPhoto.jpeg", caption: "With CMPDIL participants" },
+              { src: "/media/CMPDIL-Workshop-Presenting2.jpeg", caption: "Six Companies, Six Entry Points into AI" },
+              { src: "/media/CMPDIL-Workshop-Presenting3.jpeg", caption: "Interactive Q&A session" },
+            ]).map((p) => (
+              <figure class="photo-item">
+                <img src={p.src} alt={p.caption} loading="lazy" />
+                <figcaption>{p.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="event-block">
+        <div class="event-header">
           <span class="event-name">Administrative Training Institute</span>
           <span class="event-meta">Jan-Mar 2026</span>
         </div>
