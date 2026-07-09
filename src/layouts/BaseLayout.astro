@@ -129,6 +129,18 @@ const resolvedOgTitle = ogTitle || title;
       <!-- Main Content -->
       <main class="main-content">
         <slot />
+        <footer class="site-footer">
+          <div class="footer-links">
+            <a href="mailto:np@niveditapandey.com">np@niveditapandey.com</a>
+            <span class="footer-dot">·</span>
+            <a href="https://www.linkedin.com/in/niveditapandey/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <span class="footer-dot">·</span>
+            <a href="https://x.com/curious_NP" target="_blank" rel="noopener noreferrer">X</a>
+            <span class="footer-dot">·</span>
+            <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a>
+          </div>
+          <p class="footer-copy">© {new Date().getFullYear()} Nivedita Pandey</p>
+        </footer>
       </main>
     </div>
     
@@ -346,6 +358,48 @@ const resolvedOgTitle = ogTitle || title;
       .main-content > * {
         margin-left: auto;
         margin-right: auto;
+      }
+
+      /* Footer */
+      .site-footer {
+        max-width: 750px;
+        margin-top: 5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      .footer-dot {
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+
+      .footer-copy {
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin: 0;
       }
       
       /* Responsive */

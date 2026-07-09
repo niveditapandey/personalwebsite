@@ -16,13 +16,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-heading">Problems</h2>
       <p class="section-intro">The questions I keep returning to.</p>
       <ul class="problem-list">
-        <li>Can a machine tell us something true about ourselves that conventional assessments miss?</li>
-        <li>If one person can work at the leverage of a team, what new responsibilities come with that power?</li>
-        <li>What does it take to reliably separate signal from noise when information is abundant and attention is scarce?</li>
-        <li>Why do businesses lose customers who have already raised their hand and shown interest?</li>
-        <li>What separates organisations that successfully operationalise AI from those that never get beyond pilots?</li>
-        <li>How do you govern a resource that grows exponentially while remaining almost invisible?</li>
-        <li>When agents begin shopping on our behalf, what will the experience and trust look like?</li>
+        <li>Can a machine tell us something true about ourselves that conventional assessments miss?
+          <span class="problem-pursuit">Pursuing it through MirrorMirror.life - personality assessment built on narrative psychology.</span></li>
+        <li>If one person can work at the leverage of a team, what new responsibilities come with that power?
+          <span class="problem-pursuit">Living it daily - Dendrons is built and run with the agents it ships.</span></li>
+        <li>What does it take to reliably separate signal from noise when information is abundant and attention is scarce?
+          <span class="problem-pursuit">Pursuing it through getHeard - media intelligence and stakeholder research.</span></li>
+        <li>Why do businesses lose customers who have already raised their hand and shown interest?
+          <span class="problem-pursuit">Pursuing it through getBookings + Newton - agents that turn intent into confirmed visits.</span></li>
+        <li>What separates organisations that successfully operationalise AI from those that never get beyond pilots?
+          <span class="problem-pursuit">Pursuing it through Compass assessments and 473 officers trained across government and PSUs.</span></li>
+        <li>How do you govern a resource that grows exponentially while remaining almost invisible?
+          <span class="problem-pursuit">Pursuing it through Steward - token-level visibility and control of enterprise AI spend.</span></li>
+        <li>When agents begin shopping on our behalf, what will the experience and trust look like?
+          <span class="problem-pursuit">Pursuing it through the Agentic Commerce Suite - RankReady, TransactReady, TrustReady.</span></li>
       </ul>
     </section>
 
@@ -258,6 +265,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .problem-list li {
     color: var(--text-secondary);
     line-height: 1.8;
+  }
+
+  .problem-pursuit {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    margin-top: 0.15rem;
   }
 
   /* Products - Suite Cards */
