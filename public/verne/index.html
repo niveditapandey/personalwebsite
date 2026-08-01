@@ -359,7 +359,7 @@
         <span class="badge">NanoClaw v2</span>
         <span class="badge">Knowledge Graph Memory</span>
         <span class="badge">Telegram-Native</span>
-        <span class="badge">Runs on My Mac</span>
+        <span class="badge">Runs on GCP</span>
       </div>
       <p class="meta">STATUS: <span>OPERATIONAL</span> &nbsp;·&nbsp; PORT OF REGISTRY: <span>INDIA - SINGAPORE</span></p>
     </div>
@@ -423,7 +423,7 @@
       <p>
         Verne is my implementation of that idea - extended with persistent semantic
         memory, document integrations, and a two-agent architecture that separates
-        business from personal life while sharing one brain.
+        business from personal life, each with its own private memory.
       </p>
     </div>
   </div>
@@ -474,9 +474,8 @@
       <div class="card">
         <span class="num">VOYAGE 06</span>
         <h3>Deadline Watch</h3>
-        <p>Tracks trademark filings, follow-ups, and time-sensitive windows.
-        Scheduled tasks run on cron inside the host - a morning briefing lands
-        before I am out of bed.</p>
+        <p>Tracks trademark filings, follow-ups, and time-sensitive windows
+        via scheduled tasks.</p>
       </div>
     </div>
   </div>
@@ -517,10 +516,11 @@
       </div>
       <div class="arch-item">
         <h3>Zero-Credential Containers</h3>
-        <p>API keys and OAuth tokens never enter the agent container. A
-        <code>OneCLI</code> gateway proxies outbound HTTPS and injects
-        credentials at request time - Google APIs are called with plain
-        <code>fetch()</code>, no SDK, no stored token.</p>
+        <p>API keys and tokens are injected as environment variables at
+        container spawn. A <code>OneCLI</code> gateway integration exists in
+        the framework for stricter request-time credential proxying but
+        isn't enabled in the current deployment - Google APIs are called
+        with plain <code>fetch()</code>, no SDK.</p>
       </div>
       <div class="arch-item">
         <h3>Persona as Code</h3>
@@ -569,7 +569,7 @@
 <section class="crew">
   <div class="wrap">
     <span class="kicker">Chapter IV - The Crew</span>
-    <h2>Two agents, one brain</h2>
+    <h2>Two agents, separate memory</h2>
     <div class="rule"></div>
 
     <div class="crew-grid">
@@ -621,7 +621,7 @@
         </tr>
         <tr>
           <td>Reasoning</td>
-          <td><code>Gemini 3.5 Flash via Vertex AI</code> (Anthropic)</td>
+          <td><code>Gemini 3.5 Flash via Vertex AI</code></td>
           <td>Full agentic loop - tools, file workspace, scheduled tasks - inside the container.</td>
         </tr>
         <tr>
@@ -661,8 +661,8 @@
         </tr>
         <tr>
           <td>Hardware</td>
-          <td><code>MacBook (Apple Silicon)</code></td>
-          <td>Self-hosted on Apple Silicon. Routing, memory, and session state never leave the machine. Inference via Vertex AI (Google Cloud).</td>
+          <td><code>GCE VM (Singapore)</code></td>
+          <td>Prototyped locally on Apple Silicon; runs 24/7 on a Google Cloud Compute Engine instance I provision and manage myself. Inference via Vertex AI (Google Cloud).</td>
         </tr>
       </tbody>
     </table>
