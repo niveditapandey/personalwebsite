@@ -93,21 +93,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a class="suite-link" href="https://compass.dendrons.ai" target="_blank" rel="noopener noreferrer">Explore suite →</a>
         </div>
 
-        <div class="suite-card suite-card--soon">
+        <div class="suite-card">
           <div class="suite-card-top">
             <div>
               <span class="suite-label">AI Operations</span>
               <h3 class="suite-name">Steward</h3>
             </div>
-            <span class="suite-status suite-status--soon">Coming soon</span>
+            <span class="suite-status suite-status--mixed">Pare live · Rein in private access</span>
           </div>
           <p class="suite-tagline">Every token. Every dollar. Accounted for.</p>
-          <p class="suite-description">Know what your AI is spending. Control it before the bill does. Rein governs AI spend at the enterprise level; Pare right-sizes model usage without sacrificing output quality.</p>
+          <p class="suite-description">Rein governs AI spend at the enterprise level - metering, budgets, and an audit trail. Pare shows individual developers what their AI usage actually costs, privately and locally.</p>
           <div class="suite-products">
             <span class="suite-pill suite-pill--muted">Rein</span>
-            <span class="suite-pill suite-pill--muted">Pare</span>
+            <a href="https://chromewebstore.google.com/detail/olcdjbadbcohkkfkfebmncjidbdolbgm" target="_blank" rel="noopener noreferrer" class="suite-pill">Pare</a>
           </div>
-          <a class="suite-link" href="https://steward.dendrons.ai" target="_blank" rel="noopener noreferrer">Join waitlist →</a>
+          <a class="suite-link" href="https://steward.dendrons.ai" target="_blank" rel="noopener noreferrer">Explore Steward →</a>
         </div>
 
         <div class="suite-card suite-card--soon">
@@ -350,6 +350,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .suite-status--soon {
     color: var(--accent);
     opacity: 0.7;
+  }
+
+  .suite-status--mixed {
+    white-space: normal;
+    text-align: right;
+    max-width: 150px;
+    font-size: 0.64rem;
+    line-height: 1.4;
   }
 
   .suite-tagline {
