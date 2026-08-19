@@ -269,18 +269,36 @@ const skipaSections: SubSection[] = [
         <div class="event-subsection">
           <p class="subsection-label">CMPDI RI-VI, Singrauli &amp; Indian Institute of Coal Management</p>
           <div class="collage-row">
-            <figure class="collage-item">
-              <img src="/media/CMPDIL-Singrauli-Collage2.jpg" alt="Felicitation and AI Envisioning session for CMPDI RI-VI Singrauli executives" loading="lazy" />
-              <figcaption>Felicitation and AI Envisioning session - CMPDI RI-VI, Singrauli</figcaption>
-            </figure>
-            <figure class="collage-item">
-              <img src="/media/CMPDIL-Singrauli-Collage1.jpg" alt="Group photos with CMPDI RI-VI Singrauli participants" loading="lazy" />
-              <figcaption>With CMPDI RI-VI, Singrauli participants</figcaption>
-            </figure>
-            <figure class="collage-item">
-              <img src="/media/IICM-Collage.jpg" alt="Discovering Opportunities for AI Layer - IICM" loading="lazy" />
-              <figcaption>Discovering Opportunities for AI Layer - IICM</figcaption>
-            </figure>
+            <div class="collage-track">
+              <div class="collage-set">
+                <figure class="collage-item">
+                  <img src="/media/CMPDIL-Singrauli-Collage2.jpg" alt="Felicitation and AI Envisioning session for CMPDI RI-VI Singrauli executives" loading="lazy" />
+                  <figcaption>Felicitation and AI Envisioning session - CMPDI RI-VI, Singrauli</figcaption>
+                </figure>
+                <figure class="collage-item">
+                  <img src="/media/CMPDIL-Singrauli-Collage1.jpg" alt="Group photos with CMPDI RI-VI Singrauli participants" loading="lazy" />
+                  <figcaption>With CMPDI RI-VI, Singrauli participants</figcaption>
+                </figure>
+                <figure class="collage-item">
+                  <img src="/media/IICM-Collage.jpg" alt="Discovering Opportunities for AI Layer - IICM" loading="lazy" />
+                  <figcaption>Discovering Opportunities for AI Layer - IICM</figcaption>
+                </figure>
+              </div>
+              <div class="collage-set collage-set--dup" aria-hidden="true">
+                <figure class="collage-item">
+                  <img src="/media/CMPDIL-Singrauli-Collage2.jpg" alt="" loading="lazy" />
+                  <figcaption>Felicitation and AI Envisioning session - CMPDI RI-VI, Singrauli</figcaption>
+                </figure>
+                <figure class="collage-item">
+                  <img src="/media/CMPDIL-Singrauli-Collage1.jpg" alt="" loading="lazy" />
+                  <figcaption>With CMPDI RI-VI, Singrauli participants</figcaption>
+                </figure>
+                <figure class="collage-item">
+                  <img src="/media/IICM-Collage.jpg" alt="" loading="lazy" />
+                  <figcaption>Discovering Opportunities for AI Layer - IICM</figcaption>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -755,16 +773,37 @@ const skipaSections: SubSection[] = [
     line-height: 1.4;
   }
 
-  /* Collage display - full image, no crop */
+  /* Collage display - full image, no crop. Ribbon on desktop, static grid on mobile. */
   .collage-row {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+
+  .collage-track {
     display: flex;
-    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: max-content;
+    animation: collage-scroll 24s linear infinite;
+  }
+
+  .collage-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes collage-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .collage-set {
+    display: flex;
     gap: 1.5rem;
   }
 
   .collage-item {
-    flex: 1 1 260px;
-    max-width: 360px;
+    flex: 0 0 auto;
+    width: 280px;
     margin: 0;
   }
 
@@ -798,6 +837,31 @@ const skipaSections: SubSection[] = [
 
     .ribbon-track {
       animation-duration: 20s;
+    }
+
+    .collage-row {
+      overflow: visible;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+
+    .collage-track {
+      width: auto;
+      animation: none;
+    }
+
+    .collage-set {
+      flex-wrap: wrap;
+    }
+
+    .collage-set--dup {
+      display: none;
+    }
+
+    .collage-item {
+      flex: 1 1 220px;
+      max-width: 300px;
+      width: auto;
     }
   }
 </style>
