@@ -16,28 +16,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-heading">Problems</h2>
       <p class="section-intro">The questions I keep returning to.</p>
       <ul class="problem-list">
-        <li>Can a machine tell us something true about ourselves that conventional assessments miss?
-          <span class="problem-pursuit">Pursuing it through MirrorMirror.life - personality assessment built on narrative psychology.</span></li>
-        <li>If one person can work at the leverage of a team, what new responsibilities come with that power?
-          <span class="problem-pursuit">Living it daily - Dendrons is built and run with the agents it ships.</span></li>
+        <li>When AI systems act and transact on behalf of humans, who is accountable when they err - and what infrastructure catches that before damage is done?
+          <span class="problem-pursuit">Pursuing it through Commerce Suite and Compass GovernReady - governance before deployment, accountability after.</span></li>
+        <li>How do organisations build meaningful AI governance before deployment, not compliance frameworks retrofitted after the fact?
+          <span class="problem-pursuit">Pursuing it through Compass Suite - four assessments covering the full governance arc from readiness to continuous compliance monitoring.</span></li>
+        <li>How do you govern a resource that grows exponentially while remaining almost invisible to the people paying for it?
+          <span class="problem-pursuit">Pursuing it through Steward - token-level visibility and control of enterprise AI spend.</span></li>
+        <li>What would it take for public institutions to trust AI enough to depend on it for consequential decisions - and who validates that trust?
+          <span class="problem-pursuit">Pursuing it through NitiScope and AI Envisioning work with 583 civil servants and PSU executives across government and state enterprises.</span></li>
         <li>What does it take to reliably separate signal from noise when information is abundant and attention is scarce?
           <span class="problem-pursuit">Pursuing it through getHeard - media intelligence and stakeholder research.</span></li>
-        <li>Why do businesses lose customers who have already raised their hand and shown interest?
-          <span class="problem-pursuit">Pursuing it through getBookings + Newton - agents that turn intent into confirmed visits.</span></li>
-        <li>What separates organisations that successfully operationalise AI from those that never get beyond pilots?
-          <span class="problem-pursuit">Pursuing it through Compass assessments and 583 officers reached via AI Envisioning &amp; Capability Building across government and PSUs.</span></li>
-        <li>How do you govern a resource that grows exponentially while remaining almost invisible?
-          <span class="problem-pursuit">Pursuing it through Steward - token-level visibility and control of enterprise AI spend.</span></li>
-        <li>When agents begin shopping on our behalf, what will the experience and trust look like?
-          <span class="problem-pursuit">Pursuing it through the Agentic Commerce Suite - RankReady, TransactReady, TrustReady.</span></li>
+        <li>If one person can work at the leverage of a team, what new responsibilities come with that power?
+          <span class="problem-pursuit">Living it daily - Dendrons is built and run with the agents it ships.</span></li>
+        <li>Can a machine tell us something true about ourselves that conventional assessments miss?
+          <span class="problem-pursuit">Pursuing it through MirrorMirror.life - personality assessment built on narrative psychology.</span></li>
       </ul>
     </section>
 
     <!-- Products -->
-    <section class="building-section">
+    <section class="building-section building-section--last">
       <h2 class="section-heading">Products</h2>
-      <p class="section-intro">Five suites. One platform. Built at <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a>.</p>
+      <p class="section-intro">From public procurement intelligence to enterprise AI governance. Built at <a href="https://dendrons.ai" target="_blank" rel="noopener noreferrer">Dendrons.ai</a>.</p>
 
+      <!-- NitiScope findings card -->
+      <div class="nitiscope-card">
+        <div class="nitiscope-header">
+          <div>
+            <span class="nitiscope-tag">Procurement intelligence</span>
+            <h2 class="nitiscope-title">NITI Scope</h2>
+            <p class="nitiscope-sub">What does India's public-procurement record actually reveal?</p>
+          </div>
+          <span class="nitiscope-by">by Dendrons.ai</span>
+        </div>
+        <div class="nitiscope-findings">
+          <div class="finding">
+            <span class="finding-stat">1 in 8</span>
+            <span class="finding-label">government awards drew only a single bidder</span>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">3x</span>
+            <span class="finding-label">less competitive - central procurement vs. states</span>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">34%</span>
+            <span class="finding-label">of awards land on exactly 3 bids - the minimum competitive threshold</span>
+          </div>
+        </div>
+        <a href="https://nitiscope.com" target="_blank" rel="noopener" class="nitiscope-cta">Explore more at nitiscope.com →</a>
+      </div>
+
+      <!-- Personal Agents -->
+      <h3 class="subsection-heading">Personal Agents</h3>
+      <p class="section-intro section-intro--tight">Tools built for my own workflows. They work. I use them daily. Not yet productized - but that may change.</p>
+      <div class="agent-list">
+
+        <div class="agent-item">
+          <h3 class="agent-name">Verne <span class="agent-sub">built on NanoClaw</span></h3>
+          <p class="agent-description">Personal AI assistant built on NanoClaw, an open-source framework I forked and extended. The customisation layer - memory management, WhatsApp and web interfaces, and my specific daily workflows - is what became Verne.</p>
+          <p class="agent-inspiration">Named after Jules Verne - who imagined worlds that didn't exist yet, and wrote them into being anyway. It felt like the right name for a personal AI built from scratch.</p>
+          <a class="agent-link" href="/verne/">Know more →</a>
+        </div>
+
+        <div class="agent-item">
+          <h3 class="agent-name">Arsène</h3>
+          <p class="agent-description">Task management agent. I forward emails to it and it builds and maintains a Kanban board of what needs doing. Keeps incoming chaos organised without manual triage.</p>
+          <p class="agent-inspiration">Named after Arsène Lupin - the fictional gentleman who was always three steps ahead, never lost track of anything, and made it look effortless.</p>
+          <a class="agent-link" href="https://arsene.niveditapandey.com/about" target="_blank" rel="noopener noreferrer">Know more →</a>
+        </div>
+
+        <div class="agent-item">
+          <h3 class="agent-name">Thoth AI</h3>
+          <p class="agent-description">Form-filling agent. Handles repetitive documentation and application workflows.</p>
+          <p class="agent-inspiration">Named after Thoth - the Egyptian god of writing, knowledge, and record-keeping. The divine scribe felt like the right name for an agent that exists to handle paperwork.</p>
+          <a class="agent-link" href="https://thoth.dendrons.ai" target="_blank" rel="noopener noreferrer">Know more →</a>
+        </div>
+
+      </div>
+      <p class="section-footer">
+        These tools are built for my own work. If you are interested in the code, the approach, or exploring a productized version - <a href="/contact">get in touch</a>.
+      </p>
+
+      <!-- Dendrons Suites -->
+      <h3 class="subsection-heading">Dendrons Suites</h3>
       <div class="suite-list">
 
         <div class="suite-card">
@@ -130,6 +190,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       </div>
 
+      <!-- MirrorMirror last -->
       <div class="standalone-card">
         <div class="suite-card-top">
           <div>
@@ -142,66 +203,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a class="suite-link" href="https://mirrormirror.life" target="_blank" rel="noopener noreferrer">Visit →</a>
       </div>
 
-      <!-- NitiScope findings card -->
-      <div class="nitiscope-card">
-        <div class="nitiscope-header">
-          <div>
-            <span class="nitiscope-tag">Procurement intelligence</span>
-            <h2 class="nitiscope-title">NITI Scope</h2>
-            <p class="nitiscope-sub">What does India's public-procurement record actually reveal?</p>
-          </div>
-          <span class="nitiscope-by">by Dendrons.ai</span>
-        </div>
-        <div class="nitiscope-findings">
-          <div class="finding">
-            <span class="finding-stat">1 in 8</span>
-            <span class="finding-label">government awards drew only a single bidder</span>
-          </div>
-          <div class="finding">
-            <span class="finding-stat">3x</span>
-            <span class="finding-label">less competitive - central procurement vs. states</span>
-          </div>
-          <div class="finding">
-            <span class="finding-stat">34%</span>
-            <span class="finding-label">of awards land on exactly 3 bids - the minimum competitive threshold</span>
-          </div>
-        </div>
-        <a href="https://nitiscope.com" target="_blank" rel="noopener" class="nitiscope-cta">Explore more at nitiscope.com →</a>
-      </div>
-
-    </section>
-
-    <!-- Personal Agents -->
-    <section class="building-section building-section--last">
-      <h2 class="section-heading">Personal Agents</h2>
-      <p class="section-intro">Tools built for my own workflows. They work. I use them daily. Not yet productized - but that may change.</p>
-      <div class="agent-list">
-
-        <div class="agent-item">
-          <h3 class="agent-name">Verne <span class="agent-sub">built on NanoClaw</span></h3>
-          <p class="agent-description">Personal AI assistant built on NanoClaw, an open-source framework I forked and extended. The customisation layer - memory management, WhatsApp and web interfaces, and my specific daily workflows - is what became Verne.</p>
-          <p class="agent-inspiration">Named after Jules Verne - who imagined worlds that didn't exist yet, and wrote them into being anyway. It felt like the right name for a personal AI built from scratch.</p>
-          <a class="agent-link" href="/verne/">Know more →</a>
-        </div>
-
-        <div class="agent-item">
-          <h3 class="agent-name">Arsène</h3>
-          <p class="agent-description">Task management agent. I forward emails to it and it builds and maintains a Kanban board of what needs doing. Keeps incoming chaos organised without manual triage.</p>
-          <p class="agent-inspiration">Named after Arsène Lupin - the fictional gentleman who was always three steps ahead, never lost track of anything, and made it look effortless.</p>
-          <a class="agent-link" href="https://arsene.niveditapandey.com/about" target="_blank" rel="noopener noreferrer">Know more →</a>
-        </div>
-
-        <div class="agent-item">
-          <h3 class="agent-name">Thoth AI</h3>
-          <p class="agent-description">Form-filling agent. Handles repetitive documentation and application workflows.</p>
-          <p class="agent-inspiration">Named after Thoth - the Egyptian god of writing, knowledge, and record-keeping. The divine scribe felt like the right name for an agent that exists to handle paperwork.</p>
-          <a class="agent-link" href="https://thoth.dendrons.ai" target="_blank" rel="noopener noreferrer">Know more →</a>
-        </div>
-
-      </div>
-      <p class="section-footer">
-        These tools are built for my own work. If you are interested in the code, the approach, or exploring a productized version - <a href="/contact">get in touch</a>.
-      </p>
     </section>
 
   </div>
@@ -250,6 +251,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 2rem;
+  }
+
+  .subsection-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-intro--tight {
+    margin-bottom: 1.25rem;
   }
 
   /* Problems */
