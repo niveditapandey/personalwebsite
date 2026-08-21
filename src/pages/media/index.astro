@@ -135,7 +135,7 @@ const skipaSections: SubSection[] = [
         </div>
 
         <div class="press-grid">
-          <a class="press-card" href="/media/Pioneer-AI360-Edition1-OriginalClipping.pdf" target="_blank" rel="noopener">
+          <div class="press-card press-card--multi">
             <div class="press-card-top">
               <span class="press-outlet-tag">The Pioneer</span>
               <span class="press-card-date">Aug 21, 2026</span>
@@ -144,8 +144,11 @@ const skipaSections: SubSection[] = [
               <span class="press-part-label">Edition 1</span>
               <p class="press-card-title">Public Resources Are Used to Create AI Wealth. Should the Public Get a Share?</p>
             </div>
-            <span class="press-card-link">View clipping →</span>
-          </a>
+            <div class="press-card-links">
+              <a class="press-card-link" href="/media/Pioneer-AI360-Edition1-OriginalClipping.pdf" target="_blank" rel="noopener">View clipping →</a>
+              <a class="press-card-link" href="/media/Pioneer-AI360-Edition1-FrontPage.pdf" target="_blank" rel="noopener">Front page →</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -666,6 +669,25 @@ const skipaSections: SubSection[] = [
     color: #3EC9A7;
     letter-spacing: 0.04em;
     margin-top: auto;
+  }
+
+  .press-card--multi {
+    cursor: default;
+  }
+
+  .press-card-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: auto;
+  }
+
+  .press-card-links .press-card-link {
+    margin-top: 0;
+    text-decoration: none;
+  }
+
+  .press-card-links .press-card-link:hover {
+    text-decoration: underline;
   }
 
   @media (max-width: 540px) {
