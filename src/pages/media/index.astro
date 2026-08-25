@@ -44,6 +44,18 @@ const skipaSections: SubSection[] = [
       <h2 class="section-title">TV &amp; Video</h2>
       <div class="video-grid">
 
+        <div class="video-item video-item--upcoming">
+          <div class="video-embed video-embed--photo">
+            <img src="/media/Doordarshan-Samprati-Interview.jpg" alt="On set of Doordarshan's Samprati, recording an interview on AI & Its Impact on Us" loading="lazy" />
+            <span class="upcoming-badge">Yet to be telecast</span>
+          </div>
+          <div class="video-meta">
+            <p class="video-title">AI &amp; Its Impact on Us</p>
+            <p class="video-host">Doordarshan · Samprati (सम्प्रति) · Interview · Airing Sep 2026</p>
+            <p class="video-description">A conversation on AI's impact on how we live and work, recorded for Doordarshan's Samprati - yet to be telecast.</p>
+          </div>
+        </div>
+
         <div class="video-item">
           <div class="video-embed">
             <iframe
@@ -417,6 +429,37 @@ const skipaSections: SubSection[] = [
     font-size: 0.8rem;
     color: var(--text-muted);
     letter-spacing: 0.05em;
+  }
+
+  .video-embed--photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .upcoming-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(15, 22, 32, 0.85);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+  }
+
+  .video-item--upcoming .video-title,
+  .video-item--upcoming .video-description {
+    color: var(--text-secondary);
+  }
+
+  .video-item--upcoming .video-host {
+    font-style: italic;
   }
 
   .video-title {
