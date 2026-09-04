@@ -64,16 +64,12 @@ const skipaSections: SubSection[] = [
         </div>
 
         <div class="video-item">
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/kjJbxGHH3qo"
-              title="Responsible AI: Balancing Opportunity and Risk Across Sectors"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
+          <a class="video-embed video-embed--photo" href="https://youtu.be/kjJbxGHH3qo" target="_blank" rel="noopener noreferrer" aria-label="Watch Responsible AI: Balancing Opportunity and Risk Across Sectors on YouTube">
+            <img src="/media/Doordarshan-Samprati-Interview.jpg" alt="On set of Doordarshan's Samprati, recording the interview on Responsible AI" loading="lazy" />
+            <span class="play-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>
           <div class="video-meta">
             <p class="video-title">Responsible AI: Balancing Opportunity and Risk Across Sectors</p>
             <p class="video-host">Doordarshan · Samprati (सम्प्रति) · Interview · Sep 2026</p>
@@ -410,9 +406,11 @@ const skipaSections: SubSection[] = [
 
   .video-embed {
     position: relative;
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     background: rgba(255,255,255,0.04);
+    overflow: hidden;
   }
 
   .video-embed iframe {
@@ -434,6 +432,43 @@ const skipaSections: SubSection[] = [
     font-size: 0.8rem;
     color: var(--text-muted);
     letter-spacing: 0.05em;
+  }
+
+  .video-embed--photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .video-embed--photo:hover img {
+    transform: scale(1.03);
+  }
+
+  .play-badge {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-badge svg {
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+    color: #fff;
+    background: rgba(15, 22, 32, 0.55);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .video-embed--photo:hover .play-badge svg {
+    background: rgba(15, 22, 32, 0.8);
+    transform: scale(1.08);
   }
 
   .video-title {
