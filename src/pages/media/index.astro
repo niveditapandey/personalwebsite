@@ -63,14 +63,16 @@ const skipaSections: SubSection[] = [
           </div>
         </div>
 
-        <div class="video-item video-item--upcoming">
-          <div class="video-embed video-embed--photo">
-            <img src="/media/Doordarshan-Samprati-Interview.jpg" alt="On set of Doordarshan's Samprati, recording an interview on AI & Its Impact on Us" loading="lazy" />
-            <span class="upcoming-badge">Yet to be telecast</span>
-          </div>
+        <div class="video-item">
+          <a class="video-embed video-embed--photo" href="https://youtu.be/kjJbxGHH3qo" target="_blank" rel="noopener noreferrer" aria-label="Watch Responsible AI: Balancing Opportunity and Risk Across Sectors on YouTube">
+            <img src="/media/Doordarshan-Samprati-Interview.jpg" alt="On set of Doordarshan's Samprati, recording the interview on Responsible AI" loading="lazy" />
+            <span class="play-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>
           <div class="video-meta">
             <p class="video-title">Responsible AI: Balancing Opportunity and Risk Across Sectors</p>
-            <p class="video-host">Doordarshan · Samprati (सम्प्रति) · Interview · <em>Airing Sep 2026</em></p>
+            <p class="video-host">Doordarshan · Samprati (सम्प्रति) · Interview · Sep 2026</p>
             <p class="video-outlet-desc">With fellow panelist Dr. Rajiv Manohar, Vice-Chancellor of a leading State University</p>
           </div>
         </div>
@@ -404,9 +406,11 @@ const skipaSections: SubSection[] = [
 
   .video-embed {
     position: relative;
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     background: rgba(255,255,255,0.04);
+    overflow: hidden;
   }
 
   .video-embed iframe {
@@ -435,21 +439,36 @@ const skipaSections: SubSection[] = [
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
   }
 
-  .upcoming-badge {
+  .video-embed--photo:hover img {
+    transform: scale(1.03);
+  }
+
+  .play-badge {
     position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-    background: rgba(15, 22, 32, 0.85);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: var(--text-primary);
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    padding: 0.3rem 0.65rem;
-    border-radius: 4px;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-badge svg {
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+    color: #fff;
+    background: rgba(15, 22, 32, 0.55);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .video-embed--photo:hover .play-badge svg {
+    background: rgba(15, 22, 32, 0.8);
+    transform: scale(1.08);
   }
 
   .video-title {
