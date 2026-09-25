@@ -233,6 +233,28 @@ const skipaSections: SubSection[] = [
 
       <div class="event-block">
         <div class="event-header">
+          <span class="event-name">IIIT Ranchi - AI Talk</span>
+          <span class="event-meta">Sep 2026 · B.Tech, M.Tech &amp; PhD Orientation Programme · Invited Speaker</span>
+        </div>
+        <div class="ribbon-wrapper">
+          <div class="ribbon-track">
+            {[...Array(2)].flatMap(() => [
+              { src: "/media/IIIT-Ranchi-CandleLighting.jpg", caption: "Lamp lighting - inaugural session" },
+              { src: "/media/IIIT-Ranchi-Speaking1.jpg", caption: "On careers in the AI era" },
+              { src: "/media/IIIT-Ranchi-Speaking2.jpg", caption: "Addressing the incoming batch" },
+              { src: "/media/IIIT-Ranchi-Felicitation.jpg", caption: "Felicitated by IIIT Ranchi" },
+            ]).map((p) => (
+              <figure class="photo-item">
+                <img src={p.src} alt={p.caption} loading="lazy" />
+                <figcaption>{p.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="event-block">
+        <div class="event-header">
           <span class="event-name">IIM Ranchi - Startup Conclave</span>
           <span class="event-meta">Feb 2026 · Invited as distinguished guest · Panelist and Judge</span>
         </div>
